@@ -66,10 +66,14 @@ node_modules/
 
 # virtual environments
 .env
+env
 
 # User-uploaded media
 imagery/media/
 
+# secrets
+docs/secrets.txt
 
-
-
+# generated files
+imagery/static/css/project.min.css
+imagery/static/js/project.min.js

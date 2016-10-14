@@ -19,8 +19,8 @@ urlpatterns = [
     url(r'^users/', include('imagery.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
 
-    # Your stuff: custom urls includes go here
-
+    # imagery
+    url(r'^select/$', TemplateView.as_view(template_name='pages/select.html'), name='select'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
