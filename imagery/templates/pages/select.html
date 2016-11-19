@@ -29,6 +29,9 @@
   <body>
 
     <div class="center">
+        {% for select in selects %}
+            <img src="/media/{{ select.image }}"/>
+        {% endfor %}
         <p>Centered!</p>
     </div>
 

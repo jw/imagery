@@ -35,6 +35,7 @@ DJANGO_APPS = (
     'django.contrib.admin',
 )
 THIRD_PARTY_APPS = (
+    'photologue',
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
@@ -43,9 +44,11 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    # 'imagery.images',
     # custom users app
     'imagery.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'imagery.images.apps.ImageryConfig',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -89,7 +92,7 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.s
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    ("""Jan H. Willems""", 'jw@elevenbits.com'),
+    ("""Jan Willems""", 'jw@elevenbits.com'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers

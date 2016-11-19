@@ -20,7 +20,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # imagery
-    url(r'^select/$', TemplateView.as_view(template_name='pages/select.html'), name='select'),
+    url(r'^select/', include('imagery.images.urls'), name='images'),
+    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
