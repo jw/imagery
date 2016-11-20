@@ -13,6 +13,10 @@ class News(Dated):
     body_english = models.CharField(max_length=4096)
     body_dutch = models.CharField(max_length=4096)
 
+    class Meta:
+        ordering = ['publication_date']
+        verbose_name_plural = "News"
+
     def __str__(self):
         return self.header
 
@@ -21,6 +25,9 @@ class ManifestoTheme(Dated):
     header = models.CharField(max_length=256)
     body_english = models.CharField(max_length=4096)
     body_dutch = models.CharField(max_length=4096)
+
+    class Meta:
+        ordering = ['publication_date']
 
 
 class LandPrice(models.Model):

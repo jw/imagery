@@ -15,6 +15,7 @@ class Imagery(Photo):
     """The image."""
 
     tags = models.ManyToManyField(Tag, blank=True)
+    active = models.BooleanField(default=False)
 
     class Meta:
         # ordering = ['name']
