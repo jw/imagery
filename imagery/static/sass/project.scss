@@ -1,6 +1,17 @@
 
 // project specific CSS goes here
 
+.center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.center p {
+  margin: 0
+}
+
 ////////////////////////////////
 		//Variables//
 ////////////////////////////////
