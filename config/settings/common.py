@@ -49,6 +49,7 @@ LOCAL_APPS = (
     'imagery.users.apps.UsersConfig',
     # Your stuff: custom apps go here
     'imagery.images.apps.ImageryConfig',
+    'imagery.impart.apps.ImpartConfig',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
