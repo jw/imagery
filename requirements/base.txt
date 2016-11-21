@@ -40,9 +40,8 @@ pytz==2016.7
 django-redis==4.5.0
 redis>=2.10.5
 
-
-
-
+# huh?
+django-debug-toolbar
 
 # Your custom requirements go here
 django-photologue==3.6

@@ -44,7 +44,6 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    # 'imagery.images',
     # custom users app
     'imagery.users.apps.UsersConfig',
     # Your stuff: custom apps go here
