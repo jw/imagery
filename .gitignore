@@ -60,6 +60,7 @@ htmlcov
 
 # npm
 node_modules/
+.cache/
 
 # Compass
 .sass-cache
@@ -70,6 +71,7 @@ env
 
 # User-uploaded media
 imagery/media/
+staticfiles/
 
 # secrets
 docs/secrets.txt
