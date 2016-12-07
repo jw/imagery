@@ -28,11 +28,19 @@
 
   <body>
 
-    <div class="center">
+    <div class="container">
         {% for select in selects %}
-            <img src="/media/{{ select.image }}"/>
+            <div class="item">
+                <picture>
+                    <source srcset="/media/{{ select.image }}" media="(max-width: 768px)">
+                    <source srcset="/media/{{ select.image }}">
+                    <img srcset="/media/{{ select.image }}"
+                         alt="{{ select.title }}"
+                         style="height: 200px; width: 200px;">
+                </picture>
+                <p>{{ select.title }}</p>
+            </div>
         {% endfor %}
-        <p>Centered!</p>
     </div>
 
 

@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Dated(models.Model):
+    """Base type for all models with associated dates."""
     creation_date = models.DateTimeField('Creation date')
     publication_date = models.DateTimeField('Publication date')
     archive_date = models.DateTimeField('Archive date')
@@ -31,6 +32,10 @@ class ManifestoTheme(Dated):
 
 
 class LandPrice(models.Model):
+    """
+        There are different types of art.  Regarding the type,
+        there is a different price.
+    """
     PRIZE_TYPE = (
         ('N', 'None'),
         ('I', 'Photo'),
@@ -39,13 +44,15 @@ class LandPrice(models.Model):
         ('S', 'Statue'),
         ('M', 'Media')
     )
-    type = models.CharField(max_length=1, choices=PRIZE_TYPE)
+    type = models.CharField(max_length=1, choices=PRIZE_TYPE, null=False)
     header = models.CharField(max_length=256)
     body_english = models.CharField(max_length=4096)
     body_dutch = models.CharField(max_length=4069)
 
+    # TODO: add static method(s) to calculate price
+
     def __str__(self):
-        return '[%s] %s' % (self.type, self.header)
+        return '%s' % self.header
 
 
 class NameValuePair(models.Model):

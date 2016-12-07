@@ -2,6 +2,8 @@ from django.db import models
 
 from photologue.models import Photo
 
+from imagery.impart.models import Dated, LandPrice
+
 
 class Tag(models.Model):
     """Each image can have zero to n tags."""
@@ -16,6 +18,7 @@ class Imagery(Photo):
 
     tags = models.ManyToManyField(Tag, blank=True)
     active = models.BooleanField(default=False)
+    land_price = models.ForeignKey(LandPrice, on_delete=models.PROTECT)
 
     class Meta:
         # ordering = ['name']

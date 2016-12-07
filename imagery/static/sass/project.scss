@@ -1,15 +1,18 @@
 
 // project specific CSS goes here
 
-.center {
-  height: 100vh;
+.container {
   display: flex;
+  height: 100vh;
+  flex-flow: row;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
-.center p {
-  margin: 0
+.item {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
 }
 
 ////////////////////////////////

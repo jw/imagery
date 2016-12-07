@@ -8,7 +8,7 @@ logger = logging.getLogger("imagery")
 def selects(request, page=1):
     """Get all select entries."""
 
-    selects = Imagery.objects.reverse()
+    selects = Imagery.objects.filter(tags__tag__exact='select')
 
     logger.error("Retrieved %s images." % len(selects))
 

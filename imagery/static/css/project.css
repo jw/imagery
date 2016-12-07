@@ -1,14 +1,18 @@
-.center {
-  height: 100vh;
+.container {
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
+  -ms-flex-flow: row;
+      flex-flow: row;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center; }
 
-.center p {
-  margin: 0; }
+.item {
+  width: 200px;
+  height: 200px;
+  margin: 20px; }
 
 .alert-debug {
   background-color: #fff;
