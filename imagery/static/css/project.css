@@ -1,18 +1,74 @@
 .container {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   height: 100vh;
-  -ms-flex-flow: row;
-      flex-flow: row;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center; }
 
-.item {
-  width: 200px;
-  height: 200px;
+.intro {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding: 50px;
+  background: cyan; }
+
+@media all and (min-width: 600px) {
+  .images {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding: 5%; } }
+
+@media all and (min-width: 800px) {
+  .images {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding: 5%; } }
+
+.image {
+  padding: 5%;
+  width: 50%;
+  height: 50%;
   margin: 20px; }
+
+.image-1 {
+  padding: 5%;
+  background: deepskyblue;
+  -ms-flex-order: 2;
+      order: 2; }
+
+.image-2 {
+  padding: 5%;
+  background: darkred;
+  -ms-flex-order: 1;
+      order: 1; }
+
+.item p {
+  text-align: center; }
+
+.menu {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding: 5%;
+  background: gold; }
 
 .alert-debug {
   background-color: #fff;

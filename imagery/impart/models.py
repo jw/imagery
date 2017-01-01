@@ -56,11 +56,12 @@ class LandPrice(models.Model):
 
 
 class NameValuePair(models.Model):
+    section = models.CharField(max_length=256)
     name = models.CharField(max_length=256)
-    value = models.CharField(max_length=4069)
+    value = models.CharField(max_length=4096)
 
     def __str__(self):
-        return '%s = %s' % (self.name, self.value)
+        return '[%s] %s: %s' % (self.section, self.name, self.value)
 
 
 class Contact(models.Model):

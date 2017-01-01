@@ -46,3 +46,4 @@ django-extensions
 
 # Your custom requirements go here
 django-photologue==3.6
+django-sitetree==1.6.0

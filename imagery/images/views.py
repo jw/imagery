@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from imagery.images.models import Imagery
+from imagery.images.models import Artist
 
 import logging
 logger = logging.getLogger("imagery")
@@ -8,10 +8,10 @@ logger = logging.getLogger("imagery")
 def selects(request, page=1):
     """Get all select entries."""
 
-    selects = Imagery.objects.filter(tags__tag__exact='select')
+    artists = Artist.objects.filter(active=True)
 
-    logger.error("Retrieved %s images." % len(selects))
+    logger.error("Retrieved %s artists." % len(artists))
 
-    attributes = {'selects': selects, 'hello': 'there'}
+    attributes = {'artists': artists, 'intro': 'Hello there!'}
 
     return render(request, 'pages/select.html', attributes)

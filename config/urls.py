@@ -21,6 +21,7 @@ urlpatterns = [
 
     # imagery
     url(r'^select/', include('imagery.images.urls'), name='images'),
+    url(r'^artist/', include('imagery.artist.urls'), name='artist'),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
