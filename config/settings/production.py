@@ -38,21 +38,21 @@ INSTALLED_APPS += ('raven.contrib.django.raven_compat', )
 
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.io/
-WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
-MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
-RAVEN_MIDDLEWARE = ('raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware', )
-MIDDLEWARE = RAVEN_MIDDLEWARE + MIDDLEWARE
+# WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
+# MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
+# RAVEN_MIDDLEWARE = ('raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware', )
+# MIDDLEWARE = RAVEN_MIDDLEWARE + MIDDLEWARE
 # opbeat integration
 # See https://opbeat.com/languages/django/
-INSTALLED_APPS += ('opbeat.contrib.django',)
-OPBEAT = {
-    'ORGANIZATION_ID': env('DJANGO_OPBEAT_ORGANIZATION_ID'),
-    'APP_ID': env('DJANGO_OPBEAT_APP_ID'),
-    'SECRET_TOKEN': env('DJANGO_OPBEAT_SECRET_TOKEN')
-}
-MIDDLEWARE = (
-    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
-) + MIDDLEWARE
+# INSTALLED_APPS += ('opbeat.contrib.django',)
+# OPBEAT = {
+#    'ORGANIZATION_ID': env('DJANGO_OPBEAT_ORGANIZATION_ID'),
+#    'APP_ID': env('DJANGO_OPBEAT_APP_ID'),
+#    'SECRET_TOKEN': env('DJANGO_OPBEAT_SECRET_TOKEN')
+# }
+# MIDDLEWARE = (
+#    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
+# ) + MIDDLEWARE
 
 
 # SECURITY CONFIGURATION
@@ -61,7 +61,7 @@ MIDDLEWARE = (
 # and https://docs.djangoproject.com/ja/1.9/howto/deployment/checklist/#run-manage-py-check-deploy
 
 # set this to 60 seconds and then to 518400 when you can prove it works
-SECURE_HSTS_SECONDS = 60
+SECURE_HSTS_SDJANGO_SECURE_SSL_REDIRECTDJANGO_SECURE_SSL_REDIRECTECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
     'DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True)
 SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
