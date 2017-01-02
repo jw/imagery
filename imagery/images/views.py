@@ -5,7 +5,7 @@ import logging
 logger = logging.getLogger("imagery")
 
 
-def selects(request, page=1):
+def artists(request, page=1):
     """Get all select entries."""
 
     artists = Artist.objects.filter(active=True)
