@@ -14,4 +14,4 @@ def artists(request, page=1):
 
     attributes = {'artists': artists, 'intro': 'Hello there!'}
 
-    return render(request, 'pages/select.html', attributes)
+    return render(request, 'pages/home.html', attributes)

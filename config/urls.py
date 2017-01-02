@@ -9,7 +9,6 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
-    # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
@@ -20,7 +19,7 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # imagery
-    url(r'^', include('imagery.images.urls'), name='images'),
+    url(r'^', include('imagery.images.urls'), name='artists'),
     url(r'^artist/', include('imagery.artist.urls'), name='artist'),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 
