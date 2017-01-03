@@ -22,7 +22,7 @@ class News(Dated):
         return self.header
 
 
-class ManifestoTheme(Dated):
+class Manifesto(Dated):
     header = models.CharField(max_length=256)
     body_english = models.CharField(max_length=4096)
     body_dutch = models.CharField(max_length=4096)

@@ -1,0 +1,45 @@
+{% load staticfiles i18n %}<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}imagery{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        {% block css %}
+            <link href="{% static 'css/project.css' %}" rel="stylesheet">
+        {% endblock %}
+
+    </head>
+
+    <body>
+
+        {% for news in news %}
+            <div class="entry">
+                <h1>NEWS ENTRY</h1>
+                <p>{{ news.creation_date }}</p>
+                <p>{{ news.publication_date }}</p>
+                <p>{{ news.archive_date }}</p>
+                <p>{{ news.location }}</p>
+                <p>{{ news.header }}</p>
+                <p>{{ news.body_dutch }}</p>
+                <p>{{ news.body_english }}</p>
+            </div>
+        {% endfor %}
+
+        {% block javascript %}
+            <script src="{% static 'js/project.js' %}"></script>
+        {% endblock javascript %}
+
+    </body>
+
+</html>
