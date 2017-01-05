@@ -6,7 +6,7 @@ Production Configurations
 - Use mailgun to send emails
 - Use Redis for cache
 
-- Use sentry for error logging
+- Use sentry for error logging (using the raven plugin)
 
 
 - Use opbeat for error reporting
@@ -38,8 +38,9 @@ INSTALLED_APPS += ('raven.contrib.django.raven_compat', )
 
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.io/
-# WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
-# MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
+WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
+MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
+
 # RAVEN_MIDDLEWARE = ('raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware', )
 # MIDDLEWARE = RAVEN_MIDDLEWARE + MIDDLEWARE
 # opbeat integration
