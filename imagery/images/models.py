@@ -19,6 +19,9 @@ class Artist(models.Model):
     image = models.ImageField(upload_to='images')
     active = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ['name', 'link']
+
     def __str__(self):
         return self.name
 

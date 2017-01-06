@@ -24,7 +24,10 @@
     <body>
 
         <div class="container">
-            <div class="intro">{{ intro }}</div>
+            <div class="intro">
+                {{ intro.english }}
+                {{ intro.dutch }}
+            </div>
             <div class="images">
                 {% for artist in artists %}
                     <div class="image-{{ forloop.counter }}">
