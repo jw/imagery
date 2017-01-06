@@ -29,9 +29,9 @@
                 {% for artist in artists %}
                     <div class="image-{{ forloop.counter }}">
                         <picture>
-                            <source srcset="{{ STATIC_URL }}/{{ artist.image.image }}" media="(max-width: 768px)">
-                            <source srcset="{{ STATIC_URL }}/{{ artist.image.image }}">
-                            <img srcset="{{ STATIC_URL }}/{{ artist.image.image }}"
+                            <source srcset="{{ artist.image.url }}" media="(max-width: 768px)">
+                            <source srcset="{{ artist.image.url }}">
+                            <img srcset="{{ artist.image.url }}"
                                  alt="{{ artist.title }}"
                                  style="height: 200px; width: 200px;">
                         </picture>

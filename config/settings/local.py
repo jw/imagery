@@ -25,6 +25,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # Note: This key only used for development and testing.
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='*qhfuxh0zgobr=4dd08#yzi2rg6yskb^#x(uce9e*i@wdruius')
 
+
 # Mail settings
 # ------------------------------------------------------------------------------
 
@@ -44,12 +45,16 @@ CACHES = {
     }
 }
 
+# WHITENOISE IN DEVELOPER MODE
+# INSTALLED_APPS += ('whitenoise.runserver_nostatic',)
+# MEDIA_URL = 'https://s3.amazonaws.com/%s/' % "elevenbits-soon"
+
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
 MIDDLEWARE += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-INSTALLED_APPS += ('debug_toolbar', )
+INSTALLED_APPS += ('debug_toolbar',)
 
-INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
+INTERNAL_IPS = ['127.0.0.1', '127.0.1.1', 'localhost',]
 # tricks to have debug toolbar when developing with docker
 if os.environ.get('USE_DOCKER') == 'yes':
     ip = socket.gethostbyname(socket.gethostname())

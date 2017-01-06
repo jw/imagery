@@ -16,7 +16,7 @@ class Artist(models.Model):
     """An artist that is part of this site"""
     name = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
-    image = models.ForeignKey(Photo)
+    image = models.ImageField(upload_to='images')
     active = models.BooleanField(default=False)
 
     def __str__(self):
