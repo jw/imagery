@@ -1,6 +1,6 @@
 from django.db import models
 
-from photologue.models import Photo
+from s3direct.fields import S3DirectField
 
 from imagery.impart.models import Dated, LandPrice
 
@@ -16,7 +16,7 @@ class Artist(models.Model):
     """An artist that is part of this site"""
     name = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='images')
+    image = S3DirectField(dest='artists')
     active = models.BooleanField(default=False)
 
     class Meta:
@@ -30,7 +30,7 @@ class Art(models.Model):
     name = models.CharField(max_length=255)
     tags = models.ManyToManyField(Tag, blank=True)
     artist = models.ForeignKey(Artist)
-    image = models.ForeignKey(Photo)
+    image = S3DirectField(dest='art')
     land_price = models.ForeignKey(LandPrice)
 
     def __str__(self):
