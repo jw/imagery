@@ -47,4 +47,3 @@ django-extensions
 # Your custom requirements go here
 django-photologue==3.6
 django-sitetree==1.6.0
-django-s3direct==0.4.2

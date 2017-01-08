@@ -1,7 +1,5 @@
 from django.db import models
 
-from s3direct.fields import S3DirectField
-
 from imagery.impart.models import Dated, LandPrice
 
 
@@ -16,7 +14,7 @@ class Artist(models.Model):
     """An artist that is part of this site"""
     name = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
-    image = S3DirectField(dest='artists')
+    image = models.ImageField(upload_to='artists')
     active = models.BooleanField(default=False)
 
     class Meta:
@@ -30,7 +28,7 @@ class Art(models.Model):
     name = models.CharField(max_length=255)
     tags = models.ManyToManyField(Tag, blank=True)
     artist = models.ForeignKey(Artist)
-    image = S3DirectField(dest='art')
+    image = models.ImageField(upload_to='art')
     land_price = models.ForeignKey(LandPrice)
 
     def __str__(self):

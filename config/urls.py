@@ -34,8 +34,6 @@ urlpatterns = [
     # TODO: handle this - should this be there?
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 
-    url(r'^s3direct/', include('s3direct.urls')),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
