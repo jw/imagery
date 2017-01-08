@@ -43,11 +43,11 @@ body{
 }
 @font-face {
     font-family: "Flaticon";
-    src: url("../font/flaticon.eot");
-    src: url("../font/flaticon.eot#iefix") format("embedded-opentype"),
-        url("../font/flaticon.woff") format("woff"),
-        url("../font/flaticon.ttf") format("truetype"),
-        url("../font/flaticon.svg") format("svg");
+    src: url("../font/Flaticon.eot");
+    src: url("../font/Flaticon.eot#iefix") format("embedded-opentype"),
+        url("../font/Flaticon.woff") format("woff"),
+        url("../font/Flaticon.ttf") format("truetype"),
+        url("../font/Flaticon.svg") format("svg");
     font-weight: normal;
     font-style: normal;
 }
