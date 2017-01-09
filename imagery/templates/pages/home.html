@@ -512,7 +512,14 @@
 
         <script>
             $("#home-parallex").bgswitcher({
-                images: ["{% static 'img/IMG_5257.jpg'%}", "{% static 'img/DSC01110.jpg' %}"],
+                images: [
+                    {% for artist in artists %}
+                        "{{ artist.image.url }}"
+                        {% if not forloop.last %}
+                            ,
+                        {% endif %}
+                    {% endfor %}
+                ],
             })
         </script>
 
