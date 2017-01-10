@@ -1,0 +1,30 @@
+
+{% load static %}
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/wow-anim.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/form-validator.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/contact-form-script.js' %}"></script>
+<script src="{% static 'js/jquery.scrolly.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.fancybox.js' %}?v=2.1.5"></script>
+<script type="text/javascript" src="{% static 'js/jquery.fancybox-buttons.js' %}?v=1.0.5"></script>
+<script type="text/javascript" src="{% static 'js/jquery.fancybox-thumbs.js' %}?v=1.0.7"></script>
+<script type="text/javascript" src="{% static 'js/jquery.fancybox-media.js' %}?v=1.0.6"></script>
+<script type="text/javascript" src="{% static 'js/jquery.fancybox.pack.js' %}?v=2.1.5"></script>
+<script type="text/javascript" src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/jquery.bgswitcher.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/map.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+<script>
+    $("#home-parallex").bgswitcher({
+        images: [
+            {% for artist in artists %}
+                "{{ artist.image.url }}"{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ],
+    })
+</script>

@@ -7,4 +7,4 @@ logger = logging.getLogger("imagery")
 def artist(request):
     """Show an artist page"""
 
-    return render(request, 'pages/artist.html')
+    return render(request, 'pages/index.html')

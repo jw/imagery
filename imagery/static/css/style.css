@@ -278,6 +278,58 @@ section:nth-of-type(2){background:black;height:1600px;}
 
 
 
+/* NEWS */
+
+#news {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    position: relative;
+}
+
+.news-content {
+    /* padding-top: 120px; */
+    padding-bottom: 0px;
+}
+
+.news-entry {
+  padding-top: 0px;
+  padding-bottom: 60px;
+}
+
+.news-title {
+    padding-top: 120px;
+}
+.news-title h3{
+    font-size: 34px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 2px;
+    color: #000;
+    margin-top: 0px;
+    font-weight: 900;
+    line-height: 33px;
+    text-transform: uppercase;
+}
+
+/* MANIFEST */
+
+#manifest {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    position: relative;
+}
+
+.manifest-content {
+    /* padding-top: 120px; */
+    padding-bottom: 0px;
+}
+
+.manifest-entry {
+  padding-top: 0px;
+  padding-bottom: 60px;
+}
+
 
 
 /*==================================================================== ABOUT ============================================================*/

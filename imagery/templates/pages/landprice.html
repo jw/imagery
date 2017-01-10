@@ -1,34 +1,28 @@
-{% load staticfiles i18n %}<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{% block title %}imagery{% endblock title %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-    </head>
-
-    <body>
-
-        {% for price in prices %}
-            <div class="entry">
-                <h1>Price</h1>
-                <p>{{ price.type }}</p>
-                <p>{{ price.header }}</p>
-                <p>{{ price.body_english }}</p>
-                <p>{{ price.body_dutch }}</p>
-            </div>
-        {% endfor %}
-
-    </body>
-
-</html>
+<div id="landprice">
+    <div class="landprice-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="landprice-title text-center wow fadeIn">
+                    <h3>Land Price</h3>
+                    <div class="underline"></div>
+                </div><!-- end work-title  -->
+            </div><!-- end col-md-12  -->
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 about-col">
+                <div class="about-details wow fadeIn">
+                    {% for price in prices %}
+                        <div class="price">
+                            <p>{{ price.type }}</p>
+                            <p>{{ price.header }}</p>
+                            <p>{{ price.body_english }}</p>
+                            <p>{{ price.body_dutch }}</p>
+                        </div>
+                    {% endfor %}
+                </div><!-- end about-details  -->
+            </div><!-- end col-md-12  -->
+        </div><!-- end row  -->
+    </div><!-- end container  -->
+    </div>
+</div> <!-- end news -->

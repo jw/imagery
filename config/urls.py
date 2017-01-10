@@ -14,7 +14,6 @@ from imagery.artist import views as artist_views
 from imagery.images import views as images_views
 
 urlpatterns = [
-    url(r'^about/', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),

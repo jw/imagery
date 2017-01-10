@@ -13,6 +13,7 @@ class News(Dated):
     header = models.CharField(max_length=256)
     body_english = models.CharField(max_length=4096)
     body_dutch = models.CharField(max_length=4096)
+    active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['publication_date']
@@ -26,9 +27,11 @@ class Manifesto(Dated):
     header = models.CharField(max_length=256)
     body_english = models.CharField(max_length=4096)
     body_dutch = models.CharField(max_length=4096)
+    active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['publication_date']
+        verbose_name_plural = "Manifesti"
 
 
 class LandPrice(models.Model):
