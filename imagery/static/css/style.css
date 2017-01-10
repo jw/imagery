@@ -330,6 +330,52 @@ section:nth-of-type(2){background:black;height:1600px;}
   padding-bottom: 60px;
 }
 
+.manifest-title {
+    padding-top: 120px;
+}
+.manifest-title h3{
+    font-size: 34px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 2px;
+    color: #000;
+    margin-top: 0px;
+    font-weight: 900;
+    line-height: 33px;
+    text-transform: uppercase;
+}
+
+/* LANDPRICE */
+
+#landprice {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    position: relative;
+}
+
+.landprice-content {
+    /* padding-top: 120px; */
+    padding-bottom: 0px;
+}
+
+.landprice-entry {
+  padding-top: 0px;
+  padding-bottom: 60px;
+}
+
+.landprice-title {
+    padding-top: 120px;
+}
+.landprice-title h3{
+    font-size: 34px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 2px;
+    color: #000;
+    margin-top: 0px;
+    font-weight: 900;
+    line-height: 33px;
+    text-transform: uppercase;
+}
 
 
 /*==================================================================== ABOUT ============================================================*/
