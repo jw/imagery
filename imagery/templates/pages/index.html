@@ -1,13 +1,27 @@
-{% extends "pages/base.html" %}
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
-{% include "pages/head.html" %}
-{% include "pages/menubar.html" %}
+    {% include "pages/head.html" %}
 
+    <body>
 
-{% include "pages/home.html" %}
-{% include "pages/news.html" %}
-{% include "pages/manifest.html" %}
-{% include "pages/landprice.html" %}
+        {# The preloader #}
+        <div class="se-pre-con"></div>
 
+        {% include "pages/menubar.html" %}
 
+        <div class="main-page-content">
 
+            {% include "pages/home.html" %}
+            {% include "pages/news.html" %}
+            {% include "pages/manifest.html" %}
+            {% include "pages/landprice.html" %}
+            {% include "pages/art.html" %}
+
+        </div>
+
+        {% include "pages/javascript.html" %}
+
+    </body>
+
+</html>
