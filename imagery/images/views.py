@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from imagery.images.models import Artist
+from imagery.images.models import Artist, Art
 
 import logging
 
@@ -9,6 +9,7 @@ logger = logging.getLogger("imagery")
 
 
 # TODO: rename this to index/home
+# TODO: move this to impart
 def artists(request):
     """Get all select artists."""
 
@@ -22,11 +23,16 @@ def artists(request):
 
     prices = LandPrice.objects.all()
 
+    works = Art.objects.all()
+    works_tags = [p.header for p in prices if p.active]
+
     attributes = {'artists': artists,
                   'home_title': 'We are impart',
                   'home_artists': artists_text,
                   'news': news,
                   'manifesti': manifesti,
-                  'prices': prices}
+                  'prices': prices,
+                  'works': works,
+                  'works_tags': works_tags}
 
     return render(request, 'pages/index.html', attributes)

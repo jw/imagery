@@ -3,7 +3,7 @@
 
 
     var $body = $("body"),
-            $window = $(window);
+        $window = $(window);
 
     /*============================= Navigation Section ==============================*/
 
@@ -16,7 +16,7 @@
     });
 
     /*============================= Smoothscroll js ==============================*/
-    
+
     $('.navbar-default').on('click', 'a', function (event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
@@ -26,7 +26,7 @@
     });
 
     /*====================================== jquery scroll spy ========================================*/
-    
+
     $body.scrollspy({
         target: ".navbar-collapse",
         offset: 15
@@ -57,27 +57,27 @@
 
     /*====================================== Mixit-up ========================================*/
 
-    var filterList = {
-        init: function () {
-
-            // MixItUp plugin
-            // http://mixitup.io
-            $('#portfoliolist').mixItUp({
-                selectors: {
-                    target: '.portfolio',
-                    filter: '.filter'
-                },
-                load: {
-                    filter: '.web, .graphics, .development, .photography'
-                }
-            });
-
-        }
-
-    };
-
+    // var filterList = {
+    //     init: function () {
+    //
+    //         // MixItUp plugin
+    //         // http://mixitup.io
+    //         $('#portfoliolist').mixItUp({
+    //             selectors: {
+    //                 target: '.portfolio',
+    //                 filter: '.filter'
+    //             },
+    //             load: {
+    //                 filter: '.web, .graphics, .development, .photography'
+    //             }
+    //         });
+    //
+    //     }
+    //
+    // };
+    //
     // Run the show!
-    filterList.init();
+    // filterList.init();
 
     /*====================================== Parallex ========================================*/
 

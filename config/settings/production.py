@@ -38,8 +38,8 @@ INSTALLED_APPS += ('raven.contrib.django.raven_compat', )
 
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.io/
-WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
-MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
+# WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
+# MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
 
 # RAVEN_MIDDLEWARE = ('raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware', )
 # MIDDLEWARE = RAVEN_MIDDLEWARE + MIDDLEWARE
@@ -117,7 +117,7 @@ AWS_HEADERS = {
 MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 
 
-# Static Assets
+# Static and Media Assets go to S3
 # ------------------------
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'

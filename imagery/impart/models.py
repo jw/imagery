@@ -51,6 +51,7 @@ class LandPrice(models.Model):
     header = models.CharField(max_length=256)
     body_english = models.CharField(max_length=4096)
     body_dutch = models.CharField(max_length=4069)
+    active = models.BooleanField(default=True)
 
     # TODO: add static method(s) to calculate price
 
