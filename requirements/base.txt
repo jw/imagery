@@ -44,6 +44,5 @@ redis>=2.10.5
 django-debug-toolbar
 django-extensions
 
-# Your custom requirements go here
-django-photologue==3.6
+# Menu bar
 django-sitetree==1.6.0

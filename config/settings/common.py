@@ -36,8 +36,6 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-    # 'imagery.users.apps.UsersConfig',
-
     'imagery.impart.apps.ImpartConfig',
 )
 
@@ -216,7 +214,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 # Some really nice defaults
