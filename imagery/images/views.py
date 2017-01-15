@@ -21,7 +21,7 @@ def artists(request):
 
     manifesti = Manifesto.objects.filter(active=True).reverse()
 
-    prices = LandPrice.objects.all()
+    prices = LandPrice.objects.filter(active=True)
 
     works = Art.objects.all()
     works_tags = [p.header for p in prices if p.active]
