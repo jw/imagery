@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Django settings for imagery project.
+Django settings for the impart project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -20,7 +20,6 @@ env = environ.Env()
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
 DJANGO_APPS = (
-    # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -28,25 +27,28 @@ DJANGO_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Useful template tags:
-    # 'django.contrib.humanize',
+    'django.contrib.humanize',
 
     # Admin
     'django.contrib.admin',
 )
+
 THIRD_PARTY_APPS = (
     'crispy_forms',  # Form layouts
+
+    # TODO: do we need these?
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
-    'sitetree',
+
+    'sitetree',  # the menu bar
 )
 
-# Apps specific for this project go here.
 LOCAL_APPS = (
-    # custom users app
+    # TODO: do we need this? custom users app
     'imagery.users.apps.UsersConfig',
-    # Your stuff: custom apps go here
+
+    # TODO: these two need to be wrapped together
     'imagery.images.apps.ImageryConfig',
     'imagery.impart.apps.ImpartConfig',
 )
@@ -160,7 +162,6 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-                # Your stuff: custom template context processors go here
             ],
         },
     },
@@ -251,9 +252,3 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 
 # Location of root django.contrib.admin URL, use {% url 'admin:index' %}
 ADMIN_URL = r'^admin/'
-
-
-
-# Your common stuff: Below this line define 3rd party library settings
-# ------------------------------------------------------------------------------
-
