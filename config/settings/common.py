@@ -26,30 +26,18 @@ DJANGO_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'django.contrib.humanize',
-
-    # Admin
     'django.contrib.admin',
 )
 
 THIRD_PARTY_APPS = (
     'crispy_forms',  # Form layouts
-
-    # TODO: do we need these?
-    'allauth',  # registration
-    'allauth.account',  # registration
-    'allauth.socialaccount',  # registration
-
     'sitetree',  # the menu bar
 )
 
 LOCAL_APPS = (
-    # TODO: do we need this? custom users app
-    'imagery.users.apps.UsersConfig',
+    # 'imagery.users.apps.UsersConfig',
 
-    # TODO: these two need to be wrapped together
-    'imagery.images.apps.ImageryConfig',
     'imagery.impart.apps.ImpartConfig',
 )
 
@@ -235,16 +223,6 @@ AUTHENTICATION_BACKENDS = (
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-
-ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
-ACCOUNT_ADAPTER = 'imagery.users.adapters.AccountAdapter'
-SOCIALACCOUNT_ADAPTER = 'imagery.users.adapters.SocialAccountAdapter'
-
-# Custom user app defaults
-# Select the correct user model
-AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = 'users:redirect'
-LOGIN_URL = 'account_login'
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'

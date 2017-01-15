@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from imagery.impart.models import News, LandPrice, Manifesto
+from imagery.impart.models import News, LandPrice, Manifesto, Artist, Art
 
 import logging
 logger = logging.getLogger("imagery")
@@ -49,3 +49,33 @@ def landprice(request):
     attributes = {'prices': prices}
 
     return render(request, 'pages/landprice.html', attributes)
+
+
+def index(request):
+    """The complete home page."""
+
+    artists = Artist.objects.filter(active=True)
+    artists_text = " and ".join(str(artist.name) for artist in artists)
+    logger.info("Retrieved %s." % artists_text)
+
+    news = News.objects.filter(active=True).reverse()
+
+    manifesti = Manifesto.objects.filter(active=True).reverse()
+
+    prices = LandPrice.objects.filter(active=True)
+
+    works = Art.objects.all()
+
+    # TODO: this should not be here!
+    works_tags = [p.header for p in prices if p.active]
+
+    attributes = {'artists': artists,
+                  'home_title': 'We are impart',
+                  'home_artists': artists_text,
+                  'news': news,
+                  'manifesti': manifesti,
+                  'prices': prices,
+                  'works': works,
+                  'works_tags': works_tags}
+
+    return render(request, 'pages/index.html', attributes)
