@@ -30,9 +30,6 @@ urlpatterns = [
     url(r'^manifest/', impart_views.manifest),
     url(r'^landprice/', impart_views.landprice),
 
-    # TODO: handle this - should this be there?
-    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
