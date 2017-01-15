@@ -30,6 +30,10 @@ class Art(models.Model):
     artist = models.ForeignKey(Artist)
     image = models.ImageField(upload_to='art')
     land_price = models.ForeignKey(LandPrice)
+    x = models.IntegerField()
+    y = models.IntegerField()
+    z = models.IntegerField(blank=True, help_text='Depth of the piece')
+    materials = models.CharField(max_length=512)
 
     def __str__(self):
         return self.name
