@@ -1,5 +1,241 @@
 [
 {
+    "model": "images.tag",
+    "pk": 1,
+    "fields": {
+        "tag": "select"
+    }
+},
+{
+    "model": "images.tag",
+    "pk": 2,
+    "fields": {
+        "tag": "dirk"
+    }
+},
+{
+    "model": "images.tag",
+    "pk": 3,
+    "fields": {
+        "tag": "annik"
+    }
+},
+{
+    "model": "images.artist",
+    "pk": 1,
+    "fields": {
+        "name": "Dirk Caluwaerts",
+        "link": "dirk-caluwaerts",
+        "image": "artists/dirk.png",
+        "active": true
+    }
+},
+{
+    "model": "images.artist",
+    "pk": 4,
+    "fields": {
+        "name": "Annik Rachel Klaes",
+        "link": "annik-rachel-klaes",
+        "image": "artists/annik.png",
+        "active": true
+    }
+},
+{
+    "model": "images.artist",
+    "pk": 5,
+    "fields": {
+        "name": "Nobody",
+        "link": "nowhere",
+        "image": "15",
+        "active": false
+    }
+},
+{
+    "model": "images.art",
+    "pk": 1,
+    "fields": {
+        "name": "Something",
+        "artist": 4,
+        "image": "art/2015-07-15_21.43.06.jpg",
+        "land_price": 7,
+        "tags": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 2,
+    "fields": {
+        "name": "Cirles",
+        "artist": 4,
+        "image": "art/DSC01734.jpg",
+        "land_price": 8,
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 3,
+    "fields": {
+        "name": "Red, black and white",
+        "artist": 4,
+        "image": "art/2015-07-22_09.27.03.jpg",
+        "land_price": 8,
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 4,
+    "fields": {
+        "name": "Black, red and blue",
+        "artist": 4,
+        "image": "art/2015-03-14_17.15.14.jpg",
+        "land_price": 8,
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 5,
+    "fields": {
+        "name": "Rainbow",
+        "artist": 4,
+        "image": "art/IMG-20161120-WA0000_1.jpg",
+        "land_price": 8,
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 6,
+    "fields": {
+        "name": "Something else",
+        "artist": 4,
+        "image": "art/DSC01737.jpg",
+        "land_price": 8,
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 7,
+    "fields": {
+        "name": "woman",
+        "artist": 4,
+        "image": "art/DSC01730.jpg",
+        "land_price": 8,
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 8,
+    "fields": {
+        "name": "Station Kalmthout",
+        "artist": 1,
+        "image": "art/DSC01527.jpg",
+        "land_price": 8,
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 9,
+    "fields": {
+        "name": "Japan",
+        "artist": 1,
+        "image": "art/DSC01352.jpg",
+        "land_price": 8,
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 10,
+    "fields": {
+        "name": "Something",
+        "artist": 1,
+        "image": "art/DSC01352_xTGocVZ.jpg",
+        "land_price": 10,
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 11,
+    "fields": {
+        "name": "Dirk Caluwaerts",
+        "artist": 1,
+        "image": "art/DSC01255.jpg",
+        "land_price": 6,
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 12,
+    "fields": {
+        "name": "Watery",
+        "artist": 1,
+        "image": "art/DSC01193.jpg",
+        "land_price": 9,
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 13,
+    "fields": {
+        "name": "Flowers",
+        "artist": 1,
+        "image": "art/DSC01390.jpg",
+        "land_price": 7,
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "images.art",
+    "pk": 14,
+    "fields": {
+        "name": "Sea",
+        "artist": 1,
+        "image": "art/DSC01502.jpg",
+        "land_price": 6,
+        "tags": [
+            1,
+            2,
+            3
+        ]
+    }
+},
+{
     "model": "impart.dated",
     "pk": 1,
     "fields": {
@@ -65,7 +301,8 @@
         "type": "N",
         "header": "Untyped land price (do not use me!)",
         "body_english": "Untyped land price",
-        "body_dutch": "Ongetypeerde landprijs"
+        "body_dutch": "Ongetypeerde landprijs",
+        "active": false
     }
 },
 {
@@ -75,7 +312,8 @@
         "type": "I",
         "header": "Photo",
         "body_english": "A photgraphical image",
-        "body_dutch": "Een foto"
+        "body_dutch": "Een foto",
+        "active": true
     }
 },
 {
@@ -85,7 +323,8 @@
         "type": "D",
         "header": "Drawing",
         "body_english": "A drawing",
-        "body_dutch": "Een tekening"
+        "body_dutch": "Een tekening",
+        "active": true
     }
 },
 {
@@ -95,7 +334,8 @@
         "type": "P",
         "header": "Painting",
         "body_english": "A painting.",
-        "body_dutch": "Een schilderij."
+        "body_dutch": "Een schilderij.",
+        "active": true
     }
 },
 {
@@ -105,7 +345,8 @@
         "type": "S",
         "header": "Statue",
         "body_english": "A statue.",
-        "body_dutch": "Een beeld."
+        "body_dutch": "Een beeld.",
+        "active": true
     }
 },
 {
@@ -115,7 +356,8 @@
         "type": "M",
         "header": "Media",
         "body_english": "Some multmedia content.",
-        "body_dutch": "Multimedia."
+        "body_dutch": "Multimedia.",
+        "active": true
     }
 },
 {
@@ -143,57 +385,6 @@
         "section": "home",
         "name": "intro.english",
         "value": "Intro enlgish"
-    }
-},
-{
-    "model": "images.tag",
-    "pk": 1,
-    "fields": {
-        "tag": "select"
-    }
-},
-{
-    "model": "images.tag",
-    "pk": 2,
-    "fields": {
-        "tag": "dirk"
-    }
-},
-{
-    "model": "images.tag",
-    "pk": 3,
-    "fields": {
-        "tag": "annik"
-    }
-},
-{
-    "model": "images.artist",
-    "pk": 1,
-    "fields": {
-        "name": "Dirk Caluwaerts",
-        "link": "dirk-caluwaerts",
-        "image": "artists/dirk.png",
-        "active": true
-    }
-},
-{
-    "model": "images.artist",
-    "pk": 4,
-    "fields": {
-        "name": "Annik Rachel Klaes",
-        "link": "annik-rachel-klaes",
-        "image": "artists/annik.png",
-        "active": true
-    }
-},
-{
-    "model": "images.artist",
-    "pk": 5,
-    "fields": {
-        "name": "Nobody",
-        "link": "nowhere",
-        "image": "15",
-        "active": false
     }
 },
 {
