@@ -13,7 +13,7 @@ gunicorn==19.6.0
 # ------------------------------------------------
 boto==2.42.0
 boto3
-django-storages-redux==1.3.2
+django-storages
 
 
 # Email backends for Mailgun, Postmark, SendGrid and more
