@@ -15,6 +15,7 @@ Production Configurations
 from __future__ import absolute_import, unicode_literals
 
 from boto.s3.connection import OrdinaryCallingFormat
+from boto.s3.connection import SubdomainCallingFormat
 from django.utils import six
 
 import logging
@@ -100,6 +101,7 @@ AWS_STORAGE_BUCKET_NAME = env('DJANGO_AWS_STORAGE_BUCKET_NAME')
 AWS_AUTO_CREATE_BUCKET = False
 AWS_QUERYSTRING_AUTH = True
 # AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
+AWS_S3_CALLING_FORMAT = SubdomainCallingFormat()
 # S3_USE_SIGV4 = True
 
 # AWS cache settings, don't change unless you know what you're doing:
