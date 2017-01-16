@@ -1,265 +1,29 @@
 [
 {
-    "model": "images.tag",
-    "pk": 1,
-    "fields": {
-        "tag": "select"
-    }
-},
-{
-    "model": "images.tag",
-    "pk": 2,
-    "fields": {
-        "tag": "dirk"
-    }
-},
-{
-    "model": "images.tag",
-    "pk": 3,
-    "fields": {
-        "tag": "annik"
-    }
-},
-{
-    "model": "images.artist",
-    "pk": 1,
-    "fields": {
-        "name": "Dirk Caluwaerts",
-        "link": "dirk-caluwaerts",
-        "image": "artists/dirk.png",
-        "active": true
-    }
-},
-{
-    "model": "images.artist",
-    "pk": 4,
-    "fields": {
-        "name": "Annik Rachel Klaes",
-        "link": "annik-rachel-klaes",
-        "image": "artists/annik.png",
-        "active": true
-    }
-},
-{
-    "model": "images.artist",
-    "pk": 5,
-    "fields": {
-        "name": "Nobody",
-        "link": "nowhere",
-        "image": "15",
-        "active": false
-    }
-},
-{
-    "model": "images.art",
-    "pk": 1,
-    "fields": {
-        "name": "Something",
-        "artist": 4,
-        "image": "art/2015-07-15_21.43.06.jpg",
-        "land_price": 7,
-        "tags": [
-            2,
-            3
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 2,
-    "fields": {
-        "name": "Cirles",
-        "artist": 4,
-        "image": "art/DSC01734.jpg",
-        "land_price": 8,
-        "tags": [
-            3
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 3,
-    "fields": {
-        "name": "Red, black and white",
-        "artist": 4,
-        "image": "art/2015-07-22_09.27.03.jpg",
-        "land_price": 8,
-        "tags": [
-            3
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 4,
-    "fields": {
-        "name": "Black, red and blue",
-        "artist": 4,
-        "image": "art/2015-03-14_17.15.14.jpg",
-        "land_price": 8,
-        "tags": [
-            3
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 5,
-    "fields": {
-        "name": "Rainbow",
-        "artist": 4,
-        "image": "art/IMG-20161120-WA0000_1.jpg",
-        "land_price": 8,
-        "tags": [
-            3
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 6,
-    "fields": {
-        "name": "Something else",
-        "artist": 4,
-        "image": "art/DSC01737.jpg",
-        "land_price": 8,
-        "tags": [
-            3
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 7,
-    "fields": {
-        "name": "woman",
-        "artist": 4,
-        "image": "art/DSC01730.jpg",
-        "land_price": 8,
-        "tags": [
-            3
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 8,
-    "fields": {
-        "name": "Station Kalmthout",
-        "artist": 1,
-        "image": "art/DSC01527.jpg",
-        "land_price": 8,
-        "tags": [
-            2
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 9,
-    "fields": {
-        "name": "Japan",
-        "artist": 1,
-        "image": "art/DSC01352.jpg",
-        "land_price": 8,
-        "tags": [
-            2
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 10,
-    "fields": {
-        "name": "Something",
-        "artist": 1,
-        "image": "art/DSC01352_xTGocVZ.jpg",
-        "land_price": 10,
-        "tags": [
-            2
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 11,
-    "fields": {
-        "name": "Dirk Caluwaerts",
-        "artist": 1,
-        "image": "art/DSC01255.jpg",
-        "land_price": 6,
-        "tags": [
-            2
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 12,
-    "fields": {
-        "name": "Watery",
-        "artist": 1,
-        "image": "art/DSC01193.jpg",
-        "land_price": 9,
-        "tags": [
-            2
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 13,
-    "fields": {
-        "name": "Flowers",
-        "artist": 1,
-        "image": "art/DSC01390.jpg",
-        "land_price": 7,
-        "tags": [
-            2
-        ]
-    }
-},
-{
-    "model": "images.art",
-    "pk": 14,
-    "fields": {
-        "name": "Sea",
-        "artist": 1,
-        "image": "art/DSC01502.jpg",
-        "land_price": 6,
-        "tags": [
-            1,
-            2,
-            3
-        ]
-    }
-},
-{
     "model": "impart.dated",
     "pk": 1,
     "fields": {
-        "creation_date": "2017-01-02T20:25:45Z",
-        "publication_date": "2017-01-02T20:25:47Z",
-        "archive_date": "2017-01-02T20:25:49Z"
+        "creation_date": "2017-01-16T10:04:10Z",
+        "publication_date": "2017-01-16T10:04:11Z",
+        "archive_date": "2017-01-16T10:04:13Z"
     }
 },
 {
     "model": "impart.dated",
     "pk": 2,
     "fields": {
-        "creation_date": "2017-01-02T20:26:28Z",
-        "publication_date": "2017-01-02T20:26:29Z",
-        "archive_date": "2017-01-02T20:26:31Z"
+        "creation_date": "2017-01-16T10:05:05Z",
+        "publication_date": "2017-01-16T10:05:06Z",
+        "archive_date": "2017-01-16T10:05:07Z"
     }
 },
 {
     "model": "impart.dated",
     "pk": 3,
     "fields": {
-        "creation_date": "2017-01-03T07:56:39Z",
-        "publication_date": "2017-01-03T07:56:40Z",
-        "archive_date": "2017-01-03T07:56:42Z"
+        "creation_date": "2017-01-16T10:06:48Z",
+        "publication_date": "2017-01-16T10:06:50Z",
+        "archive_date": "2017-01-16T10:06:52Z"
     }
 },
 {
@@ -296,18 +60,7 @@
 },
 {
     "model": "impart.landprice",
-    "pk": 5,
-    "fields": {
-        "type": "N",
-        "header": "Untyped land price (do not use me!)",
-        "body_english": "Untyped land price",
-        "body_dutch": "Ongetypeerde landprijs",
-        "active": false
-    }
-},
-{
-    "model": "impart.landprice",
-    "pk": 6,
+    "pk": 1,
     "fields": {
         "type": "I",
         "header": "Photo",
@@ -318,7 +71,7 @@
 },
 {
     "model": "impart.landprice",
-    "pk": 7,
+    "pk": 2,
     "fields": {
         "type": "D",
         "header": "Drawing",
@@ -329,7 +82,7 @@
 },
 {
     "model": "impart.landprice",
-    "pk": 8,
+    "pk": 3,
     "fields": {
         "type": "P",
         "header": "Painting",
@@ -340,7 +93,7 @@
 },
 {
     "model": "impart.landprice",
-    "pk": 9,
+    "pk": 4,
     "fields": {
         "type": "S",
         "header": "Statue",
@@ -351,7 +104,7 @@
 },
 {
     "model": "impart.landprice",
-    "pk": 10,
+    "pk": 5,
     "fields": {
         "type": "M",
         "header": "Media",
@@ -361,30 +114,23 @@
     }
 },
 {
-    "model": "impart.namevaluepair",
+    "model": "impart.artist",
     "pk": 1,
     "fields": {
-        "section": "select",
-        "name": "common.uk",
-        "value": "Some english stuff."
+        "name": "Dirk Caluwaerts",
+        "link": "dirk-caluwaerts",
+        "image": "artists/dirk_fj5rhlb.png",
+        "active": true
     }
 },
 {
-    "model": "impart.namevaluepair",
+    "model": "impart.artist",
     "pk": 2,
     "fields": {
-        "section": "home",
-        "name": "intro.dutch",
-        "value": "dutch intr0"
-    }
-},
-{
-    "model": "impart.namevaluepair",
-    "pk": 3,
-    "fields": {
-        "section": "home",
-        "name": "intro.english",
-        "value": "Intro enlgish"
+        "name": "Annik Rachel Klaes",
+        "link": "annik-rachel-klaes",
+        "image": "artists/annik_gjBsm1t.png",
+        "active": true
     }
 },
 {
@@ -393,6 +139,54 @@
     "fields": {
         "title": "root",
         "alias": "root"
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 1,
+    "fields": {
+        "title": "home",
+        "hint": "",
+        "url": "#home",
+        "urlaspattern": false,
+        "tree": 1,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 1,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 2,
+    "fields": {
+        "title": "news",
+        "hint": "",
+        "url": "#news",
+        "urlaspattern": false,
+        "tree": 1,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 2,
+        "access_permissions": []
     }
 },
 {
@@ -415,7 +209,7 @@
         "access_restricted": false,
         "access_perm_type": 1,
         "parent": null,
-        "sort_order": 5,
+        "sort_order": 3,
         "access_permissions": []
     }
 },
@@ -423,9 +217,33 @@
     "model": "sitetree.treeitem",
     "pk": 4,
     "fields": {
-        "title": "manifest",
+        "title": "land price",
         "hint": "",
-        "url": "#manifest",
+        "url": "#landprice",
+        "urlaspattern": false,
+        "tree": 1,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 5,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 5,
+    "fields": {
+        "title": "art",
+        "hint": "",
+        "url": "#work",
         "urlaspattern": false,
         "tree": 1,
         "hidden": false,
@@ -445,11 +263,11 @@
 },
 {
     "model": "sitetree.treeitem",
-    "pk": 5,
+    "pk": 6,
     "fields": {
-        "title": "land price",
+        "title": "testimonial",
         "hint": "",
-        "url": "#landprice",
+        "url": "#testimonial",
         "urlaspattern": false,
         "tree": 1,
         "hidden": false,
@@ -469,11 +287,11 @@
 },
 {
     "model": "sitetree.treeitem",
-    "pk": 6,
+    "pk": 7,
     "fields": {
-        "title": "news",
+        "title": "manifesto",
         "hint": "",
-        "url": "#news",
+        "url": "#manifest",
         "urlaspattern": false,
         "tree": 1,
         "hidden": false,
@@ -488,54 +306,6 @@
         "access_perm_type": 1,
         "parent": null,
         "sort_order": 4,
-        "access_permissions": []
-    }
-},
-{
-    "model": "sitetree.treeitem",
-    "pk": 7,
-    "fields": {
-        "title": "art",
-        "hint": "",
-        "url": "#work",
-        "urlaspattern": false,
-        "tree": 1,
-        "hidden": false,
-        "alias": null,
-        "description": "",
-        "inmenu": true,
-        "inbreadcrumbs": true,
-        "insitetree": true,
-        "access_loggedin": false,
-        "access_guest": false,
-        "access_restricted": false,
-        "access_perm_type": 1,
-        "parent": null,
-        "sort_order": 8,
-        "access_permissions": []
-    }
-},
-{
-    "model": "sitetree.treeitem",
-    "pk": 8,
-    "fields": {
-        "title": "home",
-        "hint": "",
-        "url": "#home",
-        "urlaspattern": false,
-        "tree": 1,
-        "hidden": false,
-        "alias": null,
-        "description": "",
-        "inmenu": true,
-        "inbreadcrumbs": true,
-        "insitetree": true,
-        "access_loggedin": false,
-        "access_guest": false,
-        "access_restricted": false,
-        "access_perm_type": 1,
-        "parent": null,
-        "sort_order": 1,
         "access_permissions": []
     }
 }
