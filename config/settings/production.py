@@ -62,7 +62,7 @@ INSTALLED_APPS += ('raven.contrib.django.raven_compat', )
 # and https://docs.djangoproject.com/ja/1.9/howto/deployment/checklist/#run-manage-py-check-deploy
 
 # set this to 60 seconds and then to 518400 when you can prove it works
-SECURE_HSTS_SDJANGO_SECURE_SSL_REDIRECTDJANGO_SECURE_SSL_REDIRECTECONDS = 60
+SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
     'DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True)
 SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
@@ -99,8 +99,8 @@ AWS_SECRET_ACCESS_KEY = env('DJANGO_AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = env('DJANGO_AWS_STORAGE_BUCKET_NAME')
 AWS_AUTO_CREATE_BUCKET = False
 AWS_QUERYSTRING_AUTH = True
-AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
-S3_USE_SIGV4 = True
+# AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
+# S3_USE_SIGV4 = True
 
 # AWS cache settings, don't change unless you know what you're doing:
 AWS_EXPIRY = 60 * 60 * 24 * 7
