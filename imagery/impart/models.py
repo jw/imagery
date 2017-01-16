@@ -110,7 +110,7 @@ class Art(models.Model):
     land_price = models.ForeignKey(LandPrice)
     x = models.IntegerField()
     y = models.IntegerField()
-    z = models.IntegerField(blank=True, help_text='Depth of the piece')
+    z = models.IntegerField(blank=True, null=True, help_text='Depth of the piece')
     materials = models.CharField(max_length=512)
 
     def __str__(self):
