@@ -9,11 +9,13 @@ class Dated(models.Model):
 
 
 class News(Dated):
-    location = models.CharField(max_length=1024)
-    header = models.CharField(max_length=256)
-    body_english = models.CharField(max_length=4096)
-    body_dutch = models.CharField(max_length=4096)
-    active = models.BooleanField(default=True)
+    """News topic"""
+    location = models.CharField(max_length=1024,
+                                help_text="The location where the news took/will take place.")
+    header = models.CharField(max_length=256, help_text="The header.")
+    body_english = models.CharField(max_length=4096, help_text="The news body in English.")
+    body_dutch = models.CharField(max_length=4096, help_text="The news body in Dutch.")
+    active = models.BooleanField(default=True, help_text="If set the news will be shown, otherwise it will not.")
 
     class Meta:
         ordering = ['publication_date']

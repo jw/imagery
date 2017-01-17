@@ -6,19 +6,6 @@ import logging
 logger = logging.getLogger("imagery")
 
 
-def news(request, page=1):
-    """Show the news entries."""
-
-    # FIXME: add datetime and order
-    news = News.objects.all()
-
-    logger.error("Retrieved %s news entries." % len(news))
-
-    attributes = {'news': news}
-
-    return render(request, 'pages/news.html', attributes)
-
-
 def archive(request, page=1):
 
     # FIXME: add filter and order
@@ -31,28 +18,11 @@ def archive(request, page=1):
     return render(request, 'pages/archive.html', attributes)
 
 
-def manifest(request):
-
-    manifestos = Manifesto.objects.all()
-
-    logger.info("Retrieved %s manifestos." % len(manifestos))
-
-    attributes = {'manifestos': manifestos}
-
-    return render(request, 'pages/manifest.html', attributes)
-
-
-def landprice(request):
-
-    prices = LandPrice.objects.all()
-
-    attributes = {'prices': prices}
-
-    return render(request, 'pages/landprice.html', attributes)
-
-
 def index(request):
-    """The complete home page."""
+    """
+    The complete home page. Gets artists, news, mainfesti,
+    land prices.
+    """
 
     artists = Artist.objects.filter(active=True)
     artists_text = " and ".join(str(artist.name) for artist in artists)
@@ -64,8 +34,8 @@ def index(request):
 
     prices = LandPrice.objects.filter(active=True)
 
+    # TODO: this needs to go to the artist page
     works = Art.objects.all()
-
     # TODO: this should not be here!
     works_tags = [p.header for p in prices if p.active]
 
