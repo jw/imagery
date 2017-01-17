@@ -28,8 +28,8 @@ class News(Dated):
 
 class Manifesto(Dated):
     header = models.CharField(max_length=256)
-    body_english = models.CharField(max_length=4096)
-    body_dutch = models.CharField(max_length=4096)
+    body_english = MarkdownxField(max_length=4096)
+    body_dutch = MarkdownxField(max_length=4096)
     active = models.BooleanField(default=True)
 
     class Meta:
@@ -52,8 +52,8 @@ class LandPrice(models.Model):
     )
     type = models.CharField(max_length=1, choices=PRIZE_TYPE, null=False)
     header = models.CharField(max_length=256)
-    body_english = models.CharField(max_length=4096)
-    body_dutch = models.CharField(max_length=4069)
+    body_english = MarkdownxField(max_length=4096)
+    body_dutch = MarkdownxField(max_length=4069)
     active = models.BooleanField(default=True)
 
     # TODO: add static method(s) to calculate price
@@ -70,7 +70,7 @@ class NameValuePair(models.Model):
     """
     section = models.CharField(max_length=256)
     name = models.CharField(max_length=256)
-    value = models.CharField(max_length=4096)
+    value = MarkdownxField(max_length=4096)
 
     def __str__(self):
         return '[%s] %s: %s' % (self.section, self.name, self.value)
