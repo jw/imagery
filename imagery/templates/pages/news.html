@@ -1,3 +1,5 @@
+{% load django_markdown %}
+
 <div id="news">
     <div class="news-content">
     <div class="container">
@@ -17,10 +19,10 @@
                             <h3>{{ entry.header }}</h3>
                             <h5>{{ entry.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
                             <p>
-                                {{ entry.body_english }}
+                                {{ entry.body_english|markdown }}
                             </p>
                             <p>
-                                {{ entry.body_dutch }}
+                                {{ entry.body_dutch|markdown }}
                             </p>
                         </div>
                     {% endfor %}

@@ -245,6 +245,27 @@ body{
     z-index: 1;
 }
 
+#artist {
+  color: #dbdbdb;
+}
+
+#artist:link {
+  text-decoration: none;
+}
+
+#artist:visited {
+  text-decoration: none;
+}
+
+#artist:active {
+  text-decoration: none;
+}
+
+#artist:hover {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
 
 /*===================================================================== PARRALLEX EFFECT ================================================*/
 

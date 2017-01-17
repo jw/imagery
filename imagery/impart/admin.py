@@ -2,7 +2,14 @@ from django.contrib import admin
 
 from .models import Contact, LandPrice, Manifesto, NameValuePair, News, Artist, Art, Tag
 
-admin.site.register(News)
+from django.contrib import admin
+
+from markdownx.admin import MarkdownxModelAdmin
+
+admin.site.register(News, MarkdownxModelAdmin)
+
+# admin.site.register(News)
+
 admin.site.register(NameValuePair)
 admin.site.register(Manifesto)
 admin.site.register(LandPrice)

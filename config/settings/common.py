@@ -33,6 +33,8 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'crispy_forms',  # Form layouts
     'sitetree',  # the menu bar
+    'django_markdown',
+    'markdownx',  # for the Markdown field
 )
 
 LOCAL_APPS = (

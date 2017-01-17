@@ -1,4 +1,5 @@
 from django.db import models
+from markdownx.models import MarkdownxField
 
 
 class Dated(models.Model):
@@ -9,12 +10,12 @@ class Dated(models.Model):
 
 
 class News(Dated):
-    """News topic"""
+    """News topic."""
     location = models.CharField(max_length=1024,
                                 help_text="The location where the news took/will take place.")
     header = models.CharField(max_length=256, help_text="The header.")
-    body_english = models.CharField(max_length=4096, help_text="The news body in English.")
-    body_dutch = models.CharField(max_length=4096, help_text="The news body in Dutch.")
+    body_english = MarkdownxField(max_length=4096, help_text="The news body in English.")
+    body_dutch = MarkdownxField(max_length=4096, help_text="The news body in Dutch.")
     active = models.BooleanField(default=True, help_text="If set the news will be shown, otherwise it will not.")
 
     class Meta:

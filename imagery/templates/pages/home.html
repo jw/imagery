@@ -9,7 +9,10 @@
                                 <h2>{{ home_title }}</h2>
                                 <h3>
                                     {% for artist in artists %}
-                                        <a href="artist/{{ artist.id }}">{{ artist.name }}</a>
+                                        <a id="artist" href="artist/{{ artist.id }}">{{ artist.name }}</a>
+                                        {% if forloop.last is False %}
+                                            and
+                                        {% endif %}
                                     {% endfor %}
                                 </h3>
                                 {% lorem 2 p random%}
