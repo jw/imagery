@@ -75,19 +75,6 @@ class NameValuePair(models.Model):
         return '[%s] %s: %s' % (self.section, self.name, self.value)
 
 
-class Contact(models.Model):
-    email = models.EmailField()
-    first_name = models.CharField(max_length=256)
-    last_name = models.CharField(max_length=256)
-    bank = models.CharField(max_length=256)
-    vat = models.CharField(max_length=256)
-    company = models.CharField(max_length=256)
-    telephone = models.CharField(max_length=256)
-    street = models.CharField(max_length=256)
-    city = models.CharField(max_length=256)
-    country = models.CharField(max_length=256)
-
-
 class Tag(models.Model):
     tag = models.CharField(max_length=255, unique=True)
 
@@ -122,3 +109,21 @@ class Art(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Contact(models.Model):
+    artist = models.ForeignKey(Artist, blank=True, null=True)
+    email = models.EmailField()
+    first_name = models.CharField(max_length=256)
+    last_name = models.CharField(max_length=256)
+    bank = models.CharField(max_length=256, blank=True, null=True)
+    vat = models.CharField(max_length=256, blank=True, null=True)
+    company = models.CharField(max_length=256, blank=True, null=True)
+    telephone = models.CharField(max_length=256, blank=True, null=True)
+    street = models.CharField(max_length=256, blank=True, null=True)
+    city = models.CharField(max_length=256, blank=True, null=True)
+    country = models.CharField(max_length=256, blank=True, null=True)
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name + " <" + self.email + ">"
+

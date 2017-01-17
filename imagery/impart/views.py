@@ -1,6 +1,7 @@
+from django.http import Http404
 from django.shortcuts import render
 
-from imagery.impart.models import News, LandPrice, Manifesto, Artist, Art
+from imagery.impart.models import News, LandPrice, Manifesto, Artist, Art, NameValuePair, Contact
 
 import logging
 logger = logging.getLogger("imagery")
@@ -16,6 +17,33 @@ def archive(request, page=1):
     attributes = {'archives': news}
 
     return render(request, 'pages/archive.html', attributes)
+
+
+def artist(request, artist_id):
+
+    try:
+        artist = Artist.objects.get(pk=artist_id)
+    except Artist.DoesNotExist:
+        raise Http404("Sorry, but that artist does not exist!")
+
+    logger.info("Showing details of " + artist.name + ".")
+
+    # TODO: update the NameValuePairs to Content
+    text = NameValuePair.objects.all()
+
+    works = Art.objects.all()
+
+    contact = Contact.objects.all()
+
+    # TODO: this should not be here!
+    prices = LandPrice.objects.filter(active=True)
+    works_tags = [p.header for p in prices if p.active]
+
+    attributes = {'text': text,
+                  'works': works,
+                  'works_tags': works_tags}
+
+    return render(request, 'pages/artist.html', attributes)
 
 
 def index(request):
@@ -41,11 +69,11 @@ def index(request):
 
     attributes = {'artists': artists,
                   'home_title': 'We are impart',
-                  'home_artists': artists_text,
+                  'home_artists': artists_text,  # TODO: remove this!
                   'news': news,
                   'manifesti': manifesti,
                   'prices': prices,
                   'works': works,
-                  'works_tags': works_tags}
+                  'works_tags': works_tags}  # TODO: remove this!
 
     return render(request, 'pages/index.html', attributes)

@@ -7,7 +7,11 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="home-text wow fadeInDown text-center">
                                 <h2>{{ home_title }}</h2>
-                                <h3>{{ home_artists }}</h3>
+                                <h3>
+                                    {% for artist in artists %}
+                                        <a href="artist/{{ artist.id }}">{{ artist.name }}</a>
+                                    {% endfor %}
+                                </h3>
                                 {% lorem 2 p random%}
                             </div><!-- end home-text  -->
                         </div><!-- end col-md-12 col-sm-12 -->

@@ -12,6 +12,7 @@ from imagery.impart import views
 urlpatterns = [
     url(settings.ADMIN_URL, admin.site.urls),
     url(r'^$', views.index, name='home'),
+    url(r'^artist/(?P<artist_id>[0-9]+)/', views.artist, name='artist'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
