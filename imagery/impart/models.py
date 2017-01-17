@@ -62,6 +62,11 @@ class LandPrice(models.Model):
 
 
 class NameValuePair(models.Model):
+    """
+        The section contains the sections (like art, or news, or manifesti),
+        and the name/value pairs contain the key and the text to be shown in that
+        place.  See documentation for the valid section and name/key identifiers.
+    """
     section = models.CharField(max_length=256)
     name = models.CharField(max_length=256)
     value = models.CharField(max_length=4096)
