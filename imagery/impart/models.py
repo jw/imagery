@@ -17,6 +17,7 @@ class News(Dated):
     body_english = MarkdownxField(max_length=4096, help_text="The news body in English.")
     body_dutch = MarkdownxField(max_length=4096, help_text="The news body in Dutch.")
     active = models.BooleanField(default=True, help_text="If set the news will be shown, otherwise it will not.")
+    archived = models.BooleanField(default=False, help_text="If set the news will be part of the archive section.")
 
     class Meta:
         ordering = ['publication_date']
@@ -26,11 +27,13 @@ class News(Dated):
         return self.header
 
 
-class Manifesto(Dated):
+class Manifest(Dated):
     header = models.CharField(max_length=256)
     body_english = MarkdownxField(max_length=4096)
     body_dutch = MarkdownxField(max_length=4096)
     active = models.BooleanField(default=True)
+    archived = models.BooleanField(default=False,
+                                   help_text="If set the manifest will be part of the archive section.")
 
     class Meta:
         ordering = ['publication_date']
@@ -43,10 +46,9 @@ class LandPrice(models.Model):
         there is a different price.
     """
     PRIZE_TYPE = (
-        ('N', 'None'),
-        ('I', 'Photo'),
-        ('D', 'Drawing'),
         ('P', 'Painting'),
+        ('D', 'Drawing'),
+        ('I', 'Photo'),
         ('S', 'Statue'),
         ('M', 'Media')
     )
@@ -54,14 +56,19 @@ class LandPrice(models.Model):
     header = models.CharField(max_length=256)
     body_english = MarkdownxField(max_length=4096)
     body_dutch = MarkdownxField(max_length=4069)
+    order = models.PositiveSmallIntegerField()
     active = models.BooleanField(default=True)
 
     # TODO: add static method(s) to calculate price
+
+    class Meta:
+        ordering = ['order']
 
     def __str__(self):
         return '%s' % self.header
 
 
+# TODO: Create Content Model and replace this one with it.
 class NameValuePair(models.Model):
     """
         The section contains the sections (like art, or news, or manifesti),
@@ -107,6 +114,8 @@ class Art(models.Model):
     y = models.IntegerField()
     z = models.IntegerField(blank=True, null=True, help_text='Depth of the piece')
     materials = models.CharField(max_length=512)
+    active = models.BooleanField(default=True)
+    in_private_collection = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

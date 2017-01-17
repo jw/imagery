@@ -1,10 +1,12 @@
+{% load django_markdown %}
+
 <div id="manifest">
     <div class="manifest-content">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="manifest-title text-center wow fadeIn">
-                    <h3>Manifesto</h3>
+                    <h3>Manifest</h3>
                     <div class="underline"></div>
                 </div><!-- end work-title  -->
             </div><!-- end col-md-12  -->
@@ -12,15 +14,15 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 about-col">
                 <div class="about-details wow fadeIn">
-                    {% for manifesto in manifesti %}
+                    {% for manifest in manifests %}
                         <div class="news-entry">
-                            <h4>{{ manifesto.header }}</h4>
-                            <h5>{{ manifesto.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
+                            <h4>{{ manifest.header }}</h4>
+                            <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
                             <p>
-                                {{ manifesto.body_english }}
+                                {{ manifest.body_english|markdown }}
                             </p>
                             <p>
-                                {{ manifesto.body_dutch }}
+                                {{ manifest.body_dutch|markdown }}
                             </p>
                         </div>
                     {% endfor %}

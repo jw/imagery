@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render
 
-from imagery.impart.models import News, LandPrice, Manifesto, Artist, Art, NameValuePair, Contact
+from imagery.impart.models import News, LandPrice, Manifest, Artist, Art, NameValuePair, Contact
 
 import logging
 logger = logging.getLogger("imagery")
@@ -58,7 +58,7 @@ def index(request):
 
     news = News.objects.filter(active=True).reverse()
 
-    manifesti = Manifesto.objects.filter(active=True).reverse()
+    manifests = Manifest.objects.filter(active=True).reverse()
 
     prices = LandPrice.objects.filter(active=True)
 
@@ -71,7 +71,7 @@ def index(request):
                   'home_title': 'We are impart',
                   'home_artists': artists_text,  # TODO: remove this!
                   'news': news,
-                  'manifesti': manifesti,
+                  'manifests': manifests,
                   'prices': prices,
                   'works': works,
                   'works_tags': works_tags}  # TODO: remove this!
