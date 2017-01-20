@@ -10,53 +10,56 @@ logger = logging.getLogger("imagery")
 
 def archive(request, page=1):
 
-    # FIXME: add filter and order
-    news = News.objects.all()
+    news = News.objects.filter(archived=True)
+    manifests = Manifest.objects.filter(archived=True)
 
-    logger.error("Retrieved %s archive entries." % len(news))
+    logger.error("Retrieved %s archive entries." % str(len(news) + len(manifests)))
 
-    attributes = {'archives': news}
+    attributes = {'menu': 'archive',
+                  'news': news,
+                  'manifests': manifests}
 
     return render(request, 'pages/archive.html', attributes)
 
 
 def artist(request, artist_id):
 
+    # get the artist
     try:
         artist = Artist.objects.get(pk=artist_id)
     except Artist.DoesNotExist:
         raise Http404("Sorry, but that artist does not exist!")
+    logger.info("Showing details of " + artist.name + ".")
 
-    # get content...
-    about_nl_contents = Content.objects.filter(
-        Q(section='AA'), Q(language='NL'), Q(identifier=artist.link)
-    )
+    # get his/her content...
     about_en_contents = Content.objects.filter(
         Q(section='AA'), Q(language='EN'), Q(identifier=artist.link)
     )
-    try:
-        artist = Artist.objects.get(pk=artist_id)
-    except Artist.DoesNotExist:
-        raise Http404("Sorry, but that artist does not exist!")
+    about_nl_contents = Content.objects.filter(
+        Q(section='AA'), Q(language='NL'), Q(identifier=artist.link)
+    )
+    contact_en_contents = Content.objects.filter(
+        Q(section='CO'), Q(language='EN'), Q(identifier=artist.link)
+    )
+    contact_nl_contents = Content.objects.filter(
+        Q(section='CO'), Q(language='NL'), Q(identifier=artist.link)
+    )
 
-    logger.info("Showing details of " + artist.name + ".")
-
-    text = Content.objects.all()
-
+    # ...and other entities
     works = Art.objects.all()
-
     contact = Contact.objects.all()
-
     # TODO: this should not be here!
     prices = LandPrice.objects.filter(active=True)
     works_tags = [p.header for p in prices if p.active]
 
     attributes = {'menu': 'artist',
-                  'about_nl_contents': about_nl_contents,
                   'about_en_contents': about_en_contents,
-                  'text': text,
+                  'about_nl_contents': about_nl_contents,
+                  'contact_en_contents': contact_en_contents,
+                  'contact_nl_contents': contact_nl_contents,
                   'works': works,
-                  'works_tags': works_tags}
+                  'works_tags': works_tags,
+                  'contact': contact}
 
     return render(request, 'pages/artist.html', attributes)
 
@@ -68,11 +71,11 @@ def index(request):
     """
 
     # get content...
-    home_nl_contents = Content.objects.filter(
-        Q(section='HO'), Q(language='NL')
-    )
     home_en_contents = Content.objects.filter(
         Q(section='HO'), Q(language='EN')
+    )
+    home_nl_contents = Content.objects.filter(
+        Q(section='HO'), Q(language='NL')
     )
 
     # ...and all other entities
@@ -82,8 +85,8 @@ def index(request):
     prices = LandPrice.objects.filter(active=True)
 
     attributes = {'menu': 'home',
-                  'home_nl_contents': home_nl_contents,
                   'home_en_contents': home_en_contents,
+                  'home_nl_contents': home_nl_contents,
                   'artists': artists,
                   'news': news,
                   'manifests': manifests,

@@ -1,0 +1,34 @@
+{% load django_markdown %}
+
+<div id="manifest">
+    <div class="manifest-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="manifest-title text-center wow fadeIn">
+                    <h3>Manifest</h3>
+                    <div class="underline"></div>
+                </div><!-- end work-title  -->
+            </div><!-- end col-md-12  -->
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 about-col">
+                <div class="about-details wow fadeIn">
+                    {% for manifest in manifests %}
+                        <div class="news-entry">
+                            <h4>{{ manifest.header }}</h4>
+                            <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
+                            <p>
+                                {{ manifest.body_english|markdown }}
+                            </p>
+                            <p>
+                                {{ manifest.body_dutch|markdown }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div><!-- end about-details  -->
+            </div><!-- end col-md-12  -->
+        </div><!-- end row  -->
+    </div><!-- end container  -->
+    </div>
+</div> <!-- end news -->

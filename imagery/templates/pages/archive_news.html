@@ -1,0 +1,34 @@
+{% load django_markdown %}
+
+<div id="news">
+    <div class="news-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="news-title text-center wow fadeIn">
+                    <h3>News</h3>
+                    <div class="underline"></div>
+                </div><!-- end work-title  -->
+            </div><!-- end col-md-12  -->
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 about-col">
+                <div class="about-details wow fadeIn">
+                    {% for entry in news %}
+                        <div class="news-entry">
+                            <h3>{{ entry.header }}</h3>
+                            <h5>{{ entry.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
+                            <p>
+                                {{ entry.body_english|markdown }}
+                            </p>
+                            <p>
+                                {{ entry.body_dutch|markdown }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div><!-- end about-details  -->
+            </div><!-- end col-md-12  -->
+        </div><!-- end row  -->
+    </div><!-- end container  -->
+    </div>
+</div> <!-- end news -->

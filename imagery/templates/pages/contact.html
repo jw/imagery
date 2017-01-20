@@ -1,0 +1,22 @@
+<div id="contact">
+    <div class="contact-content">
+        <div class="contact-grid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contact-title text-center wow fadeIn">
+                            <h3>contact</h3>
+                            {% for content in contact_en_contents %}
+                                <p>{{ content.value }}</p>
+                            {% endfor %}
+                            {% for content in contact_nl_contents %}
+                                <p>{{ content.value }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="underline"></div>
+                    </div><!-- end col-md-12 -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end work-grid  -->
+    </div><!-- end work-content  -->
+</div><!-- end work  -->

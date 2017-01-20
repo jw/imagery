@@ -79,7 +79,7 @@ class Content(models.Model):
         ('LP', 'Land Price'),
         ('AA', 'About my art'),
         ('WO', 'Art'),  # WO from Work
-        ('CO', 'Content')
+        ('CO', 'Contact')
     )
     section = models.CharField(max_length=2, choices=CONTENT_SECTION, null=False, blank=False)
     CONTENT_LANGUAGE = (
