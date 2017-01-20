@@ -6,9 +6,6 @@
                     <div class="col-md-12">
                         <div class="work-title text-center wow fadeIn">
                             <h3>Art</h3>
-                            <p>This is just an example - the real website will have a set of works for each artist.</p>
-                            <p>And the set of tags will be based on the landprice and on the tags which can be specified for each piece of art.</p>
-                            <p>And <i>obviously</i> it will be much faster in the real version.</p>
                             <div class="underline"></div>
                         </div><!-- end work-title -->
                     </div><!-- end col-md-12 -->
@@ -21,11 +18,7 @@
                         {% for tag in works_tags %}
                             <li><span class="filter" data-filter=".{{ tag }}">{{ tag }}</span></li>
                         {% endfor %}
-{#                        <li><span class="filter" data-filter=".graphics">Statue | eutatS</span></li>#}
-{#                        <li><span class="filter" data-filter=".development">Heide</span></li>#}
-{#                        <li><span class="filter" data-filter=".photography">Something else</span></li>#}
                     </ul>
-
                     <div id="portfoliolist">
                         {% for work in works %}
                             <div class="portfolio {{ work.land_price }}" data-cat="{{ work.land_price }}">
@@ -42,155 +35,8 @@
                             </div><!-- end portfolio-graphics  -->
                         {% endfor %}
                     </div>
-
-{#                        <div class="portfolio graphics" data-cat="graphics">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".2s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/graphics/1.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/graphics/1.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-graphics  -->#}
-{#                        <div class="portfolio web" data-cat="web">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".4s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/web/1.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/web/1.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-web  -->#}
-{#                        <div class="portfolio development" data-cat="development">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".6s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/development/1.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/development/1.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-development  -->#}
-{#                        <div class="portfolio graphics" data-cat="graphics">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".8s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/graphics/2.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/graphics/2.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-graphics  -->#}
-{#                        <div class="portfolio development" data-cat="development">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".2s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/development/2.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/development/2.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-development  -->#}
-{#                        <div class="portfolio web" data-cat="web">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".4s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/web/2.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/web/2.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-web  -->#}
-{#                        <div class="portfolio graphics" data-cat="graphics">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".6s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/graphics/3.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/graphics/3.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-graphics  -->#}
-{#                        <div class="portfolio development" data-cat="development">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".8s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/development/3.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/development/3.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-development  -->#}
-{#                        <div class="portfolio photography" data-cat="photography">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".2s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/photography/1.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/photography/1.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-photo  -->#}
-{#                        <div class="portfolio web" data-cat="web">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".4s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/web/3.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/web/3.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-web  -->#}
-{#                        <div class="portfolio photography" data-cat="photography">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".6s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/photography/2.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/photography/2.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-photo  -->#}
-{#                        <div class="portfolio photography" data-cat="photography">#}
-{#                            <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".8s">#}
-{#                                <div class="overlay text-center">#}
-{#                                    <div class="overlay-main">#}
-{#                                        <div class="table-cell">#}
-{#                                            <a class="fancybox" href="img/portfolios/photography/3.jpg" title="little something about the image"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>#}
-{#                                        </div><!-- end table-cell  -->#}
-{#                                    </div><!-- end overlay-main  -->#}
-{#                                </div><!-- end overlay  -->#}
-{#                                <img src="img/portfolios/photography/3.jpg" alt="" />#}
-{#                            </div><!-- end portfolio-wrapper  -->#}
-{#                        </div><!-- end portfolio-photo  -->#}
-{#                    </div><!-- end portfoliolist  -->#}
                 </div><!-- container -->
             </div><!-- end work-details  -->
         </div><!-- end work-grid  -->
     </div><!-- end work-content  -->
 </div><!-- end work  -->
-

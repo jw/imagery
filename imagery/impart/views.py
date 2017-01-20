@@ -1,7 +1,8 @@
 from django.http import Http404
 from django.shortcuts import render
+from django.db.models import Q
 
-from imagery.impart.models import News, LandPrice, Manifest, Artist, Art, NameValuePair, Contact
+from imagery.impart.models import News, LandPrice, Manifest, Artist, Art, Content, Contact
 
 import logging
 logger = logging.getLogger("imagery")
@@ -26,10 +27,21 @@ def artist(request, artist_id):
     except Artist.DoesNotExist:
         raise Http404("Sorry, but that artist does not exist!")
 
+    # get content...
+    about_nl_contents = Content.objects.filter(
+        Q(section='AA'), Q(language='NL'), Q(identifier=artist.link)
+    )
+    about_en_contents = Content.objects.filter(
+        Q(section='AA'), Q(language='EN'), Q(identifier=artist.link)
+    )
+    try:
+        artist = Artist.objects.get(pk=artist_id)
+    except Artist.DoesNotExist:
+        raise Http404("Sorry, but that artist does not exist!")
+
     logger.info("Showing details of " + artist.name + ".")
 
-    # TODO: update the NameValuePairs to Content
-    text = NameValuePair.objects.all()
+    text = Content.objects.all()
 
     works = Art.objects.all()
 
@@ -39,7 +51,10 @@ def artist(request, artist_id):
     prices = LandPrice.objects.filter(active=True)
     works_tags = [p.header for p in prices if p.active]
 
-    attributes = {'text': text,
+    attributes = {'menu': 'artist',
+                  'about_nl_contents': about_nl_contents,
+                  'about_en_contents': about_en_contents,
+                  'text': text,
                   'works': works,
                   'works_tags': works_tags}
 
@@ -47,33 +62,31 @@ def artist(request, artist_id):
 
 
 def index(request):
-    """
-    The complete home page. Gets artists, news, mainfesti,
-    land prices.
+    """The complete home page.
+
+    Gets artists, news, manifests and land prices.
     """
 
+    # get content...
+    home_nl_contents = Content.objects.filter(
+        Q(section='HO'), Q(language='NL')
+    )
+    home_en_contents = Content.objects.filter(
+        Q(section='HO'), Q(language='EN')
+    )
+
+    # ...and all other entities
     artists = Artist.objects.filter(active=True)
-    artists_text = " and ".join(str(artist.name) for artist in artists)
-    logger.info("Retrieved %s." % artists_text)
-
     news = News.objects.filter(active=True).reverse()
-
     manifests = Manifest.objects.filter(active=True).reverse()
-
     prices = LandPrice.objects.filter(active=True)
 
-    # TODO: this needs to go to the artist page
-    works = Art.objects.all()
-    # TODO: this should not be here!
-    works_tags = [p.header for p in prices if p.active]
-
-    attributes = {'artists': artists,
-                  'home_title': 'We are impart',
-                  'home_artists': artists_text,  # TODO: remove this!
+    attributes = {'menu': 'home',
+                  'home_nl_contents': home_nl_contents,
+                  'home_en_contents': home_en_contents,
+                  'artists': artists,
                   'news': news,
                   'manifests': manifests,
-                  'prices': prices,
-                  'works': works,
-                  'works_tags': works_tags}  # TODO: remove this!
+                  'prices': prices}
 
     return render(request, 'pages/index.html', attributes)

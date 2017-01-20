@@ -19,7 +19,8 @@
                     <div class="col-md-10 col-sm-10 navbar-style">
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             {% load sitetree %}
-                            {% sitetree_menu from "root" include "trunk" template "sitetree/menu_bootstrap3.html" %}
+                            {% sitetree_menu from menu include "trunk" template "sitetree/menu_bootstrap3.html" %}
+{#                            {% sitetree_menu from "root" include "trunk" template "sitetree/menu_bootstrap3.html" %}#}
                         </div><!-- end collapse navbar-collapse -->
                     </div><!-- end col-md-8 -->
                 </div><!-- end row -->

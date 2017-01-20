@@ -6,8 +6,13 @@
                     <div class="row home-row">
                         <div class="col-md-12 col-sm-12">
                             <div class="home-text wow fadeInDown text-center">
-                                <h2>{{ home_title }}</h2>
-                                {% lorem 2 p random%}
+                                <h2>We are impart</h2>
+                                {% for content in home_en_contents %}
+                                    <p id="intro">{{ content.value }}</p>
+                                {% endfor %}
+                                {% for content in home_nl_contents %}
+                                    <p id="intro">{{ content.value }}</p>
+                                {% endfor %}
                                 <h3>
                                     {% for artist in artists %}
                                         <a id="artist" href="artist/{{ artist.id }}">{{ artist.name }}</a>

@@ -1,21 +1,25 @@
 
-html{
+/* TODO: use statics here! */
+
+html {
     position: relative;
     height: 100%;
 }
 
-body{
+body {
     margin: 0px;
     padding: 0px;
     font-family: 'Raleway', sans-serif;
     height: 100%;
     background-color: transparent;
 }
+
 @font-face {
     font-family: 'Glyphicons Halflings';
     src: url('../font/glyphicons-halflings-regular.eot');
     src: url('../font/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../font/glyphicons-halflings-regular.woff') format('woff'), url('../font/glyphicons-halflings-regular.ttf') format('truetype'), url('../font/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
 @font-face {
     font-family: "Flaticon";
     src: url("../font/Flaticon.eot");
@@ -27,17 +31,11 @@ body{
     font-style: normal;
 }
 
+/*
+ * PRELOAD
+ */
 
-
-
-
-/*================================================================ PRELOAD ===================================================================*/
-
-
-
-
-
-.no-js #loader { display: none;  }
+.no-js #loader { display: none; }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
 .se-pre-con {
     position: fixed;
@@ -265,6 +263,11 @@ body{
   text-decoration: none;
   color: white;
   font-size: 18px;
+}
+
+
+#intro {
+  color: ghostwhite;
 }
 
 /*===================================================================== PARRALLEX EFFECT ================================================*/
@@ -622,12 +625,40 @@ section:nth-of-type(2){background:black;height:1600px;}
 }
 
 
-
+/* ABOUT */
 
 /*=========================================================================== WORK ===============================================================*/
 
+#about {
+    width: 100%;
+    background-color: white;
+    margin-top: 1px;
+}
+.about-content{
+    padding-bottom: 0px;
+}
+.about-grid{
+    width: 100%;
+}
+.about-title {
+    padding-top: 120px;
+}
+.about-title h3{
+    font-size: 34px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 2px;
+    color: #000;
+    margin-top: 0px;
+    font-weight: 900;
+    line-height: 33px;
+    text-transform: uppercase;
+}
+.about-details{
+    margin-top: 40px;
+}
 
 
+/*=========================================================================== WORK ===============================================================*/
 
 #work {
     width: 100%;

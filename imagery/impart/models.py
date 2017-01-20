@@ -68,19 +68,38 @@ class LandPrice(models.Model):
         return '%s' % self.header
 
 
-# TODO: Create Content Model and replace this one with it.
-class NameValuePair(models.Model):
-    """
-        The section contains the sections (like art, or news, or manifesti),
-        and the name/value pairs contain the key and the text to be shown in that
-        place.  See documentation for the valid section and name/key identifiers.
-    """
-    section = models.CharField(max_length=256)
-    name = models.CharField(max_length=256)
-    value = MarkdownxField(max_length=4096)
+class Content(models.Model):
+    CONTENT_SECTION = (
+        ('HO', 'Home'),
+        ('NE', 'News'),
+        ('AR', 'Archive'),
+        ('AN', 'News archive'),
+        ('AM', 'Manifest archive'),
+        ('MA', 'Manifest'),
+        ('LP', 'Land Price'),
+        ('AA', 'About my art'),
+        ('WO', 'Art'),  # WO from Work
+        ('CO', 'Content')
+    )
+    section = models.CharField(max_length=2, choices=CONTENT_SECTION, null=False, blank=False)
+    CONTENT_LANGUAGE = (
+        ('--', 'No language'),
+        ('EN', 'English'),
+        ('NL', 'Nederlands')
+    )
+    language = models.CharField(max_length=2, choices=CONTENT_LANGUAGE, null=False, blank=False)
+    key = models.CharField(max_length=255, null=False)
+    order = models.PositiveSmallIntegerField()
+    identifier = models.CharField(max_length=255, blank=True)
+    value = models.CharField(max_length=4096)
+
+    class Meta:
+        ordering = ['section', 'language', 'order']
 
     def __str__(self):
-        return '[%s] %s: %s' % (self.section, self.name, self.value)
+        return 'section: %s, language: %s, key: %s (%s): %s' % (self.get_section_display(),
+                                                                self.get_language_display(),
+                                                                self.key, self.order, self.value)
 
 
 class Tag(models.Model):
