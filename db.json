@@ -32,9 +32,10 @@
     "fields": {
         "location": "Antwerp",
         "header": "Something exciting happened in Antwerp!",
-        "body_english": "Nothing happened in Antwerp!",
+        "body_english": "###Hello there!###\r\n\r\nThis is a markdown news event! \r\n*There* **are**  several markdowns.\r\n\r\n![](/media/markdownx/2759467a-ca5a-42c5-a8cc-8fd5d0c5da02.jpg)\r\n\r\nWe zijn nu in Antwerpen.\r\nEn wachten op Annik.",
         "body_dutch": "Er gebeurde helemaal niets in Antwerpen!",
-        "active": true
+        "active": true,
+        "archived": false
     }
 },
 {
@@ -45,17 +46,19 @@
         "header": "The Hindenburg disaster",
         "body_english": "The Hindenburg zeppelin crashed.  The humanity!",
         "body_dutch": "De Hindenbug zeppelin ging neer.  De menselijkheid!",
-        "active": true
+        "active": true,
+        "archived": false
     }
 },
 {
-    "model": "impart.manifesto",
+    "model": "impart.manifest",
     "pk": 3,
     "fields": {
         "header": "The first manifesto",
-        "body_english": "The first manifesto",
+        "body_english": "#Hello#\r\nThis is a try to create a Manifest!\r\n\r\n**The first manifesto**\r\nHello there!",
         "body_dutch": "Het eerste manifest",
-        "active": true
+        "active": true,
+        "archived": false
     }
 },
 {
@@ -66,6 +69,7 @@
         "header": "Photo",
         "body_english": "A photgraphical image",
         "body_dutch": "Een foto",
+        "order": 2,
         "active": true
     }
 },
@@ -77,6 +81,7 @@
         "header": "Drawing",
         "body_english": "A drawing",
         "body_dutch": "Een tekening",
+        "order": 1,
         "active": true
     }
 },
@@ -88,6 +93,7 @@
         "header": "Painting",
         "body_english": "A painting.",
         "body_dutch": "Een schilderij.",
+        "order": 0,
         "active": true
     }
 },
@@ -99,6 +105,7 @@
         "header": "Statue",
         "body_english": "A statue.",
         "body_dutch": "Een beeld.",
+        "order": 3,
         "active": true
     }
 },
@@ -110,7 +117,99 @@
         "header": "Media",
         "body_english": "Some multmedia content.",
         "body_dutch": "Multimedia.",
+        "order": 4,
         "active": true
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 1,
+    "fields": {
+        "section": "HO",
+        "language": "NL",
+        "key": "intro",
+        "order": 0,
+        "identifier": "",
+        "value": "Ten noorden van Antwerpen bevindt zich de Kalmthoutse Heide. Het is een oase van rust en onbezoedelde schoonheid waar in de loop der jaren talloze kunstenaars neerstreken. In de nabijheid van dit eeuwenoude natuurpark cre\u00eberden\u00a0Annik\u00a0Rachel Klaes\u00a0en\u00a0Dirk Caluwaerts\u00a0hun eigen artsitiek reservaat."
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 2,
+    "fields": {
+        "section": "HO",
+        "language": "NL",
+        "key": "intro",
+        "order": 1,
+        "identifier": "",
+        "value": "Klaes en Caluwaerts delen een niet te temperen verlangen naar menselijkheid. Caluwaerts rijgt de scheuren van zijn fundamentele onbehagen liefdevol dicht en verbeeldt voor zichzelf een minder benepen leefomgeving. Klaes wil in de eerste plaats uit de geestelijke beklemming breken om de samenleving meer ademruimte te geven."
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 3,
+    "fields": {
+        "section": "AA",
+        "language": "NL",
+        "key": "about",
+        "order": 0,
+        "identifier": "dirk-caluwaerts",
+        "value": "Dirk Caluwaerts is een eigentijds romanticus. Op zoek naar een reservaat van schoonheid in een vergiftigde wereld doolt hij \u2019s nachts door desolate steden en onontgonnen innerlijke landschappen. Zijn doeken zijn ultieme toevluchtsoorden. Ze ademen eenzaamheid en melancholie, maar ook het onvergankelijke verlangen naar wat Michel Houellebeck \u2018 de mogelijkheid van een eiland\u2019 noemde. Naar \u2018de liefde, waarin alles eenvoudig is, waarin alles in het moment gegeven is."
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 4,
+    "fields": {
+        "section": "AA",
+        "language": "NL",
+        "key": "about",
+        "order": 1,
+        "identifier": "dirk-caluwaerts",
+        "value": "Caluwaerts lijkt doordrongen van het besef dat er iets onherroepelijk stuk is. Woest maakt hij in de onderlagen van zijn doeken de pijn voelbaar die rest wanneer de natuur is verminkt en de ander ons of het leven zelf heeft verlaten. Ondanks de hardheid en beladenheid van zijn thema\u2019s overheerst echter zelden de somberheid. Zelfs in zijn zwarten gaat er een waaier aan kleuren schuil. De hoop die spreekt uit deze liefdevolle zoektocht naar kleur, treedt ook inhoudelijk op de voorgrond."
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 5,
+    "fields": {
+        "section": "AA",
+        "language": "NL",
+        "key": "about",
+        "order": 2,
+        "identifier": "dirk-caluwaerts",
+        "value": "De motieven waarmee Caluwaerts als een japanse prentkunstenaar of een Nabisschilder rijkelijk zijn landschappen bevolkt en decoreert, zijn nooit anekdotisch. De zuivere maar kwetsbare schoonheid van vlinders, ontluikende bloemen en andere organische elementen verheft deze plekken- tot visuele expressies van een levensvisie waarin lelijkheid en schoonheid, pijn en geluk onlosmakelijk met elkaar verbonden zijn."
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 6,
+    "fields": {
+        "section": "AA",
+        "language": "NL",
+        "key": "about",
+        "order": 3,
+        "identifier": "dirk-caluwaerts",
+        "value": "\u2018Blijf de aarde trouw\u2019, gaf Nietzsches profeet Zarathustra als raad aan de mens die zich ontheemd voelt. Laat dat precies zijn wat Caluwaerts in zijn schilderijen doet. Met dunne draadjes knoopt hij weer aan elkaar wat de maatschappij gebroken heeft. Ondanks de dwingende eenzaamheid van zijn onderneming blijft hij trachten het anorganische menselijk handelen teniet te doen en de natuurlijke samenhang te herstellen. Stenen muurtjes, ramen en glazen wanden, zelfs het kader van een schilderij blijkt enkel te dienen om binnen en buiten, mens en natuur met elkaar te verzoenen."
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 7,
+    "fields": {
+        "section": "AA",
+        "language": "NL",
+        "key": "about",
+        "order": 5,
+        "identifier": "dirk-caluwaerts",
+        "value": "Hoe kapot zijn leefomgeving ook lijkt, Caluwaerts blijft zich inzetten voor wat hij een menselijke levenbehoefte acht: het vatten van schoonheid. Niet toevallig portretteert hij zichzelf als een volwassen man die sneeuwvlokken probeert te vangen met een vlindernet. Door de idylle in leven te houden, voedt Caluwaerts zijn droom van een eiland waarop hij als mens kan overleven."
+    }
+},
+{
+    "model": "impart.tag",
+    "pk": 1,
+    "fields": {
+        "tag": "Bloem"
     }
 },
 {
@@ -134,11 +233,80 @@
     }
 },
 {
+    "model": "impart.art",
+    "pk": 1,
+    "fields": {
+        "name": "Bloemetjes",
+        "artist": 1,
+        "image": "art/DSC01390_I4Smh1z.jpg",
+        "land_price": 2,
+        "x": 40,
+        "y": 45,
+        "z": null,
+        "materials": "Paper, Black ink",
+        "active": true,
+        "in_private_collection": false,
+        "tags": [
+            1
+        ]
+    }
+},
+{
+    "model": "impart.contact",
+    "pk": 1,
+    "fields": {
+        "artist": null,
+        "email": "dirk@somewhere.org",
+        "first_name": "Dirk",
+        "last_name": "Caluwaerts",
+        "bank": "KBC",
+        "vat": "be.0.xxx.yyy.xxx",
+        "company": "company",
+        "telephone": "telephone",
+        "street": "street",
+        "city": "city",
+        "country": "Belgium"
+    }
+},
+{
+    "model": "impart.contact",
+    "pk": 2,
+    "fields": {
+        "artist": 2,
+        "email": "annik@somewhere.be",
+        "first_name": "Annik Rachel",
+        "last_name": "Klaes",
+        "bank": "",
+        "vat": "",
+        "company": "",
+        "telephone": "",
+        "street": "",
+        "city": "",
+        "country": ""
+    }
+},
+{
     "model": "sitetree.tree",
     "pk": 1,
     "fields": {
-        "title": "root",
-        "alias": "root"
+        "title": "home",
+        "alias": "home"
+    }
+},
+{
+    "model": "sitetree.tree",
+    "pk": 2,
+    "fields": {
+        "title": "archive",
+        "alias": "archive"
+    }
+},
+{
+    "model": "sitetree.tree",
+    "pk": 3,
+    "fields": {
+        "title": "artist",
+        "alias": "artist"
     }
 },
 {
@@ -239,57 +407,9 @@
 },
 {
     "model": "sitetree.treeitem",
-    "pk": 5,
-    "fields": {
-        "title": "art",
-        "hint": "",
-        "url": "#work",
-        "urlaspattern": false,
-        "tree": 1,
-        "hidden": false,
-        "alias": null,
-        "description": "",
-        "inmenu": true,
-        "inbreadcrumbs": true,
-        "insitetree": true,
-        "access_loggedin": false,
-        "access_guest": false,
-        "access_restricted": false,
-        "access_perm_type": 1,
-        "parent": null,
-        "sort_order": 6,
-        "access_permissions": []
-    }
-},
-{
-    "model": "sitetree.treeitem",
-    "pk": 6,
-    "fields": {
-        "title": "testimonial",
-        "hint": "",
-        "url": "#testimonial",
-        "urlaspattern": false,
-        "tree": 1,
-        "hidden": false,
-        "alias": null,
-        "description": "",
-        "inmenu": true,
-        "inbreadcrumbs": true,
-        "insitetree": true,
-        "access_loggedin": false,
-        "access_guest": false,
-        "access_restricted": false,
-        "access_perm_type": 1,
-        "parent": null,
-        "sort_order": 7,
-        "access_permissions": []
-    }
-},
-{
-    "model": "sitetree.treeitem",
     "pk": 7,
     "fields": {
-        "title": "manifesto",
+        "title": "manifest",
         "hint": "",
         "url": "#manifest",
         "urlaspattern": false,
@@ -306,6 +426,174 @@
         "access_perm_type": 1,
         "parent": null,
         "sort_order": 4,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 8,
+    "fields": {
+        "title": "about my art",
+        "hint": "",
+        "url": "about",
+        "urlaspattern": false,
+        "tree": 3,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 9,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 9,
+    "fields": {
+        "title": "my art",
+        "hint": "",
+        "url": "art",
+        "urlaspattern": false,
+        "tree": 3,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 10,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 10,
+    "fields": {
+        "title": "contact",
+        "hint": "",
+        "url": "contact",
+        "urlaspattern": false,
+        "tree": 3,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 11,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 11,
+    "fields": {
+        "title": "home",
+        "hint": "",
+        "url": "/",
+        "urlaspattern": false,
+        "tree": 3,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 8,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 12,
+    "fields": {
+        "title": "home",
+        "hint": "",
+        "url": "/",
+        "urlaspattern": false,
+        "tree": 2,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 12,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 13,
+    "fields": {
+        "title": "news",
+        "hint": "",
+        "url": "news",
+        "urlaspattern": false,
+        "tree": 2,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 13,
+        "access_permissions": []
+    }
+},
+{
+    "model": "sitetree.treeitem",
+    "pk": 14,
+    "fields": {
+        "title": "manifest",
+        "hint": "",
+        "url": "manifest",
+        "urlaspattern": false,
+        "tree": 2,
+        "hidden": false,
+        "alias": null,
+        "description": "",
+        "inmenu": true,
+        "inbreadcrumbs": true,
+        "insitetree": true,
+        "access_loggedin": false,
+        "access_guest": false,
+        "access_restricted": false,
+        "access_perm_type": 1,
+        "parent": null,
+        "sort_order": 14,
         "access_permissions": []
     }
 }
