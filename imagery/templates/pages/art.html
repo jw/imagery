@@ -14,9 +14,9 @@
             <div class="work-details">
                 <div class="container">
                     <ul id="filters" class="clearfix">
-                        <li><span class="filter active" data-filter="{% for tag in works_tags %}.{{tag}}{% if not forloop.last %}, {% endif %}{% endfor %}">All</span></li>
-                        {% for tag in works_tags %}
-                            <li><span class="filter" data-filter=".{{ tag }}">{{ tag }}</span></li>
+                        <li><span class="filter active" data-filter="{% for label in art_labels %}.{{label}}{% if not forloop.last %}, {% endif %}{% endfor %}">All</span></li>
+                        {% for label in art_labels %}
+                            <li><span class="filter" data-filter=".{{ label }}">{{ label }}</span></li>
                         {% endfor %}
                     </ul>
                     <div id="portfoliolist">

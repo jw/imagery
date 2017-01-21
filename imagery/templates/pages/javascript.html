@@ -86,7 +86,7 @@
                     filter: '.filter'
                 },
                 load: {
-                    filter: '{% for tag in works_tags %}.{{tag}}{% if not forloop.last %}, {% endif %}{% endfor %}'
+                    filter: '{% for label in art_labels %}.{{label}}{% if not forloop.last %}, {% endif %}{% endfor %}'
                 }
             });
         }

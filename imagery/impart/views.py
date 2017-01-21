@@ -46,11 +46,21 @@ def artist(request, artist_id):
     )
 
     # ...and other entities
-    works = Art.objects.all()
+    works = Art.objects.filter(artist=artist)
     contact = Contact.objects.all()
-    # TODO: this should not be here!
     prices = LandPrice.objects.filter(active=True)
-    works_tags = [p.header for p in prices if p.active]
+
+    # get all labels in order...
+    all_art_labels = [p.header for p in prices if p.active]
+    # ...and kick out the once that are not used
+    art_labels = []
+    for label in all_art_labels:
+        for work in works:
+            if label == str(work.land_price.header):
+                art_labels.append(label)
+                break
+
+    logger.info("Art labels: %s" % art_labels)
 
     attributes = {'menu': 'artist',
                   'about_en_contents': about_en_contents,
@@ -58,7 +68,7 @@ def artist(request, artist_id):
                   'contact_en_contents': contact_en_contents,
                   'contact_nl_contents': contact_nl_contents,
                   'works': works,
-                  'works_tags': works_tags,
+                  'art_labels': art_labels,
                   'contact': contact}
 
     return render(request, 'pages/artist.html', attributes)
