@@ -14,18 +14,24 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 about-col">
                 <div class="about-details wow fadeIn">
-                    {% for manifest in manifests %}
-                        <div class="news-entry">
-                            <h4>{{ manifest.header }}</h4>
-                            <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
-                            <p>
-                                {{ manifest.body_english|markdown }}
-                            </p>
-                            <p>
-                                {{ manifest.body_dutch|markdown }}
-                            </p>
-                        </div>
-                    {% endfor %}
+                    {% if manifest %}
+                        {% for manifest in manifests %}
+                            <div class="news-entry">
+                                <h4>{{ manifest.header }}</h4>
+                                <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
+                                <p>
+                                    {{ manifest.body_english|markdown }}
+                                </p>
+                                <p>
+                                    {{ manifest.body_dutch|markdown }}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No archived manifests available (yet).</p>
+                        <p>Er zijn nog geen oude manifesten.  Nog even wachten :)</p>
+                    {% endif %}
+
                 </div><!-- end about-details  -->
             </div><!-- end col-md-12  -->
         </div><!-- end row  -->
