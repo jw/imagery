@@ -1,6 +1,10 @@
 <div class="menubar">
     <div class="menubar-content">
-        <nav class="navbar navbar-default navbar-fixed-top">
+        {% if menu == 'home' %}
+            <nav class="navbar navbar-default navbar-fixed-top">
+        {% else %}
+            <nav class="navbar-black navbar navbar-fixed-top">
+        {% endif %}
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-sm-2">
@@ -20,7 +24,6 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             {% load sitetree %}
                             {% sitetree_menu from menu include "trunk" template "sitetree/menu_bootstrap3.html" %}
-{#                            {% sitetree_menu from "root" include "trunk" template "sitetree/menu_bootstrap3.html" %}#}
                         </div><!-- end collapse navbar-collapse -->
                     </div><!-- end col-md-8 -->
                 </div><!-- end row -->
