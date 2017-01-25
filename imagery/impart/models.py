@@ -65,10 +65,11 @@ class LandPrice(models.Model):
         ordering = ['order']
 
     def __str__(self):
-        return '%s' % self.header
+        return self.header
 
 
 class Content(models.Model):
+    """The real content as entered by the administrator of the website."""
     CONTENT_SECTION = (
         ('HO', 'Home'),
         ('NE', 'News'),
@@ -97,9 +98,9 @@ class Content(models.Model):
         ordering = ['section', 'language', 'order']
 
     def __str__(self):
-        return 'section: %s, language: %s, key: %s (%s): %s' % (self.get_section_display(),
-                                                                self.get_language_display(),
-                                                                self.key, self.order, self.value)
+        return 'section: {}, language: {}, key: {} ({}): {}'.format(self.get_section_display(),
+                                                                    self.get_language_display(),
+                                                                    self.key, self.order, self.value)
 
 
 class Tag(models.Model):
@@ -141,7 +142,7 @@ class Art(models.Model):
 
 
 class Contact(models.Model):
-    artist = models.ForeignKey(Artist, blank=True, null=True)
+    artist = models.ForeignKey(Artist)
     email = models.EmailField()
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=256)
@@ -155,4 +156,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.first_name + " " + self.last_name + " <" + self.email + ">"
-

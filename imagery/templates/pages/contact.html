@@ -6,12 +6,21 @@
                     <div class="col-md-12">
                         <div class="contact-title text-center wow fadeIn">
                             <h3>contact</h3>
-                            {% for content in contact_en_contents %}
-                                <p>{{ content.value }}</p>
-                            {% endfor %}
-                            {% for content in contact_nl_contents %}
-                                <p>{{ content.value }}</p>
-                            {% endfor %}
+                            <p>
+                                <b>{{ contact.first_name }} {{ contact.last_name }}</b><br>
+                                {{ contact.email }}
+                            </p>
+                            <p>
+                                {% if contact.company %}Company name: {{ contact.company }}<br>{% endif %}
+                                {% if contact.bank %}Account number: {{ contact.bank }}<br>{% endif %}
+                                {% if contact.vat %}VAT: {{ contact.vat }}<br>{% endif %}
+                            </p>
+                            <p>
+                                {% if contact.telephone %}Telephone: {{ contact.telephone }}<br>{% endif %}
+                                {% if contact.street %}Street: {{ contact.street }}<br>{% endif %}
+                                {% if contact.city %}City: {{ contact.city }}<br>{% endif %}
+                                {% if contact.country %}Country: {{ contact.country }}<br>{% endif %}
+                            </p>
                         </div>
                         <div class="underline"></div>
                     </div><!-- end col-md-12 -->

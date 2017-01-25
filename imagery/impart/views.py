@@ -9,11 +9,12 @@ logger = logging.getLogger("imagery")
 
 
 def archive(request, page=1):
+    """Show news and manifest archives."""
 
     news = News.objects.filter(archived=True)
     manifests = Manifest.objects.filter(archived=True)
 
-    logger.error("Retrieved %s archive entries." % str(len(news) + len(manifests)))
+    logger.error("Retrieved {} archived news entries, and {} archived manifests.".format(len(news), len(manifests)))
 
     attributes = {'menu': 'archive',
                   'news': news,
@@ -23,6 +24,7 @@ def archive(request, page=1):
 
 
 def artist(request, artist_id):
+    """Show artist information: about, art and contact."""
 
     # get the artist
     try:
@@ -47,20 +49,20 @@ def artist(request, artist_id):
 
     # ...and other entities
     works = Art.objects.filter(artist=artist)
-    contact = Contact.objects.all()
-    prices = LandPrice.objects.filter(active=True)
+    contact = Contact.objects.filter(artist=artist).get()
+    logger.info('Contact: {}.'.format(contact))
 
     # get all labels in order...
+    prices = LandPrice.objects.filter(active=True)
     all_art_labels = [p.header for p in prices if p.active]
-    # ...and kick out the once that are not used
+    # ...and kick out the ones that are not used
     art_labels = []
     for label in all_art_labels:
         for work in works:
             if label == str(work.land_price.header):
                 art_labels.append(label)
                 break
-
-    logger.info("Art labels: %s" % art_labels)
+    logger.info("Art labels: {}.".format(art_labels))
 
     attributes = {'menu': 'artist',
                   'about_en_contents': about_en_contents,
