@@ -1,3 +1,5 @@
+{% load static %}
+
 <div id="about">
     <div class="about-content">
         <div class="work-grid">
@@ -5,12 +7,18 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="about-title text-center wow fadeIn">
-                            <h3>About</h3>
-                            {% for content in about_en_contents %}
-                                <p>{{ content.value }}</p>
-                            {% endfor %}
-                            {% for content in about_nl_contents %}
-                                <p>{{ content.value }}</p>
+                            <h3 align="left">About
+                                <div class="pull-right">
+                                    <a href="/artist/{{ artist.id }}?language={{ language.other }}">
+                                        {% with '/img/'|add:language.logo as language_flag %}
+                                            <img src="{% static language_flag %}"
+                                                 height="20" alt="{{ language.name }}"/>
+                                        {% endwith %}
+                                    </a>
+                                </div>
+                            </h3>
+                            {% for content in about_contents %}
+                                <p align="left">{{ content.value }}</p>
                             {% endfor %}
                         </div>
                         <div class="underline"></div>
