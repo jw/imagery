@@ -26,7 +26,10 @@
                                     <div class="overlay text-center">
                                         <div class="overlay-main">
                                             <div class="table-cell">
-                                                <a class="fancybox" href="{{ work.image.url }}" title="{{ work.name }}"><i class="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                <a class="fancybox" href="{{ work.image.url }}"
+                                                   title="<b>{{ work.name }}</b> {% if work.in_private_collection %}<i>In private collection</i>{% else %}€{{ work.land_price.get_price }}{% endif %}">
+                                                    <i class="fa fa-search work-icon" aria-hidden="true"></i>
+                                                </a>
                                             </div><!-- end table-cell  -->
                                         </div><!-- end overlay-main  -->
                                     </div><!-- end overlay  -->
