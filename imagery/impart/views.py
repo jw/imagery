@@ -90,7 +90,7 @@ def artist(request, artist_id):
 def index(request):
     """The complete home page.
 
-    Gets artists, news, manifests and land prices.
+    Gets content, artists, news and manifests.
     """
 
     # get content...
@@ -102,12 +102,15 @@ def index(request):
     )
 
     language = get_language(request)
+    logger.info(language)
+    landprice_contents = Content.objects.filter(
+        Q(section='LP'), Q(language=language.code)
+    )
 
     # ...and all other entities
     artists = Artist.objects.filter(active=True)
     news = News.objects.filter(active=True).reverse()
     manifests = Manifest.objects.filter(active=True).reverse()
-    prices = LandPrice.objects.filter(active=True)
 
     attributes = {'menu': 'home',
                   'language': language,
@@ -116,6 +119,6 @@ def index(request):
                   'artists': artists,
                   'news': news,
                   'manifests': manifests,
-                  'prices': prices}
+                  'landprice_contents': landprice_contents}
 
     return render(request, 'pages/index.html', attributes)

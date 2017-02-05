@@ -93,7 +93,7 @@ class Content(models.Model):
     key = models.CharField(max_length=255, null=False)
     order = models.PositiveSmallIntegerField()
     identifier = models.CharField(max_length=255, blank=True)
-    value = models.CharField(max_length=4096)
+    value = MarkdownxField(max_length=4069)
 
     class Meta:
         ordering = ['section', 'language', 'order']
