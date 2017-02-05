@@ -1,5 +1,9 @@
 
-/* TODO: use statics here! */
+/* TODO: use SASS! */
+
+/*
+ * BASIC
+ */
 
 html {
     position: relative;
@@ -47,12 +51,9 @@ body {
     background: url(../img/loader1.gif) center no-repeat #fff;
 }
 
-
-
-
-/*============================================================== MENU ==========================================================*/
-
-
+/*
+ * MENU
+ */
 
 .main-page-content{
     width: 100%;
@@ -63,7 +64,9 @@ body {
     height: auto;
     width: 100%;
 }
+
 /* Only for home page. */
+/* TODO: add this also to other pages - required for scrolling in archive and art pages! */
 .navbar-default {
     background-color: transparent;
     height: 75px;
@@ -192,14 +195,9 @@ body {
     border-radius: 4px;
 }
 
-
-
-/*====================================================== HOME BACKGROUND =====================================================*/
-
-
-
-
-
+/*
+ * HOME BACKGROUND
+ */
 
 #home{
     height: 100vh;
@@ -301,8 +299,11 @@ body {
   color: ghostwhite;
 }
 
-/*===================================================================== PARRALLEX EFFECT ================================================*/
+/*
+ * PARRALLEX EFFECT
+ */
 
+/* TODO: This is not used?  Remove it. */
 
 .section:nth-of-type(1) {
     background: whitesmoke;
@@ -331,9 +332,9 @@ section:nth-of-type(2){background:black;height:1600px;}
 
 .parallax-item{position:absolute;z-index:5;top:40px;left:400px;}
 
-
-
-/* NEWS */
+/*
+ * NEWS
+ */
 
 #news {
     width: 100%;
@@ -438,11 +439,9 @@ section:nth-of-type(2){background:black;height:1600px;}
   padding-bottom: 60px;
 }
 
-/*==================================================================== ABOUT ============================================================*/
-
-
-
-
+/*
+ * ABOUT
+ */
 
 #about {
     width: 100%;
@@ -660,10 +659,9 @@ section:nth-of-type(2){background:black;height:1600px;}
     background-color: #323232;
 }
 
-
-/* ABOUT */
-
-/*=========================================================================== WORK ===============================================================*/
+/*
+ * ABOUT
+ */
 
 #about {
     width: 100%;
@@ -693,8 +691,9 @@ section:nth-of-type(2){background:black;height:1600px;}
     margin-top: 40px;
 }
 
-
-/*=========================================================================== WORK ===============================================================*/
+/*
+ * WORK
+ */
 
 #work {
     width: 100%;
@@ -815,20 +814,6 @@ section:nth-of-type(2){background:black;height:1600px;}
     font-size:9px;
 }
 
-
-
-
-
-
-
-/* #Tablet (Portrait) */
-
-
-
-/*  #Mobile (Portrait) - Note: Design for a width of 320px */
-
-/* #Clearing */
-
 /* Self Clearing Goodness */
 .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
 
@@ -858,52 +843,6 @@ section:nth-of-type(2){background:black;height:1600px;}
     height: 0;
 }
 
-
-.testimonial{
-    width: 100%;
-    background-color: white;
-    margin-top: 120px;
-    position: relative;
-    background-image: url(../img/clients.jpg);
-    background-size: cover;
-    background-position: center center;
-}
-.testimonial:after{
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.88);
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-.testimonial-content {
-    padding-bottom: 80px;
-    padding-top: 120px;
-}
-.testimonial-grid {
-    width: 100%;
-    position: relative;
-    z-index: 111;
-}
-.testimonial-title {
-    padding-top: 0px;
-}
-.testimonial-title h3{
-    font-size: 34px;
-    font-family: 'Ubuntu', sans-serif;
-    letter-spacing: 2px;
-    color: white;
-    margin-top: 0px;
-    font-weight: 900;
-    line-height: 33px;
-    text-transform: uppercase;
-}
-
-.testimonial-details{
-    width: 100%;
-}
 
 section {
     padding-top: 0px;
@@ -985,16 +924,9 @@ blockquote {
     border-radius: 5px;
 }
 
-
-
-
-
-
-
-/*================================================================ FANCYBOX ===============================================================*/
-
-
-
+/*
+ * FANCYBOX
+ */
 
 .fancybox-wrap,
 .fancybox-skin,
@@ -1421,16 +1353,9 @@ only screen and (min-device-pixel-ratio: 1.5){
     max-width: none;
 }
 
-
-
-
-
-
-/*============================================================== CONTACT =====================================================================*/
-
-
-
-
+/*
+ * CONTACT
+ */
 
 #contact {
     width: 100%;
@@ -1602,10 +1527,9 @@ only screen and (min-device-pixel-ratio: 1.5){
     color: #000;
 }
 
-
-
-/*=============================================================== RESPONSIVE ======================================================*/
-
+/*
+ * RESPONSIVE
+ */
 
 @media screen and (max-width: 768px) {
 
