@@ -1,5 +1,3 @@
-{% load django_markdown %}
-
 <div id="manifest">
     <div class="manifest-content">
     <div class="container">
@@ -19,10 +17,10 @@
                             <h4>{{ manifest.header }}</h4>
                             <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
                             <p>
-                                {{ manifest.body_english|markdown }}
+                                {{ manifest.body_english | safe }}
                             </p>
                             <p>
-                                {{ manifest.body_dutch|markdown }}
+                                {{ manifest.body_dutch | safe }}
                             </p>
                         </div>
                     {% endfor %}

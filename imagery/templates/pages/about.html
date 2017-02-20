@@ -10,16 +10,18 @@
                             <h3 align="left">About
                                 <div class="pull-right">
                                     <a href="/artist/{{ artist.id }}?language={{ language.other }}">
-                                        {% with '/img/'|add:language.logo as language_flag %}
+                                        {% with language_flag='/img/'|add:language.logo %}
                                             <img src="{% static language_flag %}"
                                                  height="20" alt="{{ language.name }}"/>
                                         {% endwith %}
                                     </a>
                                 </div>
                             </h3>
-                            {% for content in about_contents %}
-                                <p align="left">{{ content.value }}</p>
-                            {% endfor %}
+                            <div align="left">
+                                {% for content in about_contents %}
+                                    {{ content.value | safe }}
+                                {% endfor %}
+                            </div>
                         </div>
                         <div class="underline"></div>
                     </div><!-- end col-md-12 -->

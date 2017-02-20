@@ -1,5 +1,4 @@
 {% load static %}
-{% load django_markdown %}
 
 <div id="landprice">
     <div class="landprice-content">
@@ -8,9 +7,8 @@
                 <div class="col-md-12">
                     <div class="landprice-title text-center wow fadeIn">
                         <h3>Land Price</h3>
-                        <p>This is just an example - here some information on the land prices will be shown.</p>
                         <div class="underline"></div>
-                    </div><!-- end work-title  -->
+                    </div><!-- end landprice-title  -->
                 </div><!-- end col-md-12  -->
             </div>
             <div class="row">
@@ -18,15 +16,17 @@
                     <div class="about-details wow fadeIn">
                         <div class="pull-right">
                             <a href="/?language={{ language.other }}">
-                                {% with '/img/'|add:language.logo as language_flag %}
+                                {% with language_flag='/img/'|add:language.logo %}
                                     <img src="{% static language_flag %}"
                                          height="20" alt="{{ language.name }}"/>
                                 {% endwith %}
                             </a>
                         </div>
-                        {% for content in landprice_contents %}
-                            <p align="left">{{ content.value | markdown }}</p>
-                        {% endfor %}
+                        <div align="left">
+                            {% for content in landprice_contents %}
+                                {{ content.value | safe }}
+                            {% endfor %}
+                        </div>
                     </div><!-- end landprice-details  -->
                 </div><!-- end col-md-12  -->
             </div><!-- end row  -->

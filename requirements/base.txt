@@ -47,6 +47,5 @@ django-extensions
 # Menu bar
 django-sitetree==1.6.0
 
-# Markdown
-django-markdown
-django-markdownx
+# proper editor
+django-ckeditor

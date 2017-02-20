@@ -1,5 +1,5 @@
 from django.db import models
-from markdownx.models import MarkdownxField
+from ckeditor.fields import RichTextField
 
 
 class Dated(models.Model):
@@ -14,8 +14,8 @@ class News(Dated):
     location = models.CharField(max_length=1024,
                                 help_text="The location where the news took/will take place.")
     header = models.CharField(max_length=256, help_text="The header.")
-    body_english = MarkdownxField(max_length=4096, help_text="The news body in English.")
-    body_dutch = MarkdownxField(max_length=4096, help_text="The news body in Dutch.")
+    body_english = RichTextField(max_length=4096, help_text="The news body in English.")
+    body_dutch = RichTextField(max_length=4096, help_text="The news body in Dutch.")
     active = models.BooleanField(default=True, help_text="If set the news will be shown, otherwise it will not.")
     archived = models.BooleanField(default=False, help_text="If set the news will be part of the archive section.")
 
@@ -29,8 +29,8 @@ class News(Dated):
 
 class Manifest(Dated):
     header = models.CharField(max_length=256)
-    body_english = MarkdownxField(max_length=4096)
-    body_dutch = MarkdownxField(max_length=4096)
+    body_english = RichTextField(max_length=4096)
+    body_dutch = RichTextField(max_length=4096)
     active = models.BooleanField(default=True)
     archived = models.BooleanField(default=False,
                                    help_text="If set the manifest will be part of the archive section.")
@@ -54,8 +54,8 @@ class LandPrice(models.Model):
     )
     type = models.CharField(max_length=1, choices=PRIZE_TYPE, null=False)
     header = models.CharField(max_length=256)
-    body_english = MarkdownxField(max_length=4096)
-    body_dutch = MarkdownxField(max_length=4069)
+    body_english = RichTextField(max_length=4096)
+    body_dutch = RichTextField(max_length=4069)
     order = models.PositiveSmallIntegerField()
     active = models.BooleanField(default=True)
 
@@ -93,7 +93,7 @@ class Content(models.Model):
     key = models.CharField(max_length=255, null=False)
     order = models.PositiveSmallIntegerField()
     identifier = models.CharField(max_length=255, blank=True)
-    value = MarkdownxField(max_length=4069)
+    value = RichTextField(max_length=4069)
 
     class Meta:
         ordering = ['section', 'language', 'order']
