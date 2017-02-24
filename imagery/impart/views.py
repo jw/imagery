@@ -9,7 +9,7 @@ import logging
 logger = logging.getLogger("imagery")
 
 
-Language = collections.namedtuple('Language', 'code logo name other')
+Language = collections.namedtuple('Language', 'code logo name')
 
 
 def archive(request, page=1):
@@ -27,15 +27,21 @@ def archive(request, page=1):
     return render(request, 'pages/archive.html', attributes)
 
 
+def get_languages(request):
+    """Get all the languages."""
+    return [Language('NL', 'uk.svg', 'English'),
+            Language('EN', 'belgium.svg', 'Nederlands')]
+
+
 def get_language(request):
     """Get the selected language.
 
     English is the default."""
     code = request.GET.get('language', 'EN')
     if code == 'NL':
-        return Language('NL', 'uk.svg', 'English', 'EN')
+        return 'NL', 'EN'
     else:
-        return Language('EN', 'belgium.svg', 'Nederlands', 'NL')
+        return 'EN', 'NL'
 
 
 def artist(request, artist_id):
@@ -49,7 +55,7 @@ def artist(request, artist_id):
     logger.info("Showing details of " + artist.name + ".")
 
     # get his/her content based on the selected language...
-    language = get_language(request)
+    language = get_languages(request)
     logger.info(language)
     about_contents = Content.objects.filter(
         Q(section='AA'), Q(language=language.code), Q(identifier=artist.link)
@@ -101,11 +107,23 @@ def index(request):
         Q(section='HO'), Q(language='NL')
     )
 
-    language = get_language(request)
-    logger.info(language)
-    landprice_contents = Content.objects.filter(
-        Q(section='LP'), Q(language=language.code)
+    (current_language, other_language) = get_language(request)
+    logger.info("Current language {}.".format(current_language))
+    logger.info("Other language {}.".format(other_language))
+
+    languages = get_languages(request)
+    logger.info(languages)
+
+    landprice_contents_raw = Content.objects.filter(
+        Q(section='LP')
     )
+
+    landprice_contents = {}
+    for content in landprice_contents_raw:
+        content_list = landprice_contents.setdefault(content.language, [])
+        content_list.append(content)
+
+    logger.info(landprice_contents)
 
     # ...and all other entities
     artists = Artist.objects.filter(active=True)
@@ -113,7 +131,9 @@ def index(request):
     manifests = Manifest.objects.filter(active=True).reverse()
 
     attributes = {'menu': 'home',
-                  'language': language,
+                  'current_language': current_language,
+                  'other_language': other_language,
+                  'languages': languages,
                   'home_en_contents': home_en_contents,
                   'home_nl_contents': home_nl_contents,
                   'artists': artists,

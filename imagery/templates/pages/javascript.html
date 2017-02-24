@@ -110,4 +110,32 @@ $("#home-parallex").bgswitcher({
              {% endfor %}],
 })
 
+/* Toggles the content per language */
+
+$(document).ready(function() {
+    $('div.language-flag').click(function(){
+        var current = $('div[current-language]').attr('current-language');
+        var other = $('div[other-language]').attr('other-language');
+        // and why can't be do x, y = y, x?
+        var temp = current;
+        current = other;
+        other = temp;
+        $('div.language-wrapper[lang="' + current + '"]').show();
+        $('div.language-wrapper[lang="' + other + '"]').hide();
+        $('div.language-flag[lang="' + current + '"]').show();
+        $('div.language-flag[lang="' + other + '"]').hide();
+        $('div[current-language]').attr('current-language', current);
+        $('div[other-language]').attr('other-language', other);
+    });
+});
+
+$(document).ready(function() {
+    var current = $('div[current-language]').attr('current-language');
+    var other = $('div[other-language]').attr('other-language');
+    $('div.language-wrapper[lang="' + current + '"]').show();
+    $('div.language-wrapper[lang="' + other + '"]').hide();
+    $('div.language-flag[lang="' + current + '"]').show();
+    $('div.language-flag[lang="' + other + '"]').hide();
+});
+
 </script>
