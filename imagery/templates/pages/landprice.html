@@ -8,18 +8,18 @@
                     <div class="landprice-title text-center wow fadeIn">
                         <h3>Land Price</h3>
                         <div class="underline"></div>
-                    </div><!-- end landprice-title  -->
-                </div><!-- end col-md-12  -->
+                    </div><!-- end landprice-title -->
+                </div><!-- end col-md-12 -->
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 about-col">
                     <div class="about-details wow fadeIn">
-                        <div class="pull-right" current-language="{{ current_language }}" other-language="{{ other_language }}">
-                            {% for l in languages %}
-                                <div lang="{{ l.code }}" class="language-flag" style="display: none;">
-                                    {% with language_flag='/img/'|add:l.logo %}
+                        <div class="pull-right">
+                            {% for language in languages %}
+                                <div lang="{{ language.code }}" class="language-flag" style="display: none;">
+                                    {% with language_flag='/img/'|add:language.logo %}
                                         <img src="{% static language_flag %}"
-                                             height="20" alt="{{ l.name }}"/>
+                                             height="20" alt="{{ language.name }}"/>
                                     {% endwith %}
                                 </div>
                             {% endfor %}
@@ -33,7 +33,7 @@
                                 </div>
                             {% endfor %}
                         </div>
-                    </div><!-- end landprice-details  -->
+                    </div><!-- end landprice-details -->
                 </div><!-- end col-md-12  -->
             </div><!-- end row  -->
         </div><!-- end container  -->

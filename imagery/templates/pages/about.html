@@ -7,26 +7,37 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="about-title text-center wow fadeIn">
-                            <h3 align="left">About
-                                <div class="pull-right">
-                                    <a href="/artist/{{ artist.id }}?language={{ language.other }}">
-                                        {% with language_flag='/img/'|add:language.logo %}
-                                            <img src="{% static language_flag %}"
-                                                 height="20" alt="{{ language.name }}"/>
-                                        {% endwith %}
-                                    </a>
-                                </div>
-                            </h3>
-                            <div align="left">
-                                {% for content in about_contents %}
-                                    {{ content.value | safe }}
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <div class="underline"></div>
+                            <h3 align="left">About</h3>
+                            <div class="underline"></div>
+                        </div><!-- end about-title -->
                     </div><!-- end col-md-12 -->
                 </div><!-- end row -->
-            </div><!-- end container -->
-        </div><!-- end work-grid  -->
-    </div><!-- end work-content  -->
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 about-col">
+                    <div class="about-details wow fadeIn">
+                        <div class="pull-right">
+                            {% for language in languages %}
+                                <div lang="{{ language.code }}" class="language-flag" style="display: none;">
+                                    {% with language_flag='/img/'|add:language.logo %}
+                                        <img src="{% static language_flag %}"
+                                             height="20" alt="{{ language.name }}"/>
+                                    {% endwith %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div align="left">
+                            {% for language, content in about_contents.items %}
+                                <div lang="{{ language }}" class="language-wrapper" style="display: none;">
+                                    {% for c in content %}
+                                        {{ c.value | safe }}
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div><!-- end landprice-details -->
+                </div><!-- end col-md-12  -->
+            </div><!-- end row  -->
+        </div><!-- end container -->
+    </div>
 </div><!-- end work  -->

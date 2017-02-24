@@ -55,14 +55,25 @@ def artist(request, artist_id):
     logger.info("Showing details of " + artist.name + ".")
 
     # get his/her content based on the selected language...
-    language = get_languages(request)
-    logger.info(language)
-    about_contents = Content.objects.filter(
-        Q(section='AA'), Q(language=language.code), Q(identifier=artist.link)
+
+    about_contents_raw = Content.objects.filter(
+        Q(section='AA'), Q(identifier=artist.link)
     )
-    contact_contents = Content.objects.filter(
-        Q(section='CO'), Q(language=language.code), Q(identifier=artist.link)
+    about_contents = {}
+    for content in about_contents_raw:
+        content_list = about_contents.setdefault(content.language, [])
+        content_list.append(content)
+
+    contact_contents_raw = Content.objects.filter(
+        Q(section='CO'), Q(identifier=artist.link)
     )
+    contact_contents = {}
+    for content in contact_contents_raw:
+        content_list = contact_contents.setdefault(content.language, [])
+        content_list.append(content)
+
+    (current_language, other_language) = get_language(request)
+    languages = get_languages(request)
 
     # ...and other entities
     works = Art.objects.filter(artist=artist)
@@ -83,7 +94,9 @@ def artist(request, artist_id):
 
     attributes = {'menu': 'artist',
                   'artist': artist,
-                  'language': language,
+                  'current_language': current_language,
+                  'other_language': other_language,
+                  'languages': languages,
                   'about_contents': about_contents,
                   'contact_contents': contact_contents,
                   'works': works,
@@ -108,11 +121,7 @@ def index(request):
     )
 
     (current_language, other_language) = get_language(request)
-    logger.info("Current language {}.".format(current_language))
-    logger.info("Other language {}.".format(other_language))
-
     languages = get_languages(request)
-    logger.info(languages)
 
     landprice_contents_raw = Content.objects.filter(
         Q(section='LP')
