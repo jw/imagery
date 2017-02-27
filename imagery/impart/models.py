@@ -59,7 +59,8 @@ class LandPrice(models.Model):
     order = models.PositiveSmallIntegerField()
     active = models.BooleanField(default=True)
 
-    def get_price(self):
+    @staticmethod
+    def get_price():
         return "n/a"
 
     class Meta:

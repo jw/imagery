@@ -12,30 +12,35 @@
                         </div><!-- end about-title -->
                     </div><!-- end col-md-12 -->
                 </div><!-- end row -->
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 about-col">
-                    <div class="about-details wow fadeIn">
-                        <div class="pull-right">
-                            {% for language in languages %}
-                                <div lang="{{ language.code }}" class="language-flag" style="display: none;">
-                                    {% with language_flag='/img/'|add:language.logo %}
-                                        <img src="{% static language_flag %}"
-                                             height="20" alt="{{ language.name }}"/>
-                                    {% endwith %}
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <div align="left">
-                            {% for language, content in about_contents.items %}
-                                <div lang="{{ language }}" class="language-wrapper" style="display: none;">
-                                    {% for c in content %}
-                                        {{ c.value | safe }}
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 about-col">
+                        <div class="about-details wow fadeIn">
+                            <div class="pull-right">
+
+                                {% for language in languages %}
+                                    <div lang="{{ language.code }}" class="language-flag" style="display: none;">
+                                        {% with language_flag='/img/'|add:language.logo %}
+                                            <img src="{% static language_flag %}"
+                                                 height="20" alt="{{ language.name }}"/>
+                                        {% endwith %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="news-entry">
+                                <div align="left">
+                                    {% for language, content in about_contents.items %}
+                                        <div lang="{{ language }}" class="language-wrapper" style="display: none;">
+                                            {% for c in content %}
+                                                {{ c.value | safe }}
+                                            {% endfor %}
+                                        </div>
                                     {% endfor %}
                                 </div>
-                            {% endfor %}
+                            </div>
+
                         </div>
-                    </div><!-- end landprice-details -->
+                        </div><!-- end landprice-details -->
                 </div><!-- end col-md-12  -->
             </div><!-- end row  -->
         </div><!-- end container -->
