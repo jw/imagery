@@ -17,8 +17,6 @@ urlpatterns = [
     url(r'^artist/(?P<artist_id>[0-9]+)/', views.artist, name='artist'),
     url(r'^archive/', views.archive, name='archive'),
 
-    url(r'^markdownx/', include('markdownx.urls')),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
