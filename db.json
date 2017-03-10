@@ -32,8 +32,8 @@
     "fields": {
         "location": "Antwerp",
         "header": "Something exciting happened in Antwerp!",
-        "body_english": "###Hello there!###\r\n\r\nThis is a markdown news event! \r\n*There* **are**  several markdowns.\r\n\r\n![](/media/markdownx/2759467a-ca5a-42c5-a8cc-8fd5d0c5da02.jpg)\r\n\r\nWe zijn nu in Antwerpen.\r\nEn wachten op Annik.",
-        "body_dutch": "Er gebeurde helemaal niets in Antwerpen!!\r\n\r\n[Hallo!](/media/markdownx/69db6f6b-b468-4d1c-98e6-29213c1a63b7.jpg)",
+        "body_english": "<h2>Hello there!</h2>\r\n\r\n<p>This is <strong>not</strong> a markdown news event! It is a CKEditor event!</p>",
+        "body_dutch": "<p>Er gebeurde helemaal niets in Antwerpen!!</p>",
         "active": true,
         "archived": false
     }
@@ -44,8 +44,8 @@
     "fields": {
         "location": "Manchester Township, New Jersey",
         "header": "The Hindenburg disaster",
-        "body_english": "The Hindenburg zeppelin crashed.  The humanity!",
-        "body_dutch": "De Hindenbug zeppelin ging neer.  De menselijkheid!",
+        "body_english": "<p>The Hindenburg zeppelin crashed. The humanity!</p>\r\n\r\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:500px\" summary=\"summary\">\r\n\t<caption>caption</caption>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>Een</td>\r\n\t\t\t<td>Twee</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Drie</td>\r\n\t\t\t<td>Vier</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Vijf</td>\r\n\t\t\t<td>Zes</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>",
+        "body_dutch": "<p>De Hindenbug zeppelin ging neer. De menselijkheid!</p>",
         "active": true,
         "archived": false
     }
@@ -54,9 +54,9 @@
     "model": "impart.manifest",
     "pk": 3,
     "fields": {
-        "header": "The first manifesto",
-        "body_english": "#Hello#\r\nThis is a try to create a Manifest!\r\n\r\n**The first manifesto**\r\nHello there!",
-        "body_dutch": "Het eerste manifest",
+        "header": "Manifest impart #1",
+        "body_english": "<p><strong>to impart {ww.}&nbsp;</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;mededelen schenken geven verlenen</p>\r\n\r\n<p><strong>mededelen {ww.}&nbsp;</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;to acquaint, to communicate, to inform, to let know</p>\r\n\r\n<p><strong>schenken {ww.} </strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;to donate, to give, to pour, to scatter</p>\r\n\r\n<p><strong>geven {ww.} </strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;to bestow, to give, to bestow upon</p>\r\n\r\n<p><strong>verlenen {ww.}</strong></p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;to bestow, to give, to lend, to minister</p>\r\n\r\n<p style=\"text-align:right\"><em>Kalmthout, 31 januari 2017</em></p>",
+        "body_dutch": "<p>Het eerste manifest</p>",
         "active": true,
         "archived": false
     }
@@ -214,7 +214,7 @@
         "key": "about",
         "order": 0,
         "identifier": "dirk-caluwaerts",
-        "value": "This is the first English about paragraph."
+        "value": "<p>This is the first <s><strong><em><u>English</u></em></strong></s> about paragraph.</p>"
     }
 },
 {
@@ -226,7 +226,7 @@
         "key": "about",
         "order": 1,
         "identifier": "dirk-caluwaerts",
-        "value": "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. \"What's happened to me?\" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops"
+        "value": "<p>One morning, when <strong>Gregor Samsa</strong> woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &quot;<em>What&#39;s happened to me?</em>&quot; he thought. It wasn&#39;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops</p>"
     }
 },
 {
@@ -251,6 +251,54 @@
         "order": 3,
         "identifier": "dirk-caluwaerts",
         "value": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn\u2019t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then"
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 12,
+    "fields": {
+        "section": "LP",
+        "language": "NL",
+        "key": "landprice",
+        "order": 0,
+        "identifier": "",
+        "value": "<h2>Grondprijs</h2>\r\n\r\n<p>Impart verbindt zich ertoe om elk kunstwerk in een verantwoordelijk, maatschappelijk en ge&euml;ngageerd kader te plaatsen. Zoals de grond onder onze voeten noodzakelijk is, is kunst dat ook. Het verkopen van &lsquo;culturele grond&rsquo; houdt in dat we ons niet zomaar aan de wetten van de markt aanpassen.</p>\r\n\r\n<p>Met ons werk willen we schoonheid en bewustzijn toevoegen aan deze wereld. Onze kunst dient <em>Art under attack</em>. 11% van de inkomsten delen we met kunstenaars uit oorlogsgebied.</p>\r\n\r\n<p>In een wereld waaraan steeds meer geweld en spirituele onderdrukking kleeft, telt elk tegengewicht.</p>\r\n\r\n<p>Onze grondprijs bereken je met volgend wiskundig model.</p>"
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 14,
+    "fields": {
+        "section": "LP",
+        "language": "NL",
+        "key": "paintings",
+        "order": 1,
+        "identifier": "",
+        "value": "<h2>Schilderijen</h2>\r\n\r\n<p><span class=\"math-tex\">\\(grondprijs = lengte \\times breedte \\times 0.11\\)</span></p>\r\n\r\n<p>Inclusief <em>Art under attack</em> = 11% van de grondprijs</p>"
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 15,
+    "fields": {
+        "section": "LP",
+        "language": "NL",
+        "key": "drawings_and_pictures",
+        "order": 2,
+        "identifier": "",
+        "value": "<h2>Tekeningen en foto&#39;s</h2>\r\n\r\n<p>Grondprijs klein formaat = &euro; 175</p>\r\n\r\n<p>Grondprijs groot formaat = &euro; 225</p>\r\n\r\n<p>Inclusief <em>Art under attack</em> = 11% van de grondprijs</p>"
+    }
+},
+{
+    "model": "impart.content",
+    "pk": 16,
+    "fields": {
+        "section": "LP",
+        "language": "EN",
+        "key": "landprice",
+        "order": 0,
+        "identifier": "",
+        "value": "Some English information still needs to be provided."
     }
 },
 {
