@@ -8,10 +8,10 @@
                             <div class="home-text wow fadeInDown text-center">
                                 <h2>Impart</h2>
                                 {% for content in home_en_contents %}
-                                    <p id="intro">{{ content.value }}</p>
+                                    <p id="intro">{{ content.value | safe }}</p>
                                 {% endfor %}
                                 {% for content in home_nl_contents %}
-                                    <p id="intro">{{ content.value }}</p>
+                                    <p id="intro">{{ content.value | safe }}</p>
                                 {% endfor %}
                                 <h3>
                                     <div class="container-fluid">
