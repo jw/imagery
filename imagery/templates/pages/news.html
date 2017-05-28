@@ -16,17 +16,6 @@
                 <div class="about-details wow fadeIn">
                     {% for entry in news %}
 
-                        <div class="pull-right">
-                            {% for language in languages %}
-                                <div lang="{{ language.code }}" class="language-flag" style="display: none;">
-                                    {% with language_flag='/img/'|add:language.logo %}
-                                        <img src="{% static language_flag %}"
-                                             height="20" alt="{{ language.name }}"/>
-                                    {% endwith %}
-                                </div>
-                            {% endfor %}
-                        </div>
-
                         <div class="news-entry">
                             <h3>{{ entry.header }}</h3>
                             <h5>{{ entry.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>

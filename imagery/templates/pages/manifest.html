@@ -16,17 +16,6 @@
                 <div class="about-details wow fadeIn">
                     {% for manifest in manifests %}
 
-                        <div class="pull-right">
-                            {% for language in languages %}
-                                <div lang="{{ language.code }}" class="language-flag" style="display: none;">
-                                    {% with language_flag='/img/'|add:language.logo %}
-                                        <img src="{% static language_flag %}"
-                                             height="20" alt="{{ language.name }}"/>
-                                    {% endwith %}
-                                </div>
-                            {% endfor %}
-                        </div>
-
                         <div class="news-entry">
                             <h4>{{ manifest.header }}</h4>
                             <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>

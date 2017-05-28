@@ -15,7 +15,7 @@ Language = collections.namedtuple('Language', 'code logo name')
 def archive(request, page=1):
     """Show news and manifest archives."""
 
-    news = News.objects.filter(archived=True)
+    news = News.objects.filter(archived=fintTrue)
     manifests = Manifest.objects.filter(archived=True)
 
     logger.error("Retrieved {} archived news entries, and {} archived manifests.".format(len(news), len(manifests)))
@@ -29,8 +29,8 @@ def archive(request, page=1):
 
 def get_languages(request):
     """Get all the languages."""
-    return [Language('NL', 'uk.svg', 'English'),
-            Language('EN', 'belgium.svg', 'Nederlands')]
+    return [Language('NL', 'en.svg', 'English'),
+            Language('EN', 'nl.svg', 'Nederlands')]
 
 
 def get_language(request):
