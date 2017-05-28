@@ -28,7 +28,7 @@ class News(Dated):
 
 
 class Manifest(Dated):
-    header = models.CharField(max_length=256)
+    header = models.CharField(max_length=256, null=True, blank=True)
     body_english = RichTextField(max_length=4096)
     body_dutch = RichTextField(max_length=4096)
     active = models.BooleanField(default=True)
