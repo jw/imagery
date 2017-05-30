@@ -18,10 +18,10 @@
                                 <h3>{{ entry.header }}</h3>
                                 <h5>{{ entry.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
                                 <p>
-                                    {{ entry.body_english }}
+                                    {{ entry.body_english | safe }}
                                 </p>
                                 <p>
-                                    {{ entry.body_dutch }}
+                                    {{ entry.body_dutch | safe }}
                                 </p>
                             </div>
                         {% endfor %}
