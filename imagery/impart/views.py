@@ -12,17 +12,33 @@ logger = logging.getLogger("imagery")
 Language = collections.namedtuple('Language', 'code logo name')
 
 
-def archive(request, page=1):
+def archive(request):
     """Show news and manifest archives."""
 
     news = News.objects.filter(archived=True)
     manifests = Manifest.objects.filter(archived=True)
+    art = Art.objects.filter(archived=True)
 
-    logger.error("Retrieved {} archived news entries, and {} archived manifests.".format(len(news), len(manifests)))
+    logger.error("Retrieved {} archived news entries, {} archived manifests, and {} art works.".
+                 format(len(news), len(manifests), len(art)))
+
+    # get all labels in order...
+    prices = LandPrice.objects.filter(active=True)
+    all_art_labels = [p.header for p in prices if p.active]
+    # ...and kick out the ones that are not used
+    art_labels = []
+    for label in all_art_labels:
+        for work in art:
+            if label == str(work.land_price.header):
+                art_labels.append(label)
+                break
+    logger.info("Art labels: {}.".format(art_labels))
 
     attributes = {'menu': 'archive',
                   'news': news,
-                  'manifests': manifests}
+                  'manifests': manifests,
+                  'art_labels': art_labels,
+                  'works': art}
 
     return render(request, 'pages/archive.html', attributes)
 
