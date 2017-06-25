@@ -40,6 +40,9 @@ pytz==2016.7
 django-redis==4.5.0
 redis>=2.10.5
 
+# TODO: remove me!
+django-markdownx
+
 # FIXME: huh?
 django-debug-toolbar
 django-extensions
