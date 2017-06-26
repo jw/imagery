@@ -1,39 +1,90 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<path style="fill:#FFDA44;" d="M345.043,15.923C317.31,5.633,287.314,0,256,0s-61.31,5.633-89.043,15.923L144.696,256
-	l22.261,240.077C194.69,506.368,224.686,512,256,512s61.31-5.632,89.043-15.923L367.304,256L345.043,15.923z"/>
-<path style="fill:#D80027;" d="M512,256c0-110.07-69.472-203.906-166.957-240.076v480.155C442.528,459.906,512,366.072,512,256z"/>
-<path d="M0,256c0,110.072,69.472,203.906,166.957,240.078V15.924C69.472,52.094,0,145.93,0,256z"/>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 650 650"
+   xml:space="preserve"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="nl.svg"
+   width="650"
+   height="650"><metadata
+     id="metadata3396"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs3394" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1616"
+     inkscape:window-height="863"
+     id="namedview3392"
+     showgrid="false"
+     inkscape:zoom="0.98046875"
+     inkscape:cx="256"
+     inkscape:cy="353.68089"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" /><circle
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.20663548px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path7339"
+     cx="323.31473"
+     cy="325.66537"
+     r="315.05209" /><path
+     style="fill:#ffda44"
+     d="m 412.35774,86.608257 c -27.733,-10.29 -57.729,-15.923 -89.043,-15.923 -31.314,0 -61.31,5.633 -89.043,15.923 l -22.261,240.077003 22.261,240.077 c 27.733,10.291 57.729,15.923 89.043,15.923 31.314,0 61.31,-5.632 89.043,-15.923 l 22.261,-240.077 -22.261,-240.077003 z"
+     id="path3356"
+     inkscape:connector-curvature="0" /><path
+     style="fill:#d80027"
+     d="m 579.31474,326.68526 c 0,-110.07 -69.472,-203.906 -166.957,-240.076003 l 0,480.155003 c 97.485,-36.173 166.957,-130.007 166.957,-240.079 z"
+     id="path3358"
+     inkscape:connector-curvature="0" /><path
+     d="m 67.314741,326.68526 c 0,110.072 69.471999,203.906 166.956999,240.078 l 0,-480.154003 C 136.78674,122.77926 67.314741,216.61526 67.314741,326.68526 Z"
+     id="path3360"
+     inkscape:connector-curvature="0" /><g
+     id="g3362"
+     transform="translate(0,138)" /><g
+     id="g3364"
+     transform="translate(0,138)" /><g
+     id="g3366"
+     transform="translate(0,138)" /><g
+     id="g3368"
+     transform="translate(0,138)" /><g
+     id="g3370"
+     transform="translate(0,138)" /><g
+     id="g3372"
+     transform="translate(0,138)" /><g
+     id="g3374"
+     transform="translate(0,138)" /><g
+     id="g3376"
+     transform="translate(0,138)" /><g
+     id="g3378"
+     transform="translate(0,138)" /><g
+     id="g3380"
+     transform="translate(0,138)" /><g
+     id="g3382"
+     transform="translate(0,138)" /><g
+     id="g3384"
+     transform="translate(0,138)" /><g
+     id="g3386"
+     transform="translate(0,138)" /><g
+     id="g3388"
+     transform="translate(0,138)" /><g
+     id="g3390"
+     transform="translate(0,138)" /></svg>
