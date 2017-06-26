@@ -169,6 +169,7 @@ body {
 .site-title {
     padding: 0px 0px;
 }
+
 .site-title h3 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 23px;
@@ -178,6 +179,22 @@ body {
     margin-top: 24px;
     letter-spacing: 4px;
 }
+
+.site-title h3 a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.site-title h3 a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.site-title h3 a:visited {
+  color: white;
+  text-decoration: none;
+}
+
 .navbar-default.small .site-title h3{
     color: white;
 }
