@@ -32,7 +32,11 @@
     /* Smooth scrolling from the menu */
 
     $('.navbar-default').on('click', 'a', function (event) {
+        $(".navbar-default").find(".active").removeClass("active");
+        $(this).parent().addClass("active");
+
         var $anchor = $(this);
+
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top - 1
         }, 1000);
@@ -113,6 +117,7 @@ $("#home-parallex").bgswitcher({
 /* Toggles the content per language */
 
 $(document).ready(function() {
+    console.log("click called");
     $('div.language-flag').click(function(){
         var current = $('div[current-language]').attr('current-language');
         var other = $('div[other-language]').attr('other-language');
@@ -130,6 +135,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+    console.log("language update called");
     var current = $('div[current-language]').attr('current-language');
     var other = $('div[other-language]').attr('other-language');
     $('div.language-wrapper[lang="' + current + '"]').show();

@@ -22,6 +22,9 @@ def archive(request):
     logger.error("Retrieved {} archived news entries, {} archived manifests, and {} art works.".
                  format(len(news), len(manifests), len(art)))
 
+    (current_language, other_language) = get_language(request)
+    languages = get_languages(request)
+
     # get all labels in order...
     prices = LandPrice.objects.filter(active=True)
     all_art_labels = [p.header for p in prices if p.active]
@@ -38,7 +41,12 @@ def archive(request):
                   'news': news,
                   'manifests': manifests,
                   'art_labels': art_labels,
+                  'other_language': other_language,
+                  'languages': languages,
                   'works': art}
+
+    logger.info("{} of {}.".format(other_language, languages))
+
 
     return render(request, 'pages/archive.html', attributes)
 

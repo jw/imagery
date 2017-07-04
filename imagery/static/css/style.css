@@ -127,7 +127,7 @@ body {
     display: inherit;
 }
 .navbar-default .navbar-nav > li > a {
-    color: white;
+    color: #ccc;
     letter-spacing: 2px;
     font-size: 13px;
     transition: .5s;
@@ -139,7 +139,7 @@ body {
     font-weight: 600;
 }
 .navbar-black .navbar-nav > li > a {
-    color: white;
+    color: #ccc;
     letter-spacing: 2px;
     font-size: 13px;
     transition: .5s;
@@ -152,16 +152,17 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-    color: #b9b9b9;
+    color: #ddd;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    color: ghostwhite !important;
+    color: white !important;
     background-color: transparent;
 }
-.nav>li>a:focus, .nav>li>a:hover {
+.nav > li > a:focus, .nav > li > a:hover {
     background-color: black;
 }
+
 .navbar-nav > li > a {
     padding-top: 5px;
     padding-bottom: 5px;
