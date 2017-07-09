@@ -12,6 +12,23 @@ logger = logging.getLogger("imagery")
 Language = collections.namedtuple('Language', 'code logo name')
 
 
+def get_languages(request):
+    """Get all the languages."""
+    return [Language('NL', 'en.svg', 'English'),
+            Language('EN', 'nl.svg', 'Nederlands')]
+
+
+def get_language(request):
+    """Get the selected language.
+
+    English is the default."""
+    code = request.GET.get('language', 'EN')
+    if code == 'NL':
+        return 'NL', 'EN'
+    else:
+        return 'EN', 'NL'
+
+
 def archive(request):
     """Show news and manifest archives."""
 
@@ -40,32 +57,15 @@ def archive(request):
     attributes = {'menu': 'archive',
                   'news': news,
                   'manifests': manifests,
-                  'art_labels': art_labels,
+                  'current_language': current_language,
                   'other_language': other_language,
                   'languages': languages,
+                  'art_labels': art_labels,
                   'works': art}
 
     logger.info("{} of {}.".format(other_language, languages))
 
-
     return render(request, 'pages/archive.html', attributes)
-
-
-def get_languages(request):
-    """Get all the languages."""
-    return [Language('NL', 'en.svg', 'English'),
-            Language('EN', 'nl.svg', 'Nederlands')]
-
-
-def get_language(request):
-    """Get the selected language.
-
-    English is the default."""
-    code = request.GET.get('language', 'EN')
-    if code == 'NL':
-        return 'NL', 'EN'
-    else:
-        return 'EN', 'NL'
 
 
 def artist(request, artist_id):
