@@ -14,16 +14,18 @@
                     <div class="about-details wow fadeIn">
                         {% if manifest %}
                             {% for manifest in manifests %}
+
                                 <div class="news-entry">
                                     <h4>{{ manifest.header }}</h4>
                                     <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
-                                    <p>
+                                    <div lang="EN" class="language-wrapper" style="display: none;">
                                         {{ manifest.body_english | safe }}
-                                    </p>
-                                    <p>
+                                    </div>
+                                    <div lang="EN" class="language-wrapper" style="display: none;">
                                         {{ manifest.body_dutch | safe }}
-                                    </p>
+                                    </div>
                                 </div>
+
                             {% endfor %}
                         {% else %}
                             <p>No archived manifests available (yet).</p>

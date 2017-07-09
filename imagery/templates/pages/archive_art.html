@@ -1,4 +1,4 @@
-<div id="work">
+<div id="art">
     <div class="work-content">
         <div class="work-grid">
             <div class="container">
@@ -13,8 +13,10 @@
             </div> <!-- end container -->
             <div class="work-details">
                 <div class="container">
-                    <ul id="filters" class="clearfix" style="display: none">
-                        <li><span class="filter active" data-filter="{% for label in art_labels %}.{{label}}{% if not forloop.last %}, {% endif %}{% endfor %}">All</span></li>
+                    <ul id="filters" class="clearfix">
+                        {% for label in art_labels %}
+                            <li><span class="filter" data-filter=".{{ label }}">{{ label }}</span></li>
+                        {% endfor %}
                     </ul>
                     <div id="portfoliolist">
                         {% for work in works %}
