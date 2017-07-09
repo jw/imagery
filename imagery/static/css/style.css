@@ -126,19 +126,8 @@ body {
     margin: 0px 11px;
     display: inherit;
 }
+
 .navbar-default .navbar-nav > li > a {
-    color: #ccc;
-    letter-spacing: 2px;
-    font-size: 13px;
-    transition: .5s;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    padding: 10px 0px;
-    font-weight: 600;
-}
-.navbar-black .navbar-nav > li > a {
     color: #ccc;
     letter-spacing: 2px;
     font-size: 13px;
