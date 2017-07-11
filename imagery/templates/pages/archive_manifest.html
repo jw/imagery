@@ -21,15 +21,19 @@
                                     <div lang="EN" class="language-wrapper" style="display: none;">
                                         {{ manifest.body_english | safe }}
                                     </div>
-                                    <div lang="EN" class="language-wrapper" style="display: none;">
+                                    <div lang="NL" class="language-wrapper" style="display: none;">
                                         {{ manifest.body_dutch | safe }}
                                     </div>
                                 </div>
 
                             {% endfor %}
                         {% else %}
-                            <p>No archived manifests available (yet).</p>
-                            <p>Er zijn nog geen oude manifesten.  Nog even wachten :)</p>
+                            <div lang="EN" class="language-wrapper" style="display: none;">
+                                <p>No archived news available (yet).</p>
+                            </div>
+                            <div lang="NL" class="language-wrapper" style="display: none;">
+                                <p>Er is nog geen oud news.  Nog even wachten :)</p>
+                            </div>
                         {% endif %}
 
                     </div> <!-- end about-details  -->

@@ -11,34 +11,60 @@
                     </div> <!-- end col-md-12 -->
                 </div> <!-- end row -->
             </div> <!-- end container -->
-            <div class="work-details">
+
+            {% if works %}
+
+                <div class="work-details">
+                    <div class="container">
+                        <ul id="filters" class="clearfix">
+                            {% for label in art_labels %}
+                                <li><span class="filter" data-filter=".{{ label }}">{{ label }}</span></li>
+                            {% endfor %}
+                        </ul>
+                        <div id="portfoliolist">
+                            {% for work in works %}
+                                <div class="portfolio {{ work.land_price }}" data-cat="{{ work.land_price }}">
+                                    <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".2s">
+                                        <div class="overlay text-center">
+                                            <div class="overlay-main">
+                                                <div class="table-cell">
+                                                    <a class="fancybox" href="{{ work.image.url }}"
+                                                       title="<b>{{ work.name }}</b> {% if work.in_private_collection %}<i>In private collection</i>{% else %}€{{ work.land_price.get_price }}{% endif %}">
+                                                        <i class="fa fa-search work-icon" aria-hidden="true"></i>
+                                                    </a>
+                                                </div> <!-- end table-cell  -->
+                                            </div> <!-- end overlay-main  -->
+                                        </div> <!-- end overlay  -->
+                                        <img src="{{ work.image.url }}" alt="" />
+                                    </div> <!-- end portfolio-wrapper  -->
+                                </div> <!-- end portfolio  -->
+                            {% endfor %}
+                        </div>
+                    </div> <!-- container -->
+                </div> <!-- end work-details  -->
+
+            {% else %}
+
                 <div class="container">
-                    <ul id="filters" class="clearfix">
-                        {% for label in art_labels %}
-                            <li><span class="filter" data-filter=".{{ label }}">{{ label }}</span></li>
-                        {% endfor %}
-                    </ul>
-                    <div id="portfoliolist">
-                        {% for work in works %}
-                            <div class="portfolio {{ work.land_price }}" data-cat="{{ work.land_price }}">
-                                <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".2s">
-                                    <div class="overlay text-center">
-                                        <div class="overlay-main">
-                                            <div class="table-cell">
-                                                <a class="fancybox" href="{{ work.image.url }}"
-                                                   title="<b>{{ work.name }}</b> {% if work.in_private_collection %}<i>In private collection</i>{% else %}€{{ work.land_price.get_price }}{% endif %}">
-                                                    <i class="fa fa-search work-icon" aria-hidden="true"></i>
-                                                </a>
-                                            </div> <!-- end table-cell  -->
-                                        </div> <!-- end overlay-main  -->
-                                    </div> <!-- end overlay  -->
-                                    <img src="{{ work.image.url }}" alt="" />
-                                </div> <!-- end portfolio-wrapper  -->
-                            </div> <!-- end portfolio  -->
-                        {% endfor %}
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 about-col">
+                        <div class="about-details wow fadeIn">
+
+                            <div lang="EN" class="language-wrapper" style="display: none;">
+                                <p>No art is archived (yet).</p>
+                            </div>
+                            <div lang="NL" class="language-wrapper" style="display: none;">
+                                <p>Er zijn nog geen oude stukken.  Nog even wachten :)</p>
+                            </div>
+
+                        </div>
                     </div>
-                </div> <!-- container -->
-            </div> <!-- end work-details  -->
+                </div>
+
+                </div>
+
+            {% endif %}
         </div> <!-- end work-grid  -->
     </div> <!-- end work-content  -->
 </div> <!-- end work  -->
