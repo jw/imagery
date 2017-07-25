@@ -63,10 +63,6 @@ class LandPrice(models.Model):
     order = models.PositiveSmallIntegerField(help_text="Order of the landprices.")
     active = models.BooleanField(default=True, help_text="If set the landprice will be shown, otherwise it will not.")
 
-    @staticmethod
-    def get_price():
-        return "n/a"
-
     class Meta:
         ordering = ['order']
 
@@ -147,8 +143,14 @@ class Art(models.Model):
                                                 help_text="Set this when the work is sold, or unavailable.")
     archived = models.BooleanField(default=False, help_text="If set the art will be part of the archive section.")
 
-    @staticmethod
-    def get_price():
+    def get_price(self):
+        if self.land_price.type == 'P':
+            return self.x * self.y * 0.11
+        if self.land_price.type == 'D' or self.land_price.type == 'I':
+            if self.x < 100:
+                return 175
+            else:
+                return 225
         return "n/a"
 
     def __str__(self):
