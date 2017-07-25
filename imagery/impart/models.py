@@ -147,6 +147,10 @@ class Art(models.Model):
                                                 help_text="Set this when the work is sold, or unavailable.")
     archived = models.BooleanField(default=False, help_text="If set the art will be part of the archive section.")
 
+    @staticmethod
+    def get_price():
+        return "n/a"
+
     def __str__(self):
         return self.name
 
