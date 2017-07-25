@@ -5,7 +5,7 @@
 wheel==0.29.0
 
 # Bleeding edge Django
-django==1.10.4
+django==1.11.3
 
 # Configuration
 django-environ==0.4.0
@@ -48,7 +48,7 @@ django-debug-toolbar
 django-extensions
 
 # Menu bar
-django-sitetree==1.6.0
+django-sitetree==1.8.0
 
 # proper editor
 django-ckeditor
