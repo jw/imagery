@@ -1566,7 +1566,7 @@ only screen and (min-device-pixel-ratio: 1.5){
     }
 
     .navbar-default {
-        background-color: transparent;
+        /*background-color: transparent;*/
         height: 75px;
         border-bottom: none;
         overflow: visible;
@@ -1582,7 +1582,7 @@ only screen and (min-device-pixel-ratio: 1.5){
         margin-right: 32%;
         display: inherit;
         width: 200px;
-        background-color: transparent;
+        /*background-color: transparent;*/
     }
     .navbar-style{
         padding: 0px;
@@ -1613,7 +1613,7 @@ only screen and (min-device-pixel-ratio: 1.5){
         text-align: center;
     }
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-        border-color: transparent;
+        /*border-color: transparent;*/
     }
     #portfoliolist .portfolio {
         -webkit-box-sizing: border-box;
@@ -1646,11 +1646,12 @@ only screen and (min-device-pixel-ratio: 1.5){
         list-style: none;
         width: 100%;
         margin: 30px auto;
-        margin-top: 10px;
+        margin-top: 100px;
     }
     .navbar-nav {
         float: right;
-        margin: 11px 21px;
+        height: 75px;
+        /*margin: 11px 21px;*/
         margin-right: 27%;
         display: inherit;
         width: 200px;
@@ -1659,15 +1660,28 @@ only screen and (min-device-pixel-ratio: 1.5){
     #filters li {
         float: none;
     }
+
+  .home-text {
+    margin-top: 130px;
+  }
+
 }
 
 @media screen and (max-width: 320px) {
     .home-row {
         z-index: 2;
-        position: relative;
-
+        /*position: relative;*/
     }
 
+  .home-text {
+    margin-top: 130px;
+  }
+
+  .navbar-black {
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 0px 0px black;
+  }
     .home-text h2 {
         font-size: 34px;
         color: white;
@@ -1682,7 +1696,7 @@ only screen and (min-device-pixel-ratio: 1.5){
         margin-right: 15%;
         display: inherit;
         width: 200px;
-        background-color: transparent;
+        background-color: black;
     }
     .about-social li a {
         color: #FFF;

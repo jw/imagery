@@ -15,15 +15,16 @@
         </li>
     {% endfor %}
 
-    <div class="navbar-text navbar-right language-wrapper">
+    <li class="language" style="text-align: center; margin-top: 9px;">
         {% for language in languages %}
             {% with language_flag='/img/'|add:language.logo %}
                 <div lang="{{ language.code }}" class="language-flag" style="display: none;">
-                    <img src="{% static language_flag %}" style="margin-top: -13px;"
+                    <img src="{% static language_flag %}"
                          height="20" alt="{{ language.name }}"/>
                 </div>
             {% endwith %}
         {% endfor %}
-    </div>
+    </li>
 
 </ul>
+
