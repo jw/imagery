@@ -18,50 +18,26 @@
                             <li><span class="filter" data-filter=".{{ label }}">{{ label }}</span></li>
                         {% endfor %}
                     </ul>
-                    <div id="slides">
+                    <div id="portfoliolist">
                         {% for work in works %}
-                            <img src="{{ work.image.url }}" alt="{{ work.name }}">
+                            <div class="portfolio {{ work.land_price }}" data-cat="{{ work.land_price }}">
+                                <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".2s">
+                                    <div class="overlay text-center">
+                                        <div class="overlay-main">
+                                            <div class="table-cell">
+                                                <a class="fancybox" href="{{ work.image.url }}"
+                                                   title="<b>{{ work.name }}</b> ({{ work.x }}cm x {{ work.y }}cm)">
+                                                    <i class="fa fa-search work-icon" aria-hidden="true"></i>
+                                                </a>
+                                            </div> <!-- end table-cell  -->
+                                        </div> <!-- end overlay-main  -->
+                                    </div> <!-- end overlay  -->
+                                    <img src="{{ work.image.url }}" alt="" />
+                                </div> <!-- end portfolio-wrapper  -->
+                            </div> <!-- end portfolio  -->
                         {% endfor %}
-                        <a href="#" class="slidesjs-previous slidesjs-navigation">
-                            <i class="glyphicon glyphicon-chevron-left"></i>
-                        </a>
-                        <a href="#" class="slidesjs-next slidesjs-navigation">
-                            <i class="glyphicon glyphicon-chevron-right"></i>
-                        </a>
                     </div>
                 </div> <!-- container -->
-
-                  <script>
-    $(function() {
-      $('#slides').slidesjs({
-        width: 940,
-        height: 528,
-        navigation: false
-      });
-    });
-  </script>
-
-
-                    <div id="portfoliolist">
-{#                        {% for work in works %}#}
-{#                            <div class="portfolio {{ work.land_price }}" data-cat="{{ work.land_price }}">#}
-{#                                <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".2s">#}
-{#                                    <div class="overlay text-center">#}
-{#                                        <div class="overlay-main">#}
-{#                                            <div class="table-cell">#}
-{#                                                <a class="fancybox" href="{{ work.image.url }}"#}
-{#                                                   title="<b>{{ work.name }}</b> ({{ work.x }}cm x {{ work.y }}cm) {% if work.in_private_collection %}<i>In private collection</i>{% else %}€{{ work.get_price }}{% endif %}">#}
-{#                                                    <i class="fa fa-search work-icon" aria-hidden="true"></i>#}
-{#                                                </a>#}
-{#                                            </div> <!-- end table-cell  -->#}
-{#                                        </div> <!-- end overlay-main  -->#}
-{#                                    </div> <!-- end overlay  -->#}
-{#                                    <img src="{{ work.image.url }}" alt="" />#}
-{#                                </div> <!-- end portfolio-wrapper  -->#}
-{#                            </div> <!-- end portfolio  -->#}
-{#                        {% endfor %}#}
-                    </div>
-
             </div> <!-- end work-details  -->
         </div> <!-- end work-grid  -->
     </div> <!-- end work-content  -->

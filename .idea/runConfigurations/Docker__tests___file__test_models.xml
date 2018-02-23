@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Docker: tests - file: test_models" type="DjangoTestsConfigurationType" factoryName="Django tests" singleton="true">
     <option name="INTERPRETER_OPTIONS" value="" />
@@ -28,3 +29,4 @@
     <method />
   </configuration>
 </component>
+
