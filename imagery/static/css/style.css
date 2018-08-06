@@ -785,7 +785,7 @@ section:nth-of-type(2){background:black;height:1600px;}
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
-    width: 49%;
+    width: 30%;
     margin-right: 1%;
     display: none;
     float: left;
@@ -1617,7 +1617,7 @@ only screen and (min-device-pixel-ratio: 1.5){
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         -o-box-sizing: border-box;
-        width: 49%;
+        width: 24%;
         margin-right: 1%;
         display: none;
         float: left;
