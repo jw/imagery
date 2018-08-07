@@ -3,4 +3,4 @@ init:
 	pipenv install --dev
 
 test:
-	pipenv run manage.py test
+	pipenv run ./manage.py test
