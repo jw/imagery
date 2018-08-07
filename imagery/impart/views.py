@@ -156,8 +156,6 @@ def index(request):
         content_list = landprice_contents.setdefault(content.language, [])
         content_list.append(content)
 
-    # logger.info(landprice_contents)
-
     # ...and all other entities
     artists = Artist.objects.filter(active=True)
     news = News.objects.filter(active=True).reverse()
