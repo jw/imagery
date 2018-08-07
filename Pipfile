@@ -1,19 +1,16 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
-django = "==1.11.3"
-django-environ = "==0.4.0"
-whitenoise = "==3.2.2"
-django-braces = "==1.9.0"
-django-crispy-forms = "==1.6.0"
-django-model-utils = "==2.6"
-pillow = "==3.4.1"
+django = "==2.1"
+django-environ = "==0.4.5"
+whitenoise = "==3.3.1"
+django-braces = "==1.13.0"
+django-crispy-forms = "==1.7.2"
+django-model-utils = "==3.1.2"
+pillow = "==5.2.0"
 django-allauth = "==0.27.0"
 "psycopg2" = "==2.7.4"
 awesome-slugify = "==1.6.5"
@@ -22,24 +19,20 @@ django-redis = "==4.5.0"
 redis = ">=2.10.5"
 django-markdownx = "*"
 django-debug-toolbar = "*"
-django-extensions = "*"
-django-sitetree = "==1.8.0"
+django-extensions = "==2.1.0"
+django-sitetree = "==1.11.0"
 django-ckeditor = "*"
-gevent = "==1.1.2"
-gunicorn = "==19.6.0"
+gevent = "==1.3.5"
+gunicorn = "==19.9.0"
 boto = "==2.42.0"
 "boto3" = "*"
 django-storages = "*"
-django-anymail = "==0.5"
-raven = "==5.32.0"
-opbeat = "==3.4.0"
-
+django-anymail = "==3.0"
+raven = "==6.9.0"
 
 [dev-packages]
-
 werkzeug = "*"
-
+ipython = "*"
 
 [requires]
-
-python_version = "3.6"
+python_version = "3.7.0"

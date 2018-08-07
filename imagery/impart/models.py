@@ -132,9 +132,9 @@ class Artist(models.Model):
 class Art(models.Model):
     name = models.CharField(max_length=255, help_text="The name of the work of art.")
     tags = models.ManyToManyField(Tag, blank=True, help_text="The tags related to this work of art.")
-    artist = models.ForeignKey(Artist, help_text="The artist.")
+    artist = models.ForeignKey(Artist, help_text="The artist.", on_delete=models.CASCADE)
     image = models.ImageField(upload_to='art', help_text="The image of the work of art.")
-    land_price = models.ForeignKey(LandPrice, help_text="The landprice related with this work of art.")
+    land_price = models.ForeignKey(LandPrice, help_text="The landprice related with this work of art.", on_delete=models.CASCADE)
     x = models.IntegerField(help_text="The number of centimeters on the x-axis.")
     y = models.IntegerField(help_text="The number of centimeters on the y-axis.")
     z = models.IntegerField(blank=True, null=True, help_text='Depth of the piece')
@@ -159,7 +159,7 @@ class Art(models.Model):
 
 
 class Contact(models.Model):
-    artist = models.ForeignKey(Artist, help_text="The artist this contact section is part of.")
+    artist = models.ForeignKey(Artist, help_text="The artist this contact section is part of.", on_delete=models.CASCADE)
     email = models.EmailField(help_text="The email address of the artist.")
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=256)
