@@ -11,7 +11,7 @@ django-braces = "==1.13.0"
 django-crispy-forms = "==1.7.2"
 django-model-utils = "==3.1.2"
 pillow = "==5.2.0"
-django-allauth = "==0.27.0"
+django-allauth = "==0.36.0"
 "psycopg2" = "==2.7.4"
 awesome-slugify = "==1.6.5"
 pytz = "==2016.7"
@@ -33,8 +33,6 @@ raven = "==6.9.0"
 [dev-packages]
 werkzeug = "*"
 ipython = "*"
-tox = "*"
-pytest = "*"
 
 [requires]
-python_version = "3.7.0"
+python_version = "3.7"
