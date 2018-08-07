@@ -4,4 +4,4 @@ init:
 
 test:
 	# pipenv run py.test
-	pipenv run migrate.py test
+	pipenv run manage.py test
