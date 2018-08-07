@@ -112,7 +112,7 @@ def artist(request, artist_id):
     for label in all_art_labels:
         for work in works:
             if label == str(work.land_price.header):
-                art_labels.append(label)
+                art_labels.append((work.land_price.header, work.land_price.type))
                 break
     logger.info("Art labels: {}.".format(art_labels))
 

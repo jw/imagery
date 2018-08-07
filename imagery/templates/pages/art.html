@@ -15,12 +15,12 @@
                 <div class="container">
                     <ul id="filters" class="clearfix">
                         {% for label in art_labels %}
-                            <li><span class="filter" data-filter=".{{ label }}">{{ label }}</span></li>
+                            <li><span class="filter" data-filter=".{{ label.1 }}">{{ label.0 }}</span></li>
                         {% endfor %}
                     </ul>
                     <div id="portfoliolist">
                         {% for work in works %}
-                            <div class="portfolio {{ work.land_price }}" data-cat="{{ work.land_price }}">
+                            <div class="portfolio {{ work.land_price.type }}" data-cat="{{ work.land_price.type }}">
                                 <div class="portfolio-wrapper wow fadeIn" data-wow-delay=".2s">
                                     <div class="overlay text-center">
                                         <div class="overlay-main">

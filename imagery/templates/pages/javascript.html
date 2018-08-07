@@ -78,6 +78,10 @@
     var filterList = {
         init: function () {
 
+            // {{ art_labels }}
+          // {{ art_labels.0 }}
+          // {{ art_labels.0.1 }}
+
             // MixItUp plugin
             $('#portfoliolist').mixItUp({
                 selectors: {
@@ -85,7 +89,7 @@
                     filter: '.filter'
                 },
                 load: {
-                    filter: '.{{ art_labels.0 }}'
+                    filter: '.{{ art_labels.0.1 }}'
                 }
             });
         }

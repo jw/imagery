@@ -18,7 +18,7 @@
                     <div class="container">
                         <ul id="filters" class="clearfix">
                             {% for label in art_labels %}
-                                <li><span class="filter" data-filter=".{{ label }}">{{ label }}</span></li>
+                                <li><span class="filter" data-filter=".{{ label.1 }}">{{ label.0 }}</span></li>
                             {% endfor %}
                         </ul>
                         <div id="portfoliolist">
