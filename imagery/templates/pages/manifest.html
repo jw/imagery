@@ -17,8 +17,10 @@
                     {% for manifest in manifests %}
 
                         <div class="news-entry">
-                            <h4>{{ manifest.header }}</h4>
-                            <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
+                            {% if manifest.header %}
+                              <h4>{{ manifest.header }}</h4>
+                              <h5>{{ manifest.publication_date|date:"l, jS F Y, Hi\h\r\s" }}</h5>
+                            {% endif %}
                             <div lang="EN" class="language-wrapper" style="display: none;">
                                 {{ manifest.body_english | safe }}
                             </div>

@@ -1,13 +1,14 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.utils import timezone
 
 
 class Dated(models.Model):
     """Base type for all models with associated dates."""
-    creation_date = models.DateTimeField('Creation date', help_text="The model creation date.")
-    publication_date = models.DateTimeField('Publication date',
+    creation_date = models.DateTimeField('Creation date', help_text="The model creation date.", default=timezone.now)
+    publication_date = models.DateTimeField('Publication date', default=timezone.now,
                                             help_text="The date this model needs to be shown on screen.")
-    archive_date = models.DateTimeField('Archive date', help_text="The date this model needs to be archived.")
+    archive_date = models.DateTimeField('Archive date', help_text="The date this model needs to be archived.", blank=True, null=True)
 
 
 class News(Dated):
@@ -53,7 +54,7 @@ class LandPrice(models.Model):
         ('P', 'Painting'),
         ('D', 'Drawing'),
         ('I', 'Photo'),
-        ('S', 'Statue'),
+        ('S', 'Installation Art'),
         ('M', 'Media')
     )
     type = models.CharField(max_length=1, choices=PRIZE_TYPE, null=False, help_text="The different types of art.")
