@@ -33,6 +33,8 @@ raven = "==6.9.0"
 [dev-packages]
 werkzeug = "*"
 ipython = "*"
+tox = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7.0"
