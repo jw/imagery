@@ -19,6 +19,7 @@ from boto.s3.connection import SubdomainCallingFormat
 from django.utils import six
 
 import logging
+import raven
 
 
 from .common import *  # noqa
@@ -230,9 +231,11 @@ LOGGING = {
     },
 }
 SENTRY_CELERY_LOGLEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.DEBUG)
+
 RAVEN_CONFIG = {
     'CELERY_LOGLEVEL': env.int('DJANGO_SENTRY_LOG_LEVEL', logging.DEBUG),
-    'DSN': SENTRY_DSN
+    'DSN': SENTRY_DSN,
+    'RELEASE': raven.fetch_git_sha(os.path.abspath(os.pardir)),
 }
 
 # Custom Admin URL, use {% url 'admin:index' %}
