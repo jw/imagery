@@ -237,8 +237,7 @@ RAVEN_CONFIG = {
     'CELERY_LOGLEVEL': env.int('DJANGO_SENTRY_LOG_LEVEL', logging.DEBUG),
     'DSN': SENTRY_DSN,
     'RELEASE': '1.2',
-    'ENVIRONMENT': 'production',
-    'TAGS': { 'impart': 'hello!' },
+    'ENVIRONMENT': 'production'
 }
 
 # Custom Admin URL, use {% url 'admin:index' %}
