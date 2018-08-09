@@ -236,7 +236,7 @@ SENTRY_CELERY_LOGLEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.DEBUG)
 RAVEN_CONFIG = {
     'CELERY_LOGLEVEL': env.int('DJANGO_SENTRY_LOG_LEVEL', logging.DEBUG),
     'DSN': SENTRY_DSN,
-    'RELEASE': raven.fetch_git_sha(os.path.abspath(os.pardir)),
+    'RELEASE': '1.2',
     'ENVIRONMENT': 'production',
     'TAGS': { 'impart': 'hello!' },
 }
