@@ -20,6 +20,7 @@ from django.utils import six
 
 import logging
 import raven
+import os
 
 
 from .common import *  # noqa
@@ -236,6 +237,8 @@ RAVEN_CONFIG = {
     'CELERY_LOGLEVEL': env.int('DJANGO_SENTRY_LOG_LEVEL', logging.DEBUG),
     'DSN': SENTRY_DSN,
     'RELEASE': raven.fetch_git_sha(os.path.abspath(os.pardir)),
+    'ENVIRONMENT': 'production',
+    'TAGS': { 'impart': 'hello!' },
 }
 
 # Custom Admin URL, use {% url 'admin:index' %}
