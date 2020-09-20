@@ -10,13 +10,10 @@ from django.views import defaults as default_views
 from imagery.impart import views
 
 urlpatterns = [
-
     url(settings.ADMIN_URL, admin.site.urls),
-
-    url(r'^$', views.index, name='home'),
-    url(r'^artist/(?P<artist_id>[0-9]+)/', views.artist, name='artist'),
-    url(r'^archive/', views.archive, name='archive'),
-
+    url(r"^$", views.index, name="home"),
+    url(r"^artist/(?P<artist_id>[0-9]+)/", views.artist, name="artist"),
+    url(r"^archive/", views.archive, name="archive"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
@@ -24,14 +21,24 @@ if settings.DEBUG:
     # these url in browser to see how these error pages look like.
     # TODO: style these!
     urlpatterns += [
-        url(r'^400/$', default_views.bad_request, kwargs={'exception': Exception('Bad Request!')}),
-        url(r'^403/$', default_views.permission_denied, kwargs={'exception': Exception('Permission Denied')}),
-        url(r'^404/$', default_views.page_not_found, kwargs={'exception': Exception('Page not Found')}),
-        url(r'^500/$', default_views.server_error),
+        url(
+            r"^400/$",
+            default_views.bad_request,
+            kwargs={"exception": Exception("Bad Request!")},
+        ),
+        url(
+            r"^403/$",
+            default_views.permission_denied,
+            kwargs={"exception": Exception("Permission Denied")},
+        ),
+        url(
+            r"^404/$",
+            default_views.page_not_found,
+            kwargs={"exception": Exception("Page not Found")},
+        ),
+        url(r"^500/$", default_views.server_error),
     ]
-    if 'debug_toolbar' in settings.INSTALLED_APPS:
+    if "debug_toolbar" in settings.INSTALLED_APPS:
         import debug_toolbar
 
-        urlpatterns += [
-            url(r'^__debug__/', include(debug_toolbar.urls)),
-        ]
+        urlpatterns += [url(r"^__debug__/", include(debug_toolbar.urls))]

@@ -10,84 +10,148 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Contact',
+            name="Contact",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('email', models.EmailField(max_length=254)),
-                ('first_name', models.CharField(max_length=256)),
-                ('last_name', models.CharField(max_length=256)),
-                ('bank', models.CharField(max_length=256)),
-                ('vat', models.CharField(max_length=256)),
-                ('company', models.CharField(max_length=256)),
-                ('telephone', models.CharField(max_length=256)),
-                ('street', models.CharField(max_length=256)),
-                ('city', models.CharField(max_length=256)),
-                ('country', models.CharField(max_length=256)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("email", models.EmailField(max_length=254)),
+                ("first_name", models.CharField(max_length=256)),
+                ("last_name", models.CharField(max_length=256)),
+                ("bank", models.CharField(max_length=256)),
+                ("vat", models.CharField(max_length=256)),
+                ("company", models.CharField(max_length=256)),
+                ("telephone", models.CharField(max_length=256)),
+                ("street", models.CharField(max_length=256)),
+                ("city", models.CharField(max_length=256)),
+                ("country", models.CharField(max_length=256)),
             ],
         ),
         migrations.CreateModel(
-            name='Dated',
+            name="Dated",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('creation_date', models.DateTimeField(verbose_name='Creation date')),
-                ('publication_date', models.DateTimeField(verbose_name='Publication date')),
-                ('archive_date', models.DateTimeField(verbose_name='Archive date')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("creation_date", models.DateTimeField(verbose_name="Creation date")),
+                (
+                    "publication_date",
+                    models.DateTimeField(verbose_name="Publication date"),
+                ),
+                ("archive_date", models.DateTimeField(verbose_name="Archive date")),
             ],
         ),
         migrations.CreateModel(
-            name='LandPrice',
+            name="LandPrice",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(choices=[('N', 'None'), ('I', 'Photo'), ('D', 'Drawing'), ('P', 'Painting'), ('S', 'Statue'), ('M', 'Media')], max_length=1)),
-                ('header', models.CharField(max_length=256)),
-                ('body_english', models.CharField(max_length=4096)),
-                ('body_dutch', models.CharField(max_length=4069)),
-                ('active', models.BooleanField(default=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "type",
+                    models.CharField(
+                        choices=[
+                            ("N", "None"),
+                            ("I", "Photo"),
+                            ("D", "Drawing"),
+                            ("P", "Painting"),
+                            ("S", "Statue"),
+                            ("M", "Media"),
+                        ],
+                        max_length=1,
+                    ),
+                ),
+                ("header", models.CharField(max_length=256)),
+                ("body_english", models.CharField(max_length=4096)),
+                ("body_dutch", models.CharField(max_length=4069)),
+                ("active", models.BooleanField(default=True)),
             ],
         ),
         migrations.CreateModel(
-            name='NameValuePair',
+            name="NameValuePair",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('section', models.CharField(max_length=256)),
-                ('name', models.CharField(max_length=256)),
-                ('value', models.CharField(max_length=4096)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("section", models.CharField(max_length=256)),
+                ("name", models.CharField(max_length=256)),
+                ("value", models.CharField(max_length=4096)),
             ],
         ),
         migrations.CreateModel(
-            name='Manifesto',
+            name="Manifesto",
             fields=[
-                ('dated_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='impart.Dated')),
-                ('header', models.CharField(max_length=256)),
-                ('body_english', models.CharField(max_length=4096)),
-                ('body_dutch', models.CharField(max_length=4096)),
-                ('active', models.BooleanField(default=True)),
+                (
+                    "dated_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="impart.Dated",
+                    ),
+                ),
+                ("header", models.CharField(max_length=256)),
+                ("body_english", models.CharField(max_length=4096)),
+                ("body_dutch", models.CharField(max_length=4096)),
+                ("active", models.BooleanField(default=True)),
             ],
             options={
-                'verbose_name_plural': 'Manifesti',
-                'ordering': ['publication_date'],
+                "verbose_name_plural": "Manifesti",
+                "ordering": ["publication_date"],
             },
-            bases=('impart.dated',),
+            bases=("impart.dated",),
         ),
         migrations.CreateModel(
-            name='News',
+            name="News",
             fields=[
-                ('dated_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='impart.Dated')),
-                ('location', models.CharField(max_length=1024)),
-                ('header', models.CharField(max_length=256)),
-                ('body_english', models.CharField(max_length=4096)),
-                ('body_dutch', models.CharField(max_length=4096)),
-                ('active', models.BooleanField(default=True)),
+                (
+                    "dated_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="impart.Dated",
+                    ),
+                ),
+                ("location", models.CharField(max_length=1024)),
+                ("header", models.CharField(max_length=256)),
+                ("body_english", models.CharField(max_length=4096)),
+                ("body_dutch", models.CharField(max_length=4096)),
+                ("active", models.BooleanField(default=True)),
             ],
-            options={
-                'verbose_name_plural': 'News',
-                'ordering': ['publication_date'],
-            },
-            bases=('impart.dated',),
+            options={"verbose_name_plural": "News", "ordering": ["publication_date"]},
+            bases=("impart.dated",),
         ),
     ]

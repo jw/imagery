@@ -7,44 +7,42 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0005_auto_20170117_0922'),
-    ]
+    dependencies = [("impart", "0005_auto_20170117_0922")]
 
     operations = [
         migrations.AlterField(
-            model_name='contact',
-            name='bank',
+            model_name="contact",
+            name="bank",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='city',
+            model_name="contact",
+            name="city",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='company',
+            model_name="contact",
+            name="company",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='country',
+            model_name="contact",
+            name="country",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='street',
+            model_name="contact",
+            name="street",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='telephone',
+            model_name="contact",
+            name="telephone",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='vat',
+            model_name="contact",
+            name="vat",
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
     ]

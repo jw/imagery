@@ -8,40 +8,52 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0003_auto_20170116_2010'),
-    ]
+    dependencies = [("impart", "0003_auto_20170116_2010")]
 
     operations = [
         migrations.AddField(
-            model_name='contact',
-            name='artist',
-            field=models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to='impart.Artist'),
+            model_name="contact",
+            name="artist",
+            field=models.ForeignKey(
+                default=None,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="impart.Artist",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='news',
-            name='active',
-            field=models.BooleanField(default=True, help_text='If set the news will be shown, otherwise it will not.'),
+            model_name="news",
+            name="active",
+            field=models.BooleanField(
+                default=True,
+                help_text="If set the news will be shown, otherwise it will not.",
+            ),
         ),
         migrations.AlterField(
-            model_name='news',
-            name='body_dutch',
-            field=models.CharField(help_text='The news body in Dutch.', max_length=4096),
+            model_name="news",
+            name="body_dutch",
+            field=models.CharField(
+                help_text="The news body in Dutch.", max_length=4096
+            ),
         ),
         migrations.AlterField(
-            model_name='news',
-            name='body_english',
-            field=models.CharField(help_text='The news body in English.', max_length=4096),
+            model_name="news",
+            name="body_english",
+            field=models.CharField(
+                help_text="The news body in English.", max_length=4096
+            ),
         ),
         migrations.AlterField(
-            model_name='news',
-            name='header',
-            field=models.CharField(help_text='The header.', max_length=256),
+            model_name="news",
+            name="header",
+            field=models.CharField(help_text="The header.", max_length=256),
         ),
         migrations.AlterField(
-            model_name='news',
-            name='location',
-            field=models.CharField(help_text='The location where the news took/will take place.', max_length=1024),
+            model_name="news",
+            name="location",
+            field=models.CharField(
+                help_text="The location where the news took/will take place.",
+                max_length=1024,
+            ),
         ),
     ]

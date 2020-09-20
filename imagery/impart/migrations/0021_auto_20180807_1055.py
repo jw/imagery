@@ -10,149 +10,239 @@ import django.utils.timezone
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0020_auto_20170528_1828'),
-    ]
+    dependencies = [("impart", "0020_auto_20170528_1828")]
 
     operations = [
         migrations.AlterField(
-            model_name='art',
-            name='active',
-            field=models.BooleanField(default=True, help_text='If set the work of art will be shown, otherwise it will not.'),
+            model_name="art",
+            name="active",
+            field=models.BooleanField(
+                default=True,
+                help_text="If set the work of art will be shown, otherwise it will not.",
+            ),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='artist',
-            field=models.ForeignKey(help_text='The artist.', on_delete=django.db.models.deletion.CASCADE, to='impart.Artist'),
+            model_name="art",
+            name="artist",
+            field=models.ForeignKey(
+                help_text="The artist.",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="impart.Artist",
+            ),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='image',
-            field=models.ImageField(help_text='The image of the work of art.', upload_to='art'),
+            model_name="art",
+            name="image",
+            field=models.ImageField(
+                help_text="The image of the work of art.", upload_to="art"
+            ),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='in_private_collection',
-            field=models.BooleanField(default=False, help_text='Set this when the work is sold, or unavailable.'),
+            model_name="art",
+            name="in_private_collection",
+            field=models.BooleanField(
+                default=False,
+                help_text="Set this when the work is sold, or unavailable.",
+            ),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='land_price',
-            field=models.ForeignKey(help_text='The landprice related with this work of art.', on_delete=django.db.models.deletion.CASCADE, to='impart.LandPrice'),
+            model_name="art",
+            name="land_price",
+            field=models.ForeignKey(
+                help_text="The landprice related with this work of art.",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="impart.LandPrice",
+            ),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='materials',
-            field=models.CharField(help_text='The used materials.', max_length=512),
+            model_name="art",
+            name="materials",
+            field=models.CharField(help_text="The used materials.", max_length=512),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='name',
-            field=models.CharField(help_text='The name of the work of art.', max_length=255),
+            model_name="art",
+            name="name",
+            field=models.CharField(
+                help_text="The name of the work of art.", max_length=255
+            ),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='tags',
-            field=models.ManyToManyField(blank=True, help_text='The tags related to this work of art.', to='impart.Tag'),
+            model_name="art",
+            name="tags",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="The tags related to this work of art.",
+                to="impart.Tag",
+            ),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='x',
-            field=models.IntegerField(help_text='The number of centimeters on the x-axis.'),
+            model_name="art",
+            name="x",
+            field=models.IntegerField(
+                help_text="The number of centimeters on the x-axis."
+            ),
         ),
         migrations.AlterField(
-            model_name='art',
-            name='y',
-            field=models.IntegerField(help_text='The number of centimeters on the y-axis.'),
+            model_name="art",
+            name="y",
+            field=models.IntegerField(
+                help_text="The number of centimeters on the y-axis."
+            ),
         ),
         migrations.AlterField(
-            model_name='artist',
-            name='active',
-            field=models.BooleanField(default=False, help_text='If set the artist will be shown, otherwise he/she will not.'),
+            model_name="artist",
+            name="active",
+            field=models.BooleanField(
+                default=False,
+                help_text="If set the artist will be shown, otherwise he/she will not.",
+            ),
         ),
         migrations.AlterField(
-            model_name='artist',
-            name='image',
-            field=models.ImageField(help_text='The image of the artist.', upload_to='artists'),
+            model_name="artist",
+            name="image",
+            field=models.ImageField(
+                help_text="The image of the artist.", upload_to="artists"
+            ),
         ),
         migrations.AlterField(
-            model_name='artist',
-            name='link',
-            field=models.CharField(help_text='The link; please leave as is - will be removed.', max_length=255),
+            model_name="artist",
+            name="link",
+            field=models.CharField(
+                help_text="The link; please leave as is - will be removed.",
+                max_length=255,
+            ),
         ),
         migrations.AlterField(
-            model_name='artist',
-            name='name',
-            field=models.CharField(help_text='The name of artist.', max_length=255),
+            model_name="artist",
+            name="name",
+            field=models.CharField(help_text="The name of artist.", max_length=255),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='artist',
-            field=models.ForeignKey(help_text='The artist this contact section is part of.', on_delete=django.db.models.deletion.CASCADE, to='impart.Artist'),
+            model_name="contact",
+            name="artist",
+            field=models.ForeignKey(
+                help_text="The artist this contact section is part of.",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="impart.Artist",
+            ),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='email',
-            field=models.EmailField(help_text='The email address of the artist.', max_length=254),
+            model_name="contact",
+            name="email",
+            field=models.EmailField(
+                help_text="The email address of the artist.", max_length=254
+            ),
         ),
         migrations.AlterField(
-            model_name='content',
-            name='identifier',
-            field=models.CharField(blank=True, help_text='Identifier.', max_length=255),
+            model_name="content",
+            name="identifier",
+            field=models.CharField(blank=True, help_text="Identifier.", max_length=255),
         ),
         migrations.AlterField(
-            model_name='content',
-            name='key',
-            field=models.CharField(help_text='The key, as used by the CMS, must be one word.', max_length=255),
+            model_name="content",
+            name="key",
+            field=models.CharField(
+                help_text="The key, as used by the CMS, must be one word.",
+                max_length=255,
+            ),
         ),
         migrations.AlterField(
-            model_name='content',
-            name='language',
-            field=models.CharField(choices=[('--', 'No language'), ('EN', 'English'), ('NL', 'Nederlands')], help_text='The language this content is in.', max_length=2),
+            model_name="content",
+            name="language",
+            field=models.CharField(
+                choices=[
+                    ("--", "No language"),
+                    ("EN", "English"),
+                    ("NL", "Nederlands"),
+                ],
+                help_text="The language this content is in.",
+                max_length=2,
+            ),
         ),
         migrations.AlterField(
-            model_name='content',
-            name='order',
-            field=models.PositiveSmallIntegerField(help_text='The order of the section and language.'),
+            model_name="content",
+            name="order",
+            field=models.PositiveSmallIntegerField(
+                help_text="The order of the section and language."
+            ),
         ),
         migrations.AlterField(
-            model_name='content',
-            name='section',
-            field=models.CharField(choices=[('HO', 'Home'), ('NE', 'News'), ('AR', 'Archive'), ('AN', 'News archive'), ('AM', 'Manifest archive'), ('MA', 'Manifest'), ('LP', 'Land Price'), ('AA', 'About my art'), ('WO', 'Art'), ('CO', 'Contact')], help_text='The section this content is part of.', max_length=2),
+            model_name="content",
+            name="section",
+            field=models.CharField(
+                choices=[
+                    ("HO", "Home"),
+                    ("NE", "News"),
+                    ("AR", "Archive"),
+                    ("AN", "News archive"),
+                    ("AM", "Manifest archive"),
+                    ("MA", "Manifest"),
+                    ("LP", "Land Price"),
+                    ("AA", "About my art"),
+                    ("WO", "Art"),
+                    ("CO", "Contact"),
+                ],
+                help_text="The section this content is part of.",
+                max_length=2,
+            ),
         ),
         migrations.AlterField(
-            model_name='content',
-            name='value',
-            field=ckeditor.fields.RichTextField(help_text='The content itself.', max_length=4069),
+            model_name="content",
+            name="value",
+            field=ckeditor.fields.RichTextField(
+                help_text="The content itself.", max_length=4069
+            ),
         ),
         migrations.AlterField(
-            model_name='dated',
-            name='archive_date',
-            field=models.DateTimeField(blank=True, help_text='The date this model needs to be archived.', null=True, verbose_name='Archive date'),
+            model_name="dated",
+            name="archive_date",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="The date this model needs to be archived.",
+                null=True,
+                verbose_name="Archive date",
+            ),
         ),
         migrations.AlterField(
-            model_name='dated',
-            name='creation_date',
-            field=models.DateTimeField(default=django.utils.timezone.now, help_text='The model creation date.', verbose_name='Creation date'),
+            model_name="dated",
+            name="creation_date",
+            field=models.DateTimeField(
+                default=django.utils.timezone.now,
+                help_text="The model creation date.",
+                verbose_name="Creation date",
+            ),
         ),
         migrations.AlterField(
-            model_name='dated',
-            name='publication_date',
-            field=models.DateTimeField(default=django.utils.timezone.now, help_text='The date this model needs to be shown on screen.', verbose_name='Publication date'),
+            model_name="dated",
+            name="publication_date",
+            field=models.DateTimeField(
+                default=django.utils.timezone.now,
+                help_text="The date this model needs to be shown on screen.",
+                verbose_name="Publication date",
+            ),
         ),
         migrations.AlterField(
-            model_name='landprice',
-            name='active',
-            field=models.BooleanField(default=True, help_text='If set the landprice will be shown, otherwise it will not.'),
+            model_name="landprice",
+            name="active",
+            field=models.BooleanField(
+                default=True,
+                help_text="If set the landprice will be shown, otherwise it will not.",
+            ),
         ),
         migrations.AlterField(
-            model_name='landprice',
-            name='order',
-            field=models.PositiveSmallIntegerField(help_text='Order of the landprices.'),
+            model_name="landprice",
+            name="order",
+            field=models.PositiveSmallIntegerField(
+                help_text="Order of the landprices."
+            ),
         ),
         migrations.AlterField(
-            model_name='tag',
-            name='tag',
-            field=models.CharField(help_text='A tag, can be used by the works of art.', max_length=255, unique=True),
+            model_name="tag",
+            name="tag",
+            field=models.CharField(
+                help_text="A tag, can be used by the works of art.",
+                max_length=255,
+                unique=True,
+            ),
         ),
     ]

@@ -44,6 +44,3 @@ services:
       - .:/app
     links:
       - postgres
-
-
-

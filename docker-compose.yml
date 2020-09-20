@@ -27,12 +27,7 @@ services:
     build: ./compose/nginx
     depends_on:
       - django
-
       - certbot
-
-    ports:
-      - "0.0.0.0:80:80"
-
     environment:
       - MY_DOMAIN_NAME=imagery.elevenbits.be
     ports:
@@ -55,7 +50,5 @@ services:
     environment:
       - TERM=xterm
 
-
   redis:
     image: redis:latest
-

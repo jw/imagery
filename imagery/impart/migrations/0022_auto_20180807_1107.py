@@ -7,14 +7,22 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0021_auto_20180807_1055'),
-    ]
+    dependencies = [("impart", "0021_auto_20180807_1055")]
 
     operations = [
         migrations.AlterField(
-            model_name='landprice',
-            name='type',
-            field=models.CharField(choices=[('P', 'Painting'), ('D', 'Drawing'), ('I', 'Photo'), ('S', 'Installation Art'), ('M', 'Media')], help_text='The different types of art.', max_length=1),
-        ),
+            model_name="landprice",
+            name="type",
+            field=models.CharField(
+                choices=[
+                    ("P", "Painting"),
+                    ("D", "Drawing"),
+                    ("I", "Photo"),
+                    ("S", "Installation Art"),
+                    ("M", "Media"),
+                ],
+                help_text="The different types of art.",
+                max_length=1,
+            ),
+        )
     ]

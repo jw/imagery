@@ -7,26 +7,55 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0011_auto_20170117_2034'),
-    ]
+    dependencies = [("impart", "0011_auto_20170117_2034")]
 
     operations = [
         migrations.CreateModel(
-            name='Content',
+            name="Content",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('section', models.CharField(choices=[('HO', 'Home'), ('NE', 'News'), ('AR', 'Archive'), ('AN', 'News archive'), ('AM', 'Manifest archive'), ('MA', 'Manifest'), ('LP', 'Land Price'), ('AA', 'About my art'), ('WO', 'Art'), ('CO', 'Content')], max_length=2)),
-                ('language', models.CharField(choices=[('--', 'No language'), ('EN', 'English'), ('NL', 'Nederlands')], max_length=2)),
-                ('key', models.CharField(max_length=255)),
-                ('order', models.PositiveSmallIntegerField()),
-                ('value', models.CharField(max_length=4096)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "section",
+                    models.CharField(
+                        choices=[
+                            ("HO", "Home"),
+                            ("NE", "News"),
+                            ("AR", "Archive"),
+                            ("AN", "News archive"),
+                            ("AM", "Manifest archive"),
+                            ("MA", "Manifest"),
+                            ("LP", "Land Price"),
+                            ("AA", "About my art"),
+                            ("WO", "Art"),
+                            ("CO", "Content"),
+                        ],
+                        max_length=2,
+                    ),
+                ),
+                (
+                    "language",
+                    models.CharField(
+                        choices=[
+                            ("--", "No language"),
+                            ("EN", "English"),
+                            ("NL", "Nederlands"),
+                        ],
+                        max_length=2,
+                    ),
+                ),
+                ("key", models.CharField(max_length=255)),
+                ("order", models.PositiveSmallIntegerField()),
+                ("value", models.CharField(max_length=4096)),
             ],
-            options={
-                'ordering': ['section', 'language', 'order'],
-            },
+            options={"ordering": ["section", "language", "order"]},
         ),
-        migrations.DeleteModel(
-            name='NameValuePair',
-        ),
+        migrations.DeleteModel(name="NameValuePair"),
     ]

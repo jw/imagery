@@ -8,18 +8,13 @@ import markdownx.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0017_content_markdown'),
-    ]
+    dependencies = [("impart", "0017_content_markdown")]
 
     operations = [
-        migrations.RemoveField(
-            model_name='content',
-            name='markdown',
-        ),
+        migrations.RemoveField(model_name="content", name="markdown"),
         migrations.AlterField(
-            model_name='content',
-            name='value',
+            model_name="content",
+            name="value",
             field=markdownx.models.MarkdownxField(max_length=4069),
         ),
     ]

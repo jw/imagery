@@ -7,14 +7,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0013_content_identifier'),
-    ]
+    dependencies = [("impart", "0013_content_identifier")]
 
     operations = [
         migrations.AlterField(
-            model_name='content',
-            name='identifier',
+            model_name="content",
+            name="identifier",
             field=models.CharField(blank=True, max_length=255),
-        ),
+        )
     ]

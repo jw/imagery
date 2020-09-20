@@ -8,44 +8,46 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0018_auto_20170205_2033'),
-    ]
+    dependencies = [("impart", "0018_auto_20170205_2033")]
 
     operations = [
         migrations.AlterField(
-            model_name='content',
-            name='value',
+            model_name="content",
+            name="value",
             field=ckeditor.fields.RichTextField(max_length=4069),
         ),
         migrations.AlterField(
-            model_name='landprice',
-            name='body_dutch',
+            model_name="landprice",
+            name="body_dutch",
             field=ckeditor.fields.RichTextField(max_length=4069),
         ),
         migrations.AlterField(
-            model_name='landprice',
-            name='body_english',
+            model_name="landprice",
+            name="body_english",
             field=ckeditor.fields.RichTextField(max_length=4096),
         ),
         migrations.AlterField(
-            model_name='manifest',
-            name='body_dutch',
+            model_name="manifest",
+            name="body_dutch",
             field=ckeditor.fields.RichTextField(max_length=4096),
         ),
         migrations.AlterField(
-            model_name='manifest',
-            name='body_english',
+            model_name="manifest",
+            name="body_english",
             field=ckeditor.fields.RichTextField(max_length=4096),
         ),
         migrations.AlterField(
-            model_name='news',
-            name='body_dutch',
-            field=ckeditor.fields.RichTextField(help_text='The news body in Dutch.', max_length=4096),
+            model_name="news",
+            name="body_dutch",
+            field=ckeditor.fields.RichTextField(
+                help_text="The news body in Dutch.", max_length=4096
+            ),
         ),
         migrations.AlterField(
-            model_name='news',
-            name='body_english',
-            field=ckeditor.fields.RichTextField(help_text='The news body in English.', max_length=4096),
+            model_name="news",
+            name="body_english",
+            field=ckeditor.fields.RichTextField(
+                help_text="The news body in English.", max_length=4096
+            ),
         ),
     ]

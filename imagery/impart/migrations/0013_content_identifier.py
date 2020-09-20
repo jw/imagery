@@ -7,15 +7,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0012_auto_20170120_1203'),
-    ]
+    dependencies = [("impart", "0012_auto_20170120_1203")]
 
     operations = [
         migrations.AddField(
-            model_name='content',
-            name='identifier',
-            field=models.CharField(default='', max_length=255),
+            model_name="content",
+            name="identifier",
+            field=models.CharField(default="", max_length=255),
             preserve_default=False,
-        ),
+        )
     ]

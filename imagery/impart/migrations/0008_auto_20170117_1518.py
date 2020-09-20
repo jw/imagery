@@ -8,34 +8,32 @@ import markdownx.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0007_auto_20170117_1028'),
-    ]
+    dependencies = [("impart", "0007_auto_20170117_1028")]
 
     operations = [
         migrations.AlterField(
-            model_name='landprice',
-            name='body_dutch',
+            model_name="landprice",
+            name="body_dutch",
             field=markdownx.models.MarkdownxField(max_length=4069),
         ),
         migrations.AlterField(
-            model_name='landprice',
-            name='body_english',
+            model_name="landprice",
+            name="body_english",
             field=markdownx.models.MarkdownxField(max_length=4096),
         ),
         migrations.AlterField(
-            model_name='manifesto',
-            name='body_dutch',
+            model_name="manifesto",
+            name="body_dutch",
             field=markdownx.models.MarkdownxField(max_length=4096),
         ),
         migrations.AlterField(
-            model_name='manifesto',
-            name='body_english',
+            model_name="manifesto",
+            name="body_english",
             field=markdownx.models.MarkdownxField(max_length=4096),
         ),
         migrations.AlterField(
-            model_name='namevaluepair',
-            name='value',
+            model_name="namevaluepair",
+            name="value",
             field=markdownx.models.MarkdownxField(max_length=4096),
         ),
     ]

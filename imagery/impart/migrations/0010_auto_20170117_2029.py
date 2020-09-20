@@ -7,18 +7,13 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0009_auto_20170117_2011'),
-    ]
+    dependencies = [("impart", "0009_auto_20170117_2011")]
 
     operations = [
-        migrations.AlterModelOptions(
-            name='landprice',
-            options={'ordering': ['order']},
-        ),
+        migrations.AlterModelOptions(name="landprice", options={"ordering": ["order"]}),
         migrations.AddField(
-            model_name='landprice',
-            name='order',
+            model_name="landprice",
+            name="order",
             field=models.PositiveSmallIntegerField(default=0),
             preserve_default=False,
         ),

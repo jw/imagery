@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ImpartConfig(AppConfig):
-    name = 'imagery.impart'
+    name = "imagery.impart"

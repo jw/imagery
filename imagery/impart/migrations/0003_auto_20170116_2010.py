@@ -7,14 +7,14 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0002_auto_20170115_1429'),
-    ]
+    dependencies = [("impart", "0002_auto_20170115_1429")]
 
     operations = [
         migrations.AlterField(
-            model_name='art',
-            name='z',
-            field=models.IntegerField(blank=True, help_text='Depth of the piece', null=True),
-        ),
+            model_name="art",
+            name="z",
+            field=models.IntegerField(
+                blank=True, help_text="Depth of the piece", null=True
+            ),
+        )
     ]

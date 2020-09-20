@@ -8,19 +8,21 @@ import markdownx.models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0006_auto_20170117_0923'),
-    ]
+    dependencies = [("impart", "0006_auto_20170117_0923")]
 
     operations = [
         migrations.AlterField(
-            model_name='news',
-            name='body_dutch',
-            field=markdownx.models.MarkdownxField(help_text='The news body in Dutch.', max_length=4096),
+            model_name="news",
+            name="body_dutch",
+            field=markdownx.models.MarkdownxField(
+                help_text="The news body in Dutch.", max_length=4096
+            ),
         ),
         migrations.AlterField(
-            model_name='news',
-            name='body_english',
-            field=markdownx.models.MarkdownxField(help_text='The news body in English.', max_length=4096),
+            model_name="news",
+            name="body_english",
+            field=markdownx.models.MarkdownxField(
+                help_text="The news body in English.", max_length=4096
+            ),
         ),
     ]

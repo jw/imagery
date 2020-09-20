@@ -93,4 +93,3 @@ Contact
 =======
 
 Contains contact information of an Artist.
-

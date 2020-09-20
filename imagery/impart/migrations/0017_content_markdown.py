@@ -7,14 +7,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0016_auto_20170126_2054'),
-    ]
+    dependencies = [("impart", "0016_auto_20170126_2054")]
 
     operations = [
         migrations.AddField(
-            model_name='content',
-            name='markdown',
+            model_name="content",
+            name="markdown",
             field=models.BooleanField(default=False),
-        ),
+        )
     ]

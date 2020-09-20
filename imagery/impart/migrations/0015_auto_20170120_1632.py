@@ -7,14 +7,26 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('impart', '0014_auto_20170120_1216'),
-    ]
+    dependencies = [("impart", "0014_auto_20170120_1216")]
 
     operations = [
         migrations.AlterField(
-            model_name='content',
-            name='section',
-            field=models.CharField(choices=[('HO', 'Home'), ('NE', 'News'), ('AR', 'Archive'), ('AN', 'News archive'), ('AM', 'Manifest archive'), ('MA', 'Manifest'), ('LP', 'Land Price'), ('AA', 'About my art'), ('WO', 'Art'), ('CO', 'Contact')], max_length=2),
-        ),
+            model_name="content",
+            name="section",
+            field=models.CharField(
+                choices=[
+                    ("HO", "Home"),
+                    ("NE", "News"),
+                    ("AR", "Archive"),
+                    ("AN", "News archive"),
+                    ("AM", "Manifest archive"),
+                    ("MA", "Manifest"),
+                    ("LP", "Land Price"),
+                    ("AA", "About my art"),
+                    ("WO", "Art"),
+                    ("CO", "Contact"),
+                ],
+                max_length=2,
+            ),
+        )
     ]

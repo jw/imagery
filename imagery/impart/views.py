@@ -2,31 +2,39 @@ from django.http import Http404
 from django.shortcuts import render
 from django.db.models import Q
 
-from imagery.impart.models import News, LandPrice, Manifest, Artist, Art, Content, Contact
+from imagery.impart.models import (
+    News,
+    LandPrice,
+    Manifest,
+    Artist,
+    Art,
+    Content,
+    Contact,
+)
 
 import collections
 import logging
+
 logger = logging.getLogger("imagery")
 
 
-Language = collections.namedtuple('Language', 'code logo name')
+Language = collections.namedtuple("Language", "code logo name")
 
 
 def get_languages(request):
     """Get all the languages."""
-    return [Language('NL', 'en.svg', 'English'),
-            Language('EN', 'nl.svg', 'Nederlands')]
+    return [Language("NL", "en.svg", "English"), Language("EN", "nl.svg", "Nederlands")]
 
 
 def get_language(request):
     """Get the selected language.
 
     English is the default."""
-    code = request.GET.get('language', 'EN')
-    if code == 'NL':
-        return 'NL', 'EN'
+    code = request.GET.get("language", "EN")
+    if code == "NL":
+        return "NL", "EN"
     else:
-        return 'EN', 'NL'
+        return "EN", "NL"
 
 
 def archive(request):
@@ -36,8 +44,11 @@ def archive(request):
     manifests = Manifest.objects.filter(archived=True)
     art = Art.objects.filter(archived=True)
 
-    logger.error("Retrieved {} archived news entries, {} archived manifests, and {} art works.".
-                 format(len(news), len(manifests), len(art)))
+    logger.error(
+        "Retrieved {} archived news entries, {} archived manifests, and {} art works.".format(
+            len(news), len(manifests), len(art)
+        )
+    )
 
     (current_language, other_language) = get_language(request)
     languages = get_languages(request)
@@ -54,18 +65,20 @@ def archive(request):
                 break
     logger.info("Art labels: {}.".format(art_labels))
 
-    attributes = {'menu': 'archive',
-                  'news': news,
-                  'manifests': manifests,
-                  'current_language': current_language,
-                  'other_language': other_language,
-                  'languages': languages,
-                  'art_labels': art_labels,
-                  'works': art}
+    attributes = {
+        "menu": "archive",
+        "news": news,
+        "manifests": manifests,
+        "current_language": current_language,
+        "other_language": other_language,
+        "languages": languages,
+        "art_labels": art_labels,
+        "works": art,
+    }
 
     logger.info("{} of {}.".format(other_language, languages))
 
-    return render(request, 'pages/archive.html', attributes)
+    return render(request, "pages/archive.html", attributes)
 
 
 def artist(request, artist_id):
@@ -81,7 +94,7 @@ def artist(request, artist_id):
     # get his/her content based on the selected language...
 
     about_contents_raw = Content.objects.filter(
-        Q(section='AA'), Q(identifier=artist.link)
+        Q(section="AA"), Q(identifier=artist.link)
     )
     about_contents = {}
     for content in about_contents_raw:
@@ -89,7 +102,7 @@ def artist(request, artist_id):
         content_list.append(content)
 
     contact_contents_raw = Content.objects.filter(
-        Q(section='CO'), Q(identifier=artist.link)
+        Q(section="CO"), Q(identifier=artist.link)
     )
     contact_contents = {}
     for content in contact_contents_raw:
@@ -102,7 +115,7 @@ def artist(request, artist_id):
     # ...and other entities
     works = Art.objects.filter(artist=artist)
     contact = Contact.objects.filter(artist=artist).get()
-    logger.info('Contact: {}.'.format(contact))
+    logger.info("Contact: {}.".format(contact))
 
     # get all labels in order...
     prices = LandPrice.objects.filter(active=True)
@@ -116,18 +129,20 @@ def artist(request, artist_id):
                 break
     logger.info("Art labels: {}.".format(art_labels))
 
-    attributes = {'menu': 'artist',
-                  'artist': artist,
-                  'current_language': current_language,
-                  'other_language': other_language,
-                  'languages': languages,
-                  'about_contents': about_contents,
-                  'contact_contents': contact_contents,
-                  'works': works,
-                  'art_labels': art_labels,
-                  'contact': contact}
+    attributes = {
+        "menu": "artist",
+        "artist": artist,
+        "current_language": current_language,
+        "other_language": other_language,
+        "languages": languages,
+        "about_contents": about_contents,
+        "contact_contents": contact_contents,
+        "works": works,
+        "art_labels": art_labels,
+        "contact": contact,
+    }
 
-    return render(request, 'pages/artist.html', attributes)
+    return render(request, "pages/artist.html", attributes)
 
 
 def index(request):
@@ -137,19 +152,13 @@ def index(request):
     """
 
     # get content...
-    home_en_contents = Content.objects.filter(
-        Q(section='HO'), Q(language='EN')
-    )
-    home_nl_contents = Content.objects.filter(
-        Q(section='HO'), Q(language='NL')
-    )
+    home_en_contents = Content.objects.filter(Q(section="HO"), Q(language="EN"))
+    home_nl_contents = Content.objects.filter(Q(section="HO"), Q(language="NL"))
 
     (current_language, other_language) = get_language(request)
     languages = get_languages(request)
 
-    landprice_contents_raw = Content.objects.filter(
-        Q(section='LP')
-    )
+    landprice_contents_raw = Content.objects.filter(Q(section="LP"))
 
     landprice_contents = {}
     for content in landprice_contents_raw:
@@ -161,15 +170,17 @@ def index(request):
     news = News.objects.filter(active=True).reverse()
     manifests = Manifest.objects.filter(active=True).reverse()
 
-    attributes = {'menu': 'home',
-                  'current_language': current_language,
-                  'other_language': other_language,
-                  'languages': languages,
-                  'home_en_contents': home_en_contents,
-                  'home_nl_contents': home_nl_contents,
-                  'artists': artists,
-                  'news': news,
-                  'manifests': manifests,
-                  'landprice_contents': landprice_contents}
+    attributes = {
+        "menu": "home",
+        "current_language": current_language,
+        "other_language": other_language,
+        "languages": languages,
+        "home_en_contents": home_en_contents,
+        "home_nl_contents": home_nl_contents,
+        "artists": artists,
+        "news": news,
+        "manifests": manifests,
+        "landprice_contents": landprice_contents,
+    }
 
-    return render(request, 'pages/index.html', attributes)
+    return render(request, "pages/index.html", attributes)
