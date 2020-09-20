@@ -69,3 +69,6 @@ docs/secrets.txt
 # generated files
 imagery/static/css/project.min.css
 imagery/static/js/project.min.js
+
+# eggs
+imagery.egg-info
