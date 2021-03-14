@@ -113,7 +113,7 @@ def artist(request, artist_id):
     languages = get_languages(request)
 
     # ...and other entities
-    works = Art.objects.filter(artist=artist)
+    works = Art.objects.filter(artist=artist).filter(active=True)
     contact = Contact.objects.filter(artist=artist).get()
     logger.info("Contact: {}.".format(contact))
 
