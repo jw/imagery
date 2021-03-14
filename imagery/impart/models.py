@@ -200,7 +200,9 @@ class Artist(models.Model):
 
 
 class Art(models.Model):
-    name = models.CharField(max_length=255, help_text="The name of the work of art.")
+    name = models.CharField(
+        max_length=255, blank=True, help_text="The name of the work of art."
+    )
     tags = models.ManyToManyField(
         Tag, blank=True, help_text="The tags related to this work of art."
     )
@@ -214,11 +216,19 @@ class Art(models.Model):
         LandPrice,
         help_text="The landprice related with this work of art.",
         on_delete=models.CASCADE,
+        blank=True,
+        null=True,
     )
-    x = models.IntegerField(help_text="The number of centimeters on the x-axis.")
-    y = models.IntegerField(help_text="The number of centimeters on the y-axis.")
+    x = models.IntegerField(
+        blank=True, null=True, help_text="The number of centimeters on the x-axis."
+    )
+    y = models.IntegerField(
+        blank=True, null=True, help_text="The number of centimeters on the y-axis."
+    )
     z = models.IntegerField(blank=True, null=True, help_text="Depth of the piece")
-    materials = models.CharField(max_length=512, help_text="The used materials.")
+    materials = models.CharField(
+        blank=True, null=True, max_length=512, help_text="The used materials."
+    )
     active = models.BooleanField(
         default=True,
         help_text="If set the work of art will be shown, otherwise it will not.",
