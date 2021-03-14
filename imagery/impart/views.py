@@ -42,7 +42,7 @@ def archive(request):
 
     news = News.objects.filter(archived=True)
     manifests = Manifest.objects.filter(archived=True)
-    art = Art.objects.filter(archived=True)
+    art = Art.objects.filter(active=True)
 
     logger.error(
         "Retrieved {} archived news entries, {} archived manifests, and {} art works.".format(
