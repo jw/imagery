@@ -16,7 +16,7 @@ chardet==4.0.0; python_version >= "2.7" and python_full_version < "3.0.0" or pyt
 click==7.1.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 colorama==0.4.4; python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.5.0"
 cookiecutter==1.7.2; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
-cryptography==3.4.4; python_version >= "3.6"
+cryptography==39.0.1; python_version >= "3.6"
 decorator==4.4.2; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.2.0" and python_version >= "3.7"
 defusedxml==0.6.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 distlib==0.3.1; python_full_version >= "3.6.1"
